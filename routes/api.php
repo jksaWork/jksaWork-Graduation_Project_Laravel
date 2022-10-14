@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ApiAuthController;
+use App\Http\Controllers\Api\ApiOnwerAuthControler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::prefix('client')->group(function (){
     Route::post('register' , [ApiAuthController::class , 'regsiterClient']); #Register Client
     Route::post('login' , [ApiAuthController::class , 'loginClient']); #login Client
+});
+
+
+
+// Owners Routes Api
+Route::prefix('owner')->group(function (){
+    Route::post('register' , [ApiOnwerAuthControler::class , 'regsiterClient']); #Register Client
+    Route::post('login' , [ApiOnwerAuthControler::class , 'loginClient']); #login Client
 });
