@@ -17,11 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('token' , function (){
-    $token = $request->user()->createToken($request->token_name);
-
-    return ['token' => $token->plainTextToken];
-});
+Route::get('admin'  , fn() => view('layouts.admin.admin'));
 
 Auth::routes();
 
