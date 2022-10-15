@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AdminUsersController;
+use App\Http\Controllers\AreaController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
@@ -51,10 +54,20 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
 });
-})
+});
 
-;
-// Route::get('user/data' , [AdminUsersController::class , 'data'])->name('user.data');
 
-// Route::get('admin/data' , [AdminController::class , 'data'])->name('admins.data');
+//  New Route Login
+Route::prefix('admin' )->middleware('guest:admin')->group(function () {
+    Route::get('login' , [AdminAuthController::class , 'getlogin']);
+    Route::post('login' , [AdminAuthController::class , 'login'])->name('admin.login');
+});
+
+
+Route::prefix('admin')->middleware('auth:admin')->group(function(){
+    Route::get('dashboard' , [DashboardController::class , 'index']);
+    // Area Routes 
+    Route::resource('area' , AreaController::class);
+
+});
 

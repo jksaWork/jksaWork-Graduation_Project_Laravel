@@ -176,7 +176,7 @@ return [
 
 
         Yajra\DataTables\DataTablesServiceProvider::class,
-
+        Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
 
     ],
 
