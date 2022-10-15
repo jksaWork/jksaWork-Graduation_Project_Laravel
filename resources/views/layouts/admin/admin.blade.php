@@ -37,7 +37,9 @@ License: For each use you must have a valid license purchased only from above li
 		<link href="{{ asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
-	</head>
+        @notifyCss
+        @notifyJs
+    </head>
 	<!--end::Head-->
 	<!--begin::Body-->
 	<body id="kt_body"
@@ -2311,10 +2313,11 @@ License: For each use you must have a valid license purchased only from above li
                     </div>
                     <!--end::Toolbar-->
                     <!--begin::Post-->
+                    <x:notify-messages />
                     @yield('content')
                     <!--end::Post-->
                 </div>
-                <!--end::Content-->
+            <!--end::Content-->
                 <!--begin::Footer-->
                 <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
                     <!--begin::Container-->

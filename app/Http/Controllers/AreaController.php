@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Area;
+use Exception;
 use Illuminate\Http\Request;
 
 class AreaController extends Controller
@@ -14,7 +15,9 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //
+        $areas = Area::all();
+        // dd($areas);
+        return view('admin.area.index' ,compact('areas'));
     }
 
     /**
@@ -36,8 +39,15 @@ class AreaController extends Controller
     public function store(Request $request)
     {
         // return $request;
-        Area::created($request->except('_token'));
-        
+        try{
+        Area::create($request->except('_token'));
+        session()->flash('success' , 'Area Was Insert Succesfuly');
+        return redirect()->back();
+        }
+        catch(Exception $e){
+        session()->flash('error' , 'some Thing Went Worng');
+        return redirect()->back();
+        }
     }
 
     /**

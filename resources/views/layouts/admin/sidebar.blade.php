@@ -68,7 +68,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link" href="../../demo1/dist/dashboards/light-aside.html">
+                    <a class="menu-link active" href="{{ route('area.index')}}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
                             <span class="svg-icon svg-icon-2">

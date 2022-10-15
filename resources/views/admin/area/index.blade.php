@@ -91,16 +91,17 @@
                     <!--end::Table head-->
                     <!--begin::Table body-->
                     <tbody class="fw-bold text-gray-600">
+                        @forelse ($areas as $area  )
                         <tr>
                             <td>
                                 <div
                                     class="form-check form-check-sm form-check-custom form-check-solid">
-                                    <input class="form-check-input" type="checkbox" value="1" />
+                                    <input class="form-check-input" type="checkbox" value="{{$area->id}}" />
                                 </div>
                             </td>
-                            <td>Sean Bean</a>
+                            <td>{{ $area->name}}</a>
                             </td>
-                            <td>Sean Bean</a>
+                            <td>{{ $area->description }}</a>
                             </td>
                             <td class="text-end">
                                 <a href="#" class="btn btn-sm btn-light btn-active-light-primary"
@@ -114,6 +115,9 @@
                                 <!--end::Menu-->
                             </td>
                         </tr>
+                        @empty
+                            <td colspan="4"> <div class="text-center">No Data Was Found</div></td>
+                        @endforelse
                     </tbody>
                     <!--end::Table body-->
                 </table>
