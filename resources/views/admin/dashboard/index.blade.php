@@ -103,13 +103,17 @@
                             <td>Sean Bean</a>
                             </td>
                             <td class="text-end">
-                                <a href="#" class="btn btn-sm btn-light btn-active-light-primary"
+                                
+                                <form action="{{ route('area.destroy')}}" method="post">
+                                @csrf
+                                <button href="#" class="btn btn-sm btn-danger"
                                     data-kt-menu-trigger="click"
-                                    >Actions
+                                    >Delete
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
                                     
                                     <!--end::Svg Icon-->
-                                </a>
+                                </button>
+                                </form>
                                 <!--begin::Menu-->
                                 <!--end::Menu-->
                             </td>

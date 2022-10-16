@@ -104,15 +104,13 @@
                             <td>{{ $area->description }}</a>
                             </td>
                             <td class="text-end">
-                                <a href="#" class="btn btn-sm btn-light btn-active-light-primary"
-                                    data-kt-menu-trigger="click"
-                                    >Actions
-                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
-                                    
-                                    <!--end::Svg Icon-->
-                                </a>
-                                <!--begin::Menu-->
-                                <!--end::Menu-->
+                                <form action="{{ route('area.destroy' , $area->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button href="#" class="btn btn-sm btn-danger"
+                                        data-kt-menu-trigger="click"
+                                        >Delete
+                                    </button>
                             </td>
                         </tr>
                         @empty

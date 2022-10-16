@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Admin;
+use App\Models\Area;
 use App\Models\Client;
 use App\Models\Owner;
 use Illuminate\Database\Seeder;
@@ -20,5 +21,6 @@ class DatabaseSeeder extends Seeder
         Admin::factory(1)->create();
         Client::factory(1)->create();
         Owner::factory(1)->create();
+        $this->call(AreaSedder::class);
     }
 }

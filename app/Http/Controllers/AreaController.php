@@ -92,6 +92,13 @@ class AreaController extends Controller
      */
     public function destroy(Area $area)
     {
-        //
+        try {
+            $area->delete();
+            session()->flash('sccuess' ,  'Item Was Update Success Fuly');
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            session()->flash('error' ,  'Some Thing Went Worng');
+            return redirect()->back();
+        }
     }
 }
