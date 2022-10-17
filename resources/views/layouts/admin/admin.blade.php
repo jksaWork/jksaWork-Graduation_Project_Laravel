@@ -2272,7 +2272,7 @@ License: For each use you must have a valid license purchased only from above li
                                 data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                                 class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                                 <!--begin::Title-->
-                                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Customer List</h1>
+                                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">@yield('main-head','Dashboard' )</h1>
                                 <!--end::Title-->
                                 <!--begin::Separator-->
                                 <span class="h-20px border-gray-300 border-start mx-4"></span>
@@ -2280,10 +2280,12 @@ License: For each use you must have a valid license purchased only from above li
                                 <!--begin::Breadcrumb-->
                                 <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
                                     <!--begin::Item-->
-                                    <li class="breadcrumb-item text-muted">
+                                   {{-- {!! @yield('sub-head' ,'<li class="breadcrumb-item text-muted">
                                         <a href="../../demo1/dist/index.html"
-                                            class="text-muted text-hover-primary">Home</a>
-                                    </li>
+                                            class="text-muted text-hover-primary">
+                                        </a>
+                                    </li>') !!} --}}
+                                    {{--
                                     <!--end::Item-->
                                     <!--begin::Item-->
                                     <li class="breadcrumb-item">
@@ -2300,13 +2302,13 @@ License: For each use you must have a valid license purchased only from above li
                                     <!--end::Item-->
                                     <!--begin::Item-->
                                     <li class="breadcrumb-item text-dark">Customer Listing</li>
-                                    <!--end::Item-->
+                                    <!--end::Item--> --}}
                                 </ul>
                                 <!--end::Breadcrumb-->
                             </div>
                             <!--end::Page title-->
                             <!--begin::Actions-->
-                            
+
                             <!--end::Actions-->
                         </div>
                         <!--end::Container-->

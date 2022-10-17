@@ -10,6 +10,7 @@ use App\Http\Controllers\AreaController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\SettingController;
 
 /*
@@ -67,8 +68,9 @@ Route::prefix('admin' )->middleware('guest:admin')->group(function () {
 
 Route::prefix('admin')->middleware('auth:admin')->group(function(){
     Route::get('dashboard' , [DashboardController::class , 'index']);
-    // Area Routes 
+    // Area Routes
     Route::resource('area' , AreaController::class);
+    Route::resource('services' , ServiceController::class);
 
 });
 

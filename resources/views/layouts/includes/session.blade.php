@@ -4,7 +4,7 @@
         <div class="alert alert-success">
                 <h1>
                     Inser Done Succuess
-                </h1>             
+                </h1>
         </div>
         <script>
             toastr.options = {
@@ -27,12 +27,12 @@
             toastr.success("Are you the six fingered man?");
         </script>
     @elseif (session()->has('error'))
-        {{ session()->forget('error') }}
         <div class="alert alert-danger">
             {{-- <div class="h1"> --}}
                 <h1 class="mb-1 text-dark">{{ session()->get('error')}}</h1>
             {{-- </div> --}}
         </div>
+        {{ session()->forget('error') }}
         <script>
             toastr.options = {
                 "closeButton": true,

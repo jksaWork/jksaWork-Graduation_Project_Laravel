@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Api\ApiAuthController;
 use App\Http\Controllers\Api\ApiOnwerAuthControler;
+use App\Http\Controllers\Api\ApiServiceController;
+use App\Http\Controllers\Api\AreaController as ApiAreaController;
 use App\Http\Controllers\AreaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,4 +36,5 @@ Route::prefix('owner')->group(function (){
     Route::post('login' , [ApiOnwerAuthControler::class , 'loginClient']); #login Client
 });
 
-Route::get('area' , [AreaController::class , 'index']);
+Route::get('areas' , [ApiAreaController::class , 'index']);
+Route::get('services' , [ApiServiceController::class , 'index']);
