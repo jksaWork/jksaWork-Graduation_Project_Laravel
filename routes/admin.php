@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\SettingController;
 
 /*
@@ -71,6 +72,6 @@ Route::prefix('admin')->middleware('auth:admin')->group(function(){
     // Area Routes
     Route::resource('area' , AreaController::class);
     Route::resource('services' , ServiceController::class);
-
+    Route::resource('clients' , ClientController::class);
 });
 

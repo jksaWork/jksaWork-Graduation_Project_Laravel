@@ -2,21 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClientRequest;
 use App\Models\Client;
+use App\Repo\Interfaces\ClientInteface;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
+    public $interface; # the InterFace Used In This Controller
+
+    public function __construct(ClientInteface $interface)
+    {
+        // dd('ok');
+        $this->interface = $interface;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
 
+        public function index(){
+            return $this->interface->getClientIndex();
+        }
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +33,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return $this->interface->create();
     }
 
     /**
@@ -33,9 +42,9 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClientRequest $request)
     {
-        //
+        return $this->interface->StoreClient($request);
     }
 
     /**

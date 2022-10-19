@@ -173,7 +173,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\RepositroyPatternProvider::class,
 
         Yajra\DataTables\DataTablesServiceProvider::class,
         Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
