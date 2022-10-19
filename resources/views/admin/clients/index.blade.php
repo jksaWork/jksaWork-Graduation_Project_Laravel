@@ -126,7 +126,7 @@
                                             <a href="../../demo1/dist/apps/customers/view.html" class="menu-link bg-light-info px-3">Edit</a>
                                         </div>
                                         <div class="menu-item px-3">
-                                            <a href="../../demo1/dist/apps/customers/view.html" class="menu-link bg-light-success px-3">Change Status</a>
+                                            <a href="{{ route('clients.show' , ['client' => $client->id,  'status' => true]) }}" class="menu-link bg-light-success px-3">Change Status</a>
                                         </div>
                                         
                                         <div class="menu-item px-3">

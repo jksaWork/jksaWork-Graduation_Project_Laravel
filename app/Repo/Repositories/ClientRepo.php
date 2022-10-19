@@ -32,4 +32,11 @@ class  ClientRepo  implements ClientInteface {
         $clients = Client::paginate(10);
         return view('admin.clients.index',compact('clients'));
     }
+
+
+    public function ChangeStatus($client){
+        // Change The Status 
+        $client->ChangeStatus();
+        return redirect()->route('clients.index');
+    }
 }

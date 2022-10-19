@@ -55,7 +55,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        if(request()->has('status')) return $this->interface->ChangeStatus($client);
     }
 
     /**

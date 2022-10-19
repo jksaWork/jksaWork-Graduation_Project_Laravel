@@ -6,4 +6,5 @@ interface  ClientInteface {
     public function create();
     public function StoreClient($data);
     public function getClientIndex();
+    public function ChangeStatus($Client);
 }

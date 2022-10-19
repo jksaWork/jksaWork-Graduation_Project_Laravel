@@ -8,7 +8,7 @@ trait HasStatus {
     }
 
     public function getStatusWithSpan(){
-        if($this->staus) return "<span class='badge badge-warning'> Not Actice</span>";
+        if($this->status) return "<span class='badge badge-warning'> Not Actice</span>";
         else  return "<span class='badge badge-success'> Actice</span>";
     }
 }
