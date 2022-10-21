@@ -2799,7 +2799,7 @@ License: For each use you must have a valid license purchased only from above li
                                 </div>
                                 <!--end::Timeline heading-->
                                 <!--begin::Timeline details-->
-                                <div class="overflow-auto pb-5">
+                                {{-- <div class="overflow-auto pb-5">
                                     <div
                                         class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-7">
                                         <!--begin::Item-->
@@ -2848,7 +2848,7 @@ License: For each use you must have a valid license purchased only from above li
                                         </div>
                                         <!--end::Item-->
                                     </div>
-                                </div>
+                                </div> --}}
                                 <!--end::Timeline details-->
                             </div>
                             <!--end::Timeline content-->
@@ -3494,7 +3494,7 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Main-->
     <!--begin::Engage drawers-->
     <!--begin::Demos drawer-->
-    <div id="kt_engage_demos" class="bg-body" data-kt-drawer="true" data-kt-drawer-name="explore"
+    {{-- <div id="kt_engage_demos" class="bg-body" data-kt-drawer="true" data-kt-drawer-name="explore"
         data-kt-drawer-activate="true" data-kt-drawer-overlay="true"
         data-kt-drawer-width="{default:'350px', 'lg': '475px'}" data-kt-drawer-direction="end"
         data-kt-drawer-toggle="#kt_engage_demos_toggle" data-kt-drawer-close="#kt_engage_demos_close">
@@ -3559,10 +3559,10 @@ License: For each use you must have a valid license purchased only from above li
                         </div>
                         <!--end::License-->
                         <!--begin::License-->
-                        
+
                         <!--end::License-->
                         <!--begin::Purchase-->
-                        
+
                         <!--end::Demos-->
                     </div>
                     <!--end::Wrapper-->
@@ -3572,11 +3572,11 @@ License: For each use you must have a valid license purchased only from above li
             <!--end::Body-->
         </div>
         <!--end::Card-->
-    </div>
+    </div> --}}
     <!--end::Demos drawer-->
     <!--end::Engage drawers-->
     <!--begin::Engage toolbar-->
-    <div
+    {{-- <div
         class="engage-toolbar d-flex position-fixed px-5 fw-bolder zindex-2 top-50 end-0 transform-90 mt-10 mt-lg-20 gap-2">
         <!--begin::Demos drawer toggle-->
         <button id="kt_engage_demos_toggle"
@@ -3591,7 +3591,7 @@ License: For each use you must have a valid license purchased only from above li
             class="engage-purchase-link btn btn-flex h-35px bg-body btn-color-gray-700 btn-active-color-gray-900 px-5 shadow-sm rounded-top-0">Buy
             Now</a>
         <!--end::Purchase link-->
-    </div>
+    </div> --}}
     <!--end::Engage toolbar-->
     <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">

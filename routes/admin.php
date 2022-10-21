@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\AreaController as AdminAreaController;
 use App\Http\Controllers\Admin\DashboardController;
 // use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AdminUsersController;
-use App\Http\Controllers\AreaController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
@@ -70,7 +70,7 @@ Route::prefix('admin' )->middleware('guest:admin')->group(function () {
 Route::prefix('admin')->middleware('auth:admin')->group(function(){
     Route::get('dashboard' , [DashboardController::class , 'index']);
     // Area Routes
-    Route::resource('area' , AreaController::class);
+    Route::resource('area' , AdminAreaController ::class);
     Route::resource('services' , ServiceController::class);
     Route::resource('clients' , ClientController::class);
 });
