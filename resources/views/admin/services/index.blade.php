@@ -111,6 +111,7 @@
                                         data-kt-menu-trigger="click"
                                         >Delete
                                     </button>
+                                </form>
                             </td>
                         </tr>
                         @empty

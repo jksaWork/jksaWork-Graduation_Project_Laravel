@@ -42,11 +42,13 @@ class AreaController extends Controller
     {
         // return $request;
         try{
+            // dd($request);
         Area::create($request->except('_token'));
         session()->flash('success' , 'Area Was Insert Succesfuly');
         return redirect()->back();
         }
         catch(Exception $e){
+        // dd($e);
         session()->flash('error' , 'some Thing Went Worng');
         return redirect()->back();
         }

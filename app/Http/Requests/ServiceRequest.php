@@ -23,9 +23,11 @@ class ServiceRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $roles =  [
             'name' => 'required',
             'description' => 'required',
         ];
+        // dd($roles , $this);
+        return $roles;
     }
 }
