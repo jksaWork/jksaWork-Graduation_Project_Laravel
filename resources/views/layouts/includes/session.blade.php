@@ -1,9 +1,8 @@
 <div>
     @if (session()->has('success'))
-        {{ session()->forget('success') }}
         <div class="alert alert-success">
                 <h1>
-                    Inser Done Succuess
+                    {{session()->get('success')}}
                 </h1>
         </div>
         <script>
@@ -23,9 +22,10 @@
                 "showMethod": "fadeIn",
                 "hideMethod": "fadeOut"
             };
-
             toastr.success("Are you the six fingered man?");
         </script>
+        {{ session()->forget('success') }}
+
     @elseif (session()->has('error'))
         <div class="alert alert-danger">
             {{-- <div class="h1"> --}}

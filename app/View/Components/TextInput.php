@@ -12,11 +12,12 @@ class TextInput extends Component
      * @return void
      */
 
-     public $name, $class;
-    public function __construct($name, $class)
+     public $name, $class , $value;
+    public function __construct($name, $class , $value = null)
     {
         $this->name = $name;
         $this->class = $class;
+        $this->value = $value;
     }
 
     /**

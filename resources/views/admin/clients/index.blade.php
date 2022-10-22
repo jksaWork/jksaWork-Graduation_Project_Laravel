@@ -35,13 +35,13 @@
                 <div class="card-toolbar">
                     <!--begin::Toolbar-->
                     <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                        
+
                         <!--begin::Menu 1-->
-                       
+
                         <!--end::Menu 1-->
                         <!--end::Filter-->
                         <!--begin::Export-->
-                       
+
                         <!--end::Export-->
                         <!--begin::Add customer-->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -123,17 +123,16 @@
                                             <a href="../../demo1/dist/apps/customers/view.html" class="menu-link px-3">View</a>
                                         </div>
                                         <div class="menu-item px-3">
-                                            <a href="../../demo1/dist/apps/customers/view.html" class="menu-link bg-light-info px-3">Edit</a>
+                                            <a href="{{ route('clients.edit' , $client->id) }}" class="menu-link bg-light-info px-3">Edit</a>
                                         </div>
                                         <div class="menu-item px-3">
                                             <a href="{{ route('clients.show' , ['client' => $client->id,  'status' => true]) }}" class="menu-link bg-light-success px-3">Change Status</a>
                                         </div>
-                                        
                                         <div class="menu-item px-3">
-                                            <form action="{{ route('area.destroy' , $client->id)}}" method="post">
+                                            <form action="{{ route('clients.destroy' , $client->id)}}" method="post" id='{{'client_delete_from_' . $client->id}}'>
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="#" class="menu-link px-3 bg-light-danger "
+                                                <a href="#" onclick="document.getElementById('client_delete_from_{{$client->id}}').submit()" class="menu-link px-3 bg-light-danger "
                                                     data-kt-menu-trigger="click"
                                                     >Delete
                                             </a>
@@ -142,7 +141,7 @@
                                         <!--end::Menu item-->
                                     </div>
                                     <!--end::Menu-->
-                                
+
                             </td>
                         </tr>
                         @empty
@@ -165,7 +164,7 @@
                 <div class="modal-content">
                     <!--begin::Form-->
                     <form class="form" action="{{ route('area.store') }}" id=""
-                        method="post"    
+                        method="post"
                     >
                     @csrf
                         <!--begin::Modal header-->
@@ -207,7 +206,7 @@
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin::Input group-->
-                                
+
                                 <!--end::Input group-->
                                 <!--begin::Input group-->
                                 <div class="fv-row mb-15">
@@ -221,10 +220,10 @@
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin::Billing toggle-->
-                                
+
                                 <!--end::Billing toggle-->
                                 <!--begin::Billing form-->
-                               
+
                                 <!--end::Billing form-->
                             </div>
                             <!--end::Scroll-->

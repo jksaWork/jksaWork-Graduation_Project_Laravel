@@ -71,7 +71,9 @@ Route::prefix('admin')->middleware('auth:admin')->group(function(){
     Route::get('dashboard' , [DashboardController::class , 'index']);
     // Area Routes
     Route::resource('area' , AdminAreaController ::class);
+    // Service Resuroce
     Route::resource('services' , ServiceController::class);
+    // Clients Resorce
     Route::resource('clients' , ClientController::class);
 });
 

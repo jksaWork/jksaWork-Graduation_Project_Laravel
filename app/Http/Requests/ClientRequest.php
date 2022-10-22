@@ -23,11 +23,17 @@ class ClientRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required', 
-            'email' => 'email|unique:clients,email', 
-            'password'=>'required', 
-            'phone' => 'required|numeric', 
+        $roles =  [
+            'name' => 'required',
+            'email' => 'email|unique:clients,email',
+            'password'=>'required',
+            'phone' => 'required|numeric',
         ];
+        // dd(request()->email);
+        if(request()->method() == 'PUT'){
+            $roles['email'] = 'exists:clients,email';
+        }
+        // dd($email);
+        return $roles;
     }
 }

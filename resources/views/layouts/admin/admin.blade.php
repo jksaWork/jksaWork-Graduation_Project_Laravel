@@ -2280,11 +2280,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <!--begin::Breadcrumb-->
                                 <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
                                     <!--begin::Item-->
-                                   {{-- {!! @yield('sub-head' ,'<li class="breadcrumb-item text-muted">
-                                        <a href="../../demo1/dist/index.html"
-                                            class="text-muted text-hover-primary">
-                                        </a>
-                                    </li>') !!} --}}
+                                   x
                                     {{--
                                     <!--end::Item-->
                                     <!--begin::Item-->

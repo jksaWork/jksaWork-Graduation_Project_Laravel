@@ -66,7 +66,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return $this->interface->editClient($client);
     }
 
     /**
@@ -76,9 +76,9 @@ class ClientController extends Controller
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(ClientRequest $request, Client $client)
     {
-        //
+        return $this->interface->updateClient($request , $client);
     }
 
     /**
@@ -89,6 +89,6 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        return $this->interface->deleteClient($client);
     }
 }
