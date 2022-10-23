@@ -24,9 +24,11 @@
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
-                        <input type="text" data-kt-customer-table-filter="search"
+                        <form action="{{ route('clients.index')}}" method="get">
+                            <input type="text"  name='search'
                             class="form-control form-control-solid w-250px ps-15"
                             placeholder="Search Area" />
+                        </form>
                     </div>
                     <!--end::Search-->
                 </div>
@@ -44,8 +46,7 @@
 
                         <!--end::Export-->
                         <!--begin::Add customer-->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#kt_modal_add_customer">Add Area</button>
+                        <a href='{{ route('clients.create')}}' class="btn btn-primary" >Add Client</a>
                         <!--end::Add customer-->
                     </div>
                     <!--end::Toolbar-->

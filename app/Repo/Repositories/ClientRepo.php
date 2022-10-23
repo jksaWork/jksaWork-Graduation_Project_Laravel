@@ -29,7 +29,7 @@ class  ClientRepo  implements ClientInteface {
     }
 
     public function getClientIndex(){
-        $clients = Client::paginate(10);
+        $clients = Client::whenSerach()->paginate(10);
         return view('admin.clients.index',compact('clients'));
     }
 
