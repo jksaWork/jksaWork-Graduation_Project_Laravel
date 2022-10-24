@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Owner;
+use App\Repo\Interfaces\OwnerInterFace;
 use Illuminate\Http\Request;
 
 class OwnerController extends Controller
 {
+
+    public function __construct(OwnerInterFace  $interface)
+    {
+        $this->interface = $interface;
+        // dd($this->interface);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,7 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        //
+        return $this->interface->getOwnerIndex();
     }
 
     /**

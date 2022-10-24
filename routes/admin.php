@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\SettingController;
 
 /*
@@ -71,9 +72,11 @@ Route::prefix('admin')->middleware('auth:admin')->group(function(){
     Route::get('dashboard' , [DashboardController::class , 'index']);
     // Area Routes
     Route::resource('area' , AdminAreaController ::class);
-    // Service Resuroce
+    // Service Resource
     Route::resource('services' , ServiceController::class);
-    // Clients Resorce
+    // Clients Resource
     Route::resource('clients' , ClientController::class);
+    // Owners Resource
+    Route::resource('owners' , OwnerController::class);
 });
 
