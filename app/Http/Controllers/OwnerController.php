@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OwnersRequest;
 use App\Models\Owner;
 use App\Repo\Interfaces\OwnerInterFace;
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        //
+        return $this->interface->create();
     }
 
     /**
@@ -40,9 +41,9 @@ class OwnerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OwnersRequest $request)
     {
-        //
+        return $this->interface->StoreOwner($request);
     }
 
     /**
@@ -53,7 +54,7 @@ class OwnerController extends Controller
      */
     public function show(Owner $owner)
     {
-        //
+        if(request()->has('status')) return $this->interface->ChangeStatus($owner);
     }
 
     /**
@@ -87,6 +88,6 @@ class OwnerController extends Controller
      */
     public function destroy(Owner $owner)
     {
-        //
+        return $this->interface->deleteOwner($owner);
     }
 }

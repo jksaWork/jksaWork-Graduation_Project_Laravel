@@ -1,7 +1,7 @@
 @extends('layouts.admin.admin')
 @section('main-head')
-    Client Mangement
-    <small> - Edit  Clients </small>
+    Owner Mangement
+    <small> - Edit  Owners </small>
 @endsection
 @section('content')
     <div class="post d-flex flex-column-fluid" id="kt_post">
@@ -13,7 +13,7 @@
                 <div class="card-header border-0 pt-6">
                     <div class="card-body pt-0">
                         @include('layouts.includes.session')
-                        <form action="{{ route('clients.store')}}" method="post">
+                        <form action="{{ route('owners.store')}}" method="post">
                             @csrf
                             <div class="row">
                                 <x:text-input name='name' class='col-md-6' />

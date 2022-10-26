@@ -14,17 +14,17 @@ class  OwnerRepository implements OwnerInterFace {
         return view('admin.owners.create');
     }
     public function StoreOwner($request){
-        $this->StoreClientInDatabse($request);
-        return redirect()->route('clients.index');
+        $this->StoreOwnerInDatabse($request);
+        return redirect()->route('owners.index');
     }
 
-    public function StoreClientInDatabse($request){
+    public function StoreOwnerInDatabse($request){
         try{
             $data = $request->all();
             $data['password'] = bcrypt($request->password);
-            return $client  = Client::create($data);
+            return $Owner  = Owner::create($data);
         }catch(Exception $e){
-            return $e;
+            dd($e);
         }
     }
 
@@ -34,10 +34,11 @@ class  OwnerRepository implements OwnerInterFace {
     }
 
 
-    public function ChangeStatus($client){
+    public function ChangeStatus($Owner){
         // Change The Status
-        $client->ChangeStatus();
-        return redirect()->route('clients.index');
+        $Owner->ChangeStatus();
+        session()->flash('success' , 'Status  Was Change Succesfuly');
+        return redirect()->route('owners.index');
     }
 
     public function editOwner($client){
@@ -58,12 +59,12 @@ class  OwnerRepository implements OwnerInterFace {
         }
     }
 
-    public function deleteOwner($client)
+    public function deleteOwner($Owner)
     {
         try{
-            $client->delete();
-            session()->flash('success' , 'Client Was Delete Succesfuly');
-            return redirect()->route('clients.index');
+            $Owner->delete();
+            session()->flash('success' , 'Owners  Was Delete Succesfuly');
+            return redirect()->route('owners.index');
         }catch(Exception $e){
             session()->flash('error' ,  'Some Thing Went Worng ');
             return redirect()->back();

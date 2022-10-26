@@ -57,7 +57,7 @@ class ApiOnwerAuthControler extends Controller
             ];
             return $this->SeccuessMessage($data);
         } else {
-            $this->ErrorMessage("Invalid Password");
+            return $this->ErrorMessage("Invalid Password" , null , 422);
         }
     }
 }

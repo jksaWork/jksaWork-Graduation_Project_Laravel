@@ -131,10 +131,10 @@
                                             <a href="{{ route('owners.show' , ['owner' => $Owner->id,  'status' => true]) }}" class="menu-link bg-light-success px-3">Change Status</a>
                                         </div>
                                         <div class="menu-item px-3">
-                                            <form action="{{ route('owners.destroy' , $Owner->id)}}" method="post" id='{{'client_delete_from_' . $Owner->id}}'>
+                                            <form action="{{ route('owners.destroy' , $Owner->id)}}" method="post" id='{{'owner_delete_from_' . $Owner->id}}'>
                                                 @csrf
                                                 @method('DELETE')
-                                                <a href="#" onclick="document.getElementById('client_delete_from_{{$Owner->id}}').submit()" class="menu-link px-3 bg-light-danger "
+                                                <a href="#" onclick="document.getElementById('owner_delete_from_{{$Owner->id}}').submit()" class="menu-link px-3 bg-light-danger "
                                                     data-kt-menu-trigger="click"
                                                     >Delete
                                             </a>
