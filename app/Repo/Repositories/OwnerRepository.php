@@ -41,18 +41,18 @@ class  OwnerRepository implements OwnerInterFace {
         return redirect()->route('owners.index');
     }
 
-    public function editOwner($client){
-        return view('admin.clients.edit' , compact('client'));
+    public function editOwner($owner){
+        return view('admin.owners.edit' , compact('owner'));
     }
 
-    public function updateOwner($request,  $client){
+    public function updateOwner($request,  $owner){
         // dd($request , $client);
         try{
             $data = $request->except('_token' , '_method');
             $data['password'] = bcrypt($request->password);
-            $client->update($data);
-            session()->flash('success' , 'Update Client Was Done Succesfuly');
-            return redirect()->route('clients.index');
+            $owner->update($data);
+            session()->flash('success' , 'Update Owners Was Done Succesfuly');
+            return redirect()->route('owners.index');
         }catch(Exception $e){
             session()->flash('error' ,  'Some Thing Went Worng ');
             return redirect()->back();

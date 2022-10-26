@@ -65,7 +65,7 @@ class OwnerController extends Controller
      */
     public function edit(Owner $owner)
     {
-        //
+        return $this->interface->editOwner($owner);
     }
 
     /**
@@ -77,7 +77,7 @@ class OwnerController extends Controller
      */
     public function update(Request $request, Owner $owner)
     {
-        //
+        return $this->interface->UpdateOwner($request , $owner);
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.admin.admin')
 @section('main-head')
-    Client Mangement
-    <small> - Edit Clients </small>
+    Owner Mangement
+    <small> - Edit Owner </small>
 @endsection
 {{-- @section('head') --}}
 @section('content')
@@ -14,14 +14,14 @@
                 <div class="card-header border-0 pt-6">
                     <div class="card-body pt-0">
                         @include('layouts.includes.session')
-                        <form action="{{ route('clients.update', $client->id)}}" method="post" >
+                        <form action="{{ route('owners.update', $owner->id)}}" method="post" >
                             @csrf
                             @method('PUT')
                             <div class="row">
-                                <x:text-input name='name' class='col-md-6'  value='{{$client->name}}'/>
-                                <x:text-input name='email' class='col-md-6'  value='{{$client->email}}' />
+                                <x:text-input name='name' class='col-md-6'  value='{{$owner->name}}'/>
+                                <x:text-input name='email' class='col-md-6'  value='{{$owner->email}}' />
                                 <x:text-input name='password' class='col-md-6'   />
-                                <x:text-input name='phone' class='col-md-6'  value='{{$client->phone}}'/>
+                                <x:text-input name='phone' class='col-md-6'  value='{{$owner->phone}}'/>
                                 {{-- <x:text-input name='phone' class='col-md-6' /> --}}
                                 <div class='col-md-6'>
                                     <x:status-filed />
