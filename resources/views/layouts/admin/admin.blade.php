@@ -2280,7 +2280,6 @@ License: For each use you must have a valid license purchased only from above li
                                 <!--begin::Breadcrumb-->
                                 <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
                                     <!--begin::Item-->
-                                   x
                                     {{--
                                     <!--end::Item-->
                                     <!--begin::Item-->

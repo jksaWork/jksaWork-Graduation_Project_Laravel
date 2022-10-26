@@ -30,9 +30,9 @@
                                     <button class="btn btn-primary">
                                         Save
                                     </button>
-                                    <button class="btn btn-outline-danger">
+                                    <a href='{{ route('clients.index')}}' class="btn btn-outline-danger">
                                         Cancle
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
 
