@@ -11,7 +11,7 @@ Dribbble: www.dribbble.com/keenthemes
 Like: www.facebook.com/keenthemes
 License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
 -->
-<html lang="en">
+<html lang="" {{ app()->getLocale() == 'en' ?: 'direction="rtl" dir="rtl" style="direction: rtl"'}}>
 	<!--begin::Head-->
 	<head><base href="">
 		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
@@ -34,9 +34,15 @@ License: For each use you must have a valid license purchased only from above li
 		<link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
-		<link href="{{ asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+		@if (app()->getLocale() == 'en')
+        <link href="{{ asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
+       @else
+       <link href="{{ asset('assets/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+       <link href="{{ asset('assets/css/style.bundle.rtl.css') }}" rel="stylesheet" type="text/css" />
+       
+       @endif
         @notifyCss
         @notifyJs
     </head>
@@ -1349,16 +1355,6 @@ License: For each use you must have a valid license purchased only from above li
                                             <!--begin::Menu item-->
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
-                                            <div class="menu-item px-5">
-                                                <a href="../../demo1/dist/apps/projects/list.html"
-                                                    class="menu-link px-5">
-                                                    <span class="menu-text">My Projects</span>
-                                                    <span class="menu-badge">
-                                                        <span
-                                                            class="badge badge-light-danger badge-circle fw-bolder fs-7">3</span>
-                                                    </span>
-                                                </a>
-                                            </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5" data-kt-menu-trigger="hover"
@@ -1434,7 +1430,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <div class="menu-sub menu-sub-dropdown w-175px py-4">
                                                     <!--begin::Menu item-->
                                                     <div class="menu-item px-3">
-                                                        <a href="../../demo1/dist/account/settings.html"
+                                                        <a href="#"
                                                             class="menu-link d-flex px-5 active">
                                                             <span class="symbol symbol-20px me-4">
                                                                 <img class="rounded-1"
@@ -1444,42 +1440,12 @@ License: For each use you must have a valid license purchased only from above li
                                                     <!--end::Menu item-->
                                                     <!--begin::Menu item-->
                                                     <div class="menu-item px-3">
-                                                        <a href="../../demo1/dist/account/settings.html"
+                                                        <a href="#"
                                                             class="menu-link d-flex px-5">
                                                             <span class="symbol symbol-20px me-4">
                                                                 <img class="rounded-1"
                                                                     src="assets/media/flags/spain.svg" alt="" />
                                                             </span>Spanish</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo1/dist/account/settings.html"
-                                                            class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="assets/media/flags/germany.svg" alt="" />
-                                                            </span>German</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo1/dist/account/settings.html"
-                                                            class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="assets/media/flags/japan.svg" alt="" />
-                                                            </span>Japanese</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo1/dist/account/settings.html"
-                                                            class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1"
-                                                                    src="assets/media/flags/france.svg" alt="" />
-                                                            </span>French</a>
                                                     </div>
                                                     <!--end::Menu item-->
                                                 </div>
