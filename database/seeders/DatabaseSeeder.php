@@ -17,12 +17,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(LaraTrustSeeder::class);
+        $this->call(LaraTrustSeeder::class);
         Admin::factory(1)->create();
         Client::factory(1)->create();
         Owner::factory(1)->create();
         $this->call(
-           [ ServiceSeeder::class, 
+           [ ServiceSeeder::class,
             AreaSedder::class,]
         );
     }

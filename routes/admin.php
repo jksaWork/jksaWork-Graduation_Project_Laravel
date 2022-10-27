@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\SettingController;
@@ -38,9 +39,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('home' , [AdminHomeController::class , 'index'])->name('home');
 
     // role  -----------------
-    Route::get('role/data' , [RoleController::class , 'data'])->name('roles.data');
-    Route::resource('roles' , RoleController::class);
-    Route::delete('bulk_delete', fn()=> '')->name('roles.bulk_delete');
+    // Route::get('role/data' , [RoleController::class , 'data'])->name('roles.data');
+    // Route::resource('roles' , RoleController::class);
+    // Route::delete('bulk_delete', fn()=> '')->name('roles.bulk_delete');
 
     // Admins Data  -----------------------
     Route::get('admin/data' , [AdminController::class , 'data'])->name('admins.data');
@@ -67,6 +68,12 @@ Route::prefix('admin' )->middleware('guest:admin')->group(function () {
     Route::post('login' , [AdminAuthController::class , 'login'])->name('admin.login');
 });
 
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::get('role/data' , [RoleController::class , 'data'])->name('roles.data');
+    Route::resource('roles' , RoleController::class);
+    Route::delete('bulk_delete', fn()=> '')->name('roles.bulk_delete');
+});
+
 
 Route::prefix('admin')->middleware('auth:admin')->group(function(){
     Route::get('dashboard' , [DashboardController::class , 'index']);
@@ -78,5 +85,7 @@ Route::prefix('admin')->middleware('auth:admin')->group(function(){
     Route::resource('clients' , ClientController::class);
     // Owners Resource
     Route::resource('owners' , OwnerController::class);
+    // User Controller
+    Route::resource('users' , UserController::class);
 });
 

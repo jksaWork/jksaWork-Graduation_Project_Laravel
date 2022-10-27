@@ -23,7 +23,10 @@ class RoleController extends Controller
 
     public function index()
     {
-        return view('admin.roles.index');
+        // dd(Role::all());
+        $roles = Role::whereNotIn('name', ['super_admin', 'admin', 'user'])
+            ->withCount(['users'])->get();
+        return view('admin.roles.index' , compact('roles'));
     }// end of index
 
     public function data()
@@ -50,12 +53,14 @@ class RoleController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:roles,name',
+            'permissions' => 'required',
+        ]);
         $role = Role::create($request->only(['name']));
         $role->attachPermissions($request->permissions);
-
         session()->flash('success', __('site.added_successfully'));
         return redirect()->route('admin.roles.index');
-
     }// end of store
 
     public function edit(Role $role)
@@ -68,7 +73,6 @@ class RoleController extends Controller
     {
         $role->update($request->only(['name']));
         $role->syncPermissions($request->permissions);
-
         session()->flash('success', __('site.updated_successfully'));
         return redirect()->route('admin.roles.index');
 
@@ -78,8 +82,7 @@ class RoleController extends Controller
     {
         $this->delete($role);
         session()->flash('success', __('site.deleted_successfully'));
-        return response(__('site.deleted_successfully'));
-
+        return redirect()->back();
     }// end of destroy
 
     public function bulkDelete()
@@ -99,7 +102,6 @@ class RoleController extends Controller
     private function delete(Role $role)
     {
         $role->delete();
-
     }// end of delete
 
 }

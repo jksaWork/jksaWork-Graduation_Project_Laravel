@@ -1,51 +1,45 @@
-@extends('layouts.Edum')
+@extends('layouts.admin.admin')
 
 @section('content')
-
-    <div>
-        <h2>@lang('roles.roles')</h2>
-    </div>
-    <ul class="breadcrumb mt-2">
-        <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">@lang('site.home')</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('admin.roles.index') }}">@lang('roles.roles')</a></li>
-        <li class="breadcrumb-item">@lang('site.create')</li>
-    </ul>
-    <div class="card">
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container-xxl">
+    <div class="card p-5">
         <div class="card-body p-3">
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="tile shadow">
+            <div class="tile">
                 <form method="post" action="{{ route('admin.roles.store') }}">
                     @csrf
-                    @method('post')
+                    {{-- @method('post') --}}
                     @include('admin.partials._errors')
                     {{--name--}}
-                    <div class="form-group">
-                        <label>@lang('roles.name') <span class="text-danger">*</span></label>
-                        <input type="text" name="name" autofocus class="form-control" value="{{ old('name') }}" required>
-                    </div>
-                    <h5>@lang('roles.permissions') <span class="text-danger">*</span></h5>
+                    {{-- <x:input --}}
+                    <x:text-input name='name' class='col-md-12' />
+                    <h5> permission <span class="text-danger">*</span></h5>
                     @php
-                        $models = ['roles', 'admins'];
+                        $models = Config::get('laratrust_seeder.roles_structure.super_admin');
                     @endphp
 
-                    <table class="table">
+                    <table class="table p-5">
                         <thead>
                         <tr>
-                            <th>@lang('roles.model')</th>
-                            <th>@lang('roles.permissions')</th>
+                            <th> Roles</th>
+                            <th> Permission </th>
                         </tr>
                         </thead>
 
                         <tbody>
-                        @foreach ($models as $model)
+                        @foreach ($models as $key => $model)
                             <tr>
-                                <td>@lang($model . '.' . $model)</td>
+                                <td> {{ $key }}</td>
                                 <td>
                                     <div class="animated-checkbox mx-2" style="display:inline-block;">
                                         <label class="m-0">
-                                            <input type="checkbox" value="" name="" class="all-roles">
+                                            <input type="checkbox" value="{{$key}}" name="" id='{{$key}}'
+                                            onchange="markAll({{$key}})"
+                                            class="all-roles mark_all">
                                             <span class="label-text">@lang('site.all')</span>
                                         </label>
                                     </div>
@@ -58,7 +52,8 @@
                                     @foreach ($permissionMaps as $permissionMap)
                                         <div class="animated-checkbox mx-2" style="display:inline-block;">
                                             <label class="m-0">
-                                                <input type="checkbox" value="{{ $permissionMap . '_' . $model }}" name="permissions[]" class="role">
+                                                <input type="checkbox"
+                                                value="{{ $permissionMap . '_' . $key }}" name="permissions[]" class="role {{$key}}">
                                                 <span class="label-text">@lang('site.' . $permissionMap)</span>
                                             </label>
                                         </div>
@@ -82,4 +77,24 @@
 
     </div><!-- end of row -->
 
+    <script>
+        function markAll(e , key){
+            // alert(key);
+            // console.log(e.checked);
+            if(e.checked == true){
+                // alert(e.value);
+                document.querySelectorAll('.' + e.value ).forEach(element => {
+                    element.checked = true;
+                });
+                // console.log(key);
+            }
+            else{
+                document.querySelectorAll('.' + e.value).forEach(element => {
+                    element.checked = false;
+                });
+            }
+            // console.log(key);
+        }
+    </script>
 @endsection
+
