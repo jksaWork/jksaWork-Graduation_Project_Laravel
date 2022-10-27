@@ -1,15 +1,10 @@
-@extends('layouts.Edum')
-
+@extends('layouts.admin.admin')
 @section('content')
-
-<div class="">
-    <div>
-        <h2>Admins</h2>
-    </div>
-    <ul class="breadcrumb mt-2">
-        <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">@lang('site.home')</a></li>
-        <li class="breadcrumb-item">Admin</li>
-    </ul>
+<div class="post d-flex flex-column-fluid" id="kt_post">
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container-xxl">
+    <div class="card p-5">
+        <div class="card-body p-3">
     <div class="row">
         <div class="col-md-12">
             <div class="card p-4">
@@ -54,7 +49,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-responsive">
-                                <table class="table datatable" id="roles-table" style="width: 100%;">
+                                <table class="table datatable  align-middle table-row-dashed fs-6 gy-5" id="roles-table" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>
@@ -67,6 +62,7 @@
                                             </th>
                                             <th>@lang('roles.name')</th>
                                             <th>email</th>
+                                            <th>phone</th>
                                             <th>roles</th>
                                             <th>@lang('site.created_at')</th>
                                             <th>@lang('site.action')</th>
@@ -104,7 +100,7 @@
                 "url": "{{ asset('admin_assets/datatable-lang/' . app()->getLocale() . '.json') }}"
             },
             ajax: {
-                url: '{{ route('admin.admins.data') }}',
+                url: '{{ route('users.data') }}',
                 data : function (d) {
                     d.role_id = role;
                 },
@@ -113,6 +109,7 @@
                 {data: 'record_select', name: 'record_select', searchable: false, sortable: false, width: '1%'},
                 {data: 'name', name: 'name' },
                 {data: 'email', name: 'email'},
+                {data: 'phone', name: 'phone'},
                 {data: 'roles', name: 'roles', searchable: false},
                 {data: 'created_at', name: 'created_at', searchable: false},
                 {data: 'actions', name: 'actions', searchable: false, sortable: false, width: '20%'},

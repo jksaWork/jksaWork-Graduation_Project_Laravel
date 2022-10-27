@@ -87,5 +87,7 @@ Route::prefix('admin')->middleware('auth:admin')->group(function(){
     Route::resource('owners' , OwnerController::class);
     // User Controller
     Route::resource('users' , UserController::class);
+    Route::get('user-ajax' , [UserController::class , 'data'])->name('users.data');
+    
 });
 

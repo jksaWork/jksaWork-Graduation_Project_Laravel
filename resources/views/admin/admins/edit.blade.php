@@ -1,61 +1,23 @@
-@extends('layouts.Edum')
-
+@extends('layouts.admin.admin')
+@section('main-head' ,  'Admin Mangement')
 @section('content')
 
-<div class="">
-    <div>
-        <h2>Admins</h2>
-    </div>
-    <ul class="breadcrumb mt-2">
-        <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">@lang('site.home')</a></li>
-        <li class="breadcrumb-item">Admin</li>
-        <li class="breadcrumb-item">Edit</li>
-    </ul>
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <!--begin::Container-->
+        <div id="kt_content_container" class="container-xxl">
+        <div class="card p-5">
+            <div class="card-body p-3">
     <div class="row">
-        <form action="{{route('admin.admin.update', $user->id)}}" method="post">
+        <form action="{{route('users.update' , $admin->id )}}" method="post">
             @csrf
             @method('PUT')
         <div class="col-md-12">
             <div class="card p-4">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="">name</label>
-                            <input type="text" class="form-control" name="name" value="{{$user->name}}" id="" aria-describedby="helpId"
-                                placeholder="">
-                            {{-- <small id="helpId" class="form-text text-muted">Help text</small> --}}
-                            @error('name')
-                            <span class="text-danger">
-                                {{$message}}
-                            </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="">email</label>
-                            <input type="text" class="form-control" name="email" value="{{$user->email}}" id="" aria-describedby="helpId"
-                                placeholder="">
-                                @error('email')
-                                <span class="text-danger">
-                                    {{$message}}
-                                </span>
-                                @enderror
-                            {{-- <small id="helpId" class="form-text text-muted">Help text</small> --}}
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="">password</label>
-                            <input type="text" class="form-control" name="password" id="" aria-describedby="helpId"
-                                placeholder="">
-                                @error('password')
-                                <span class="text-danger">
-                                    {{$message}}
-                                </span>
-                                @enderror
-                        </div>
-                    </div>
+                    <x:text-input class="col-md-6" name='name' value='{{ $admin->name }}'  />
+                    <x:text-input class="col-md-6" name='email' value='{{ $admin->email }}' />
+                    <x:text-input class="col-md-6" name='password'   />
+                    <x:text-input class="col-md-6" name='phone' value='{{ $admin->phone }}'  />
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Roles</label>
@@ -71,19 +33,23 @@
                                 @enderror
                         </div>
                     </div>
-                    <button class="btn-primary btn">
-                        Save
-                    </button>
-                    <a href="javascript::back()" class="btn">
-                        Back
-                    </a>
+                    <div class="mt-3">
+                        <button class="btn-primary btn">
+                            Save
+                        </button>
+                        <a href="javascript::back()" class="btn btn-light-danger">
+                            Back
+                        </a>
+                    </div>
                 </div>
             </div><!-- end of tile -->
         </div><!-- end of col -->
     </form>
     </div>
 </div><!-- end of row -->
-
+        </div>
+        </div>
+    </div>
 @endsection
 
 @push('scripts');

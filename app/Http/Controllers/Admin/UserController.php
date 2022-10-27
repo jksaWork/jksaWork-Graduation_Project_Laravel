@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminRequest;
+use App\Http\Requests\AdminsRequest;
+use App\Models\Admin;
+use App\Repo\Interfaces\AdminIterface;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,9 +16,14 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $interface;
+    public function __construct(AdminIterface $interface)
+    {
+        $this->interface = $interface;
+    }
     public function index()
     {
-        //
+        return $this->interface->getAdminsIndex();
     }
 
     /**
@@ -24,7 +33,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return $this->interface->create();
     }
 
     /**
@@ -33,11 +42,15 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminsRequest $request)
     {
-        //
+        return $this->interface->StoreAdmin($request);
     }
 
+
+    public function data(){
+        return $this->interface->getAjaxData();
+    }
     /**
      * Display the specified resource.
      *
@@ -55,9 +68,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($admin_id)
     {
-        //
+        $admin = Admin::find($admin_id);
+        return $this->interface->editAdmin($admin);
     }
 
     /**
@@ -67,9 +81,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminsRequest $request, $id)
     {
-        //
+        // return $request;
+        $admin = Admin::find($id);
+        return $this->interface->updateAdmin($request , $admin);
     }
 
     /**
