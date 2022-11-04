@@ -27,6 +27,7 @@
                             @endif
                         </div>
                     </div><!-- end of row -->
+                    @include('layouts.includes.session')
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -60,12 +61,13 @@
                                                     </label>
                                                 </div>
                                             </th>
-                                            <th>@lang('roles.name')</th>
-                                            <th>email</th>
-                                            <th>phone</th>
-                                            <th>roles</th>
-                                            <th>@lang('site.created_at')</th>
-                                            <th>@lang('site.action')</th>
+                                            <th>{{__('translation.name')}}</th>
+                                            <th>{{__('translation.email')}} </th>
+                                            <th>{{__('translation.phone')}}</th>
+                                            <th>{{__('translation.roles')}}</th>
+                                            <th>{{__('translation.status')}}</th>
+                                            <th>{{__('translation.date')}}</th>
+                                            <th>{{__('translation.action')}}</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -111,6 +113,7 @@
                 {data: 'email', name: 'email'},
                 {data: 'phone', name: 'phone'},
                 {data: 'roles', name: 'roles', searchable: false},
+                {data: 'status', name: 'roles', searchable: false},
                 {data: 'created_at', name: 'created_at', searchable: false},
                 {data: 'actions', name: 'actions', searchable: false, sortable: false, width: '20%'},
             ],

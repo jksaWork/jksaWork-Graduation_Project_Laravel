@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\SettingController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,63 +32,63 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/' , fn() => 'jksa')->name('switchLan');
-Route::get('/pro' , fn() => 'jksa')->name('profile');
-Route::middleware('auth')->group(function(){
+Route::get('/', fn () => 'jksa')->name('switchLan');
+Route::get('/pro', fn () => 'jksa')->name('profile');
+Route::middleware('auth')->group(function () {
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('home' , [AdminHomeController::class , 'index'])->name('home');
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('home', [AdminHomeController::class, 'index'])->name('home');
 
-    // role  -----------------
-    // Route::get('role/data' , [RoleController::class , 'data'])->name('roles.data');
-    // Route::resource('roles' , RoleController::class);
-    // Route::delete('bulk_delete', fn()=> '')->name('roles.bulk_delete');
+        // role  -----------------
+        // Route::get('role/data' , [RoleController::class , 'data'])->name('roles.data');
+        // Route::resource('roles' , RoleController::class);
+        // Route::delete('bulk_delete', fn()=> '')->name('roles.bulk_delete');
 
-    // Admins Data  -----------------------
-    Route::get('admin/data' , [AdminController::class , 'data'])->name('admins.data');
-    Route::resource('admin' , AdminController::class);
-    Route::delete('admin/bulk_delete', fn()=> '')->name('admin.bulk_delete');
+        // Admins Data  -----------------------
+        Route::get('admin/data', [AdminController::class, 'data'])->name('admins.data');
+        Route::resource('admin', AdminController::class);
+        Route::delete('admin/bulk_delete', fn () => '')->name('admin.bulk_delete');
 
-    // Admins Data  -----------------------
-    Route::get('user/data' , [AdminUsersController::class , 'data'])->name('user.data');
-    Route::resource('user' , AdminUsersController::class);
-    Route::delete('user/bulk_delete', fn()=> '')->name('user.bulk_delete');
+        // Admins Data  -----------------------
+        Route::get('user/data', [AdminUsersController::class, 'data'])->name('user.data');
+        Route::resource('user', AdminUsersController::class);
+        Route::delete('user/bulk_delete', fn () => '')->name('user.bulk_delete');
 
-    Route::get('setting' , [SettingController::class , 'index'])->name('setting');
-    Route::post('setting' , [SettingController::class , 'Store'])->name('setting.store');
-
-
-
-});
+        Route::get('setting', [SettingController::class, 'index'])->name('setting');
+        Route::post('setting', [SettingController::class, 'Store'])->name('setting.store');
+    });
 });
 
-
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
 //  New Route Login
-Route::prefix('admin' )->middleware('guest:admin')->group(function () {
-    Route::get('login' , [AdminAuthController::class , 'getlogin']);
-    Route::post('login' , [AdminAuthController::class , 'login'])->name('admin.login');
+Route::prefix('admin')->middleware('guest:admin')->group(function () {
+    Route::get('login', [AdminAuthController::class, 'getlogin']);
+    Route::post('login', [AdminAuthController::class, 'login'])->name('admin.login');
 });
 
-Route::prefix('admin')->name('admin.')->group(function(){
-    Route::get('role/data' , [RoleController::class , 'data'])->name('roles.data');
-    Route::resource('roles' , RoleController::class);
-    Route::delete('bulk_delete', fn()=> '')->name('roles.bulk_delete');
+Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function () {
+    Route::get('role/data', [RoleController::class, 'data'])->name('roles.data');
+    Route::resource('roles', RoleController::class);
+    Route::delete('bulk_delete', fn () => '')->name('roles.bulk_delete');
 });
 
 
-Route::prefix('admin')->middleware('auth:admin')->group(function(){
-    Route::get('dashboard' , [DashboardController::class , 'index']);
+Route::prefix('admin')->middleware('auth:admin')->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'index']);
     // Area Routes
-    Route::resource('area' , AdminAreaController ::class);
+    Route::resource('area', AdminAreaController::class);
     // Service Resource
-    Route::resource('services' , ServiceController::class);
+    Route::resource('services', ServiceController::class);
     // Clients Resource
-    Route::resource('clients' , ClientController::class);
+    Route::resource('clients', ClientController::class);
     // Owners Resource
-    Route::resource('owners' , OwnerController::class);
+    Route::resource('owners', OwnerController::class);
     // User Controller
-    Route::resource('users' , UserController::class);
-    Route::get('user-ajax' , [UserController::class , 'data'])->name('users.data');
-    
+    Route::resource('users', UserController::class);
+    Route::get('user-ajax', [UserController::class, 'data'])->name('users.data');
 });
-
+});

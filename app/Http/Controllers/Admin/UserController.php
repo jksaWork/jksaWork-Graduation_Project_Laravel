@@ -59,7 +59,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        if(request()->has('status')) return $this->interface->ChangeStatus(Admin::findOrfail($id));
     }
 
     /**
@@ -94,8 +94,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy( $id)
     {
-        //
+        // dd(Admin::find($id));
+        return $this->interface->deleteAdmin(Admin::findOrfail($id));
     }
 }

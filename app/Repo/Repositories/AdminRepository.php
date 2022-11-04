@@ -53,9 +53,12 @@ class  AdminRepository implements AdminIterface {
             ->addColumn('roles' , function(Admin $admin){
                 return view('admin.admins.data_table.roles', compact('admin'));
             })
+            ->addColumn('status' , function(Admin $admin){
+                return view('admin.admins.data_table.status', compact('admin'));
+            })
             ->rawColumns(['record_select', 'actions' , 'roles'])
             ->toJson();
-    
+
     }
 
 
@@ -63,7 +66,7 @@ class  AdminRepository implements AdminIterface {
         // Change The Status
         $Owner->ChangeStatus();
         session()->flash('success' , 'Status  Was Change Succesfuly');
-        return redirect()->route('owners.index');
+        return redirect()->back();
     }
 
     public function editAdmin($admin){
@@ -94,7 +97,7 @@ class  AdminRepository implements AdminIterface {
         try{
             $Owner->delete();
             session()->flash('success' , 'Admin  Was Delete Succesfuly');
-            return redirect()->route('owners.index');
+            return redirect()->back();
         }catch(Exception $e){
             session()->flash('error' ,  'Some Thing Went Worng ');
             return redirect()->back();
