@@ -55,7 +55,8 @@ class AgentController extends Controller
      */
     public function show(Agent $agent)
     {
-        //
+        if(request()->has('status')) return $this->interface->ChangeStatus($agent);
+        else return $this->interface->ShowAgentDetails($agent);
     }
 
     /**

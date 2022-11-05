@@ -36,7 +36,6 @@
                                             <label class="required fs-6 fw-bold mb-2">{{ __('translation.' . 'long') }}</label>
                                             <input type="hidden" class="form-control form-control-solid"
                                                 placeholder=""
-
                                                 name="long" value="{{  old('long') ?? '' }}"/>
                                                 @error('long')
                                                     <span class="text-danger">

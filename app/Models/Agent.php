@@ -10,7 +10,17 @@ class Agent extends Model
 {
     use HasFactory , HasStatus;
     public $guarded = [];
+    // relations
     public function attachments(){
         return $this->morphMany(Attachments::class, 'attachable');
+    }
+    public function Users(){
+        return $this->hasMany(AgentUser::class);
+    }
+
+    // Accessor
+    public function getLogoAttribute($key)
+    {
+        return asset('agents/' . $key);
     }
 }

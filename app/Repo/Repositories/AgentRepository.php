@@ -36,7 +36,7 @@ class  AgentRepository implements AgentIterface {
             // Init Sub Agent User Data
             $agent = $this->saveAgentData($request);
             // Save Agent User  Data
-            // $this->saveAgentUser($request , $agent->id);
+            $this->saveAgentUser($request , $agent->id);
             $this->HandelAgentFiles($request->agents_files , $agent);
             session()->flash('success', 'Insert Agent And Agent User Was Done');
             DB::commit();
@@ -51,6 +51,10 @@ class  AgentRepository implements AgentIterface {
         // $Admins = Admin::whenSerach()->paginate(10);
         // $roles = Role::whereNotIn('name' , ['admin' , 'super_admin' , 'user'])->get();
         return view('admin.agents.index');
+    }
+
+    public function ShowAgentDetails($agent){
+        return view('admin.agents.show' , compact('agent'));
     }
 
     public function getAjaxData(){

@@ -7,6 +7,7 @@ use App\Models\Agent;
 interface  AgentIterface {
     public function create();
     public function StoreAgent($data);
+    public function ShowAgentDetails($data);
     public function getAgentsIndex();
     public function ChangeStatus($admin);
     public function editAgent($admin);

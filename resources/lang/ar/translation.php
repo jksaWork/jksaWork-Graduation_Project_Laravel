@@ -25,5 +25,9 @@ return [
     'in_active' => 'غير مفعل',
     'active' => 'مفعل',
     'add_agent' => 'اضافه وكاله جديده',
-    'search_on_agents' => 'بحث قي الوكلات'
+    'search_on_agents' => 'بحث قي الوكلات',
+    'agent_info' => 'بياتات الوكاله',
+    'agent_users' => 'مستخدمين الوكاله',
+    'agent_attachment' => 'مرفقات الوكاله',
+    'show_agent_details' => 'عرض بياتات الوكاله',
 ];

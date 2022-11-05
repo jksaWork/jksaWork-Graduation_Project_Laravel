@@ -1,5 +1,9 @@
 {{-- @if (auth()->user()->hasPermission('update_admins')) --}}
-<div style="min-width: 300px">
+<div style="min-width: 200px">
+    <a href="{{ route('agent.show', $id) }}" class="btn btn-light-primary btn-sm btn-icon">
+        <i class="fa fa-eye"></i>
+    </a>
+
     <a href="{{ route('agent.edit', $id) }}" class="btn btn-light-info btn-sm btn-icon">
         <i class="fa fa-edit"></i>
     </a>
