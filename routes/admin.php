@@ -13,6 +13,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\AttachmentsController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\SettingController;
@@ -95,7 +96,10 @@ Route::group(
             // Agent Controller
             Route::resource('agent',  AgentController::class);
             Route::get('agents-ajax', [AgentController::class, 'data'])->name('agents.data');
-
         });
+
+        Route::get('show_attachments/{attachment}' , [AttachmentsController::class , 'show'])->name('show_attachments');
+        Route::get('download_attachments/{attachment}' ,[ AttachmentsController::class , 'download'])->name('download_attachments');
+        Route::post('attachments' ,[ AttachmentsController::class , 'store'])->name('attachments.store');
     }
 );

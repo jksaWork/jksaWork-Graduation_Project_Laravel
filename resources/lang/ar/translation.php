@@ -30,4 +30,7 @@ return [
     'agent_users' => 'مستخدمين الوكاله',
     'agent_attachment' => 'مرفقات الوكاله',
     'show_agent_details' => 'عرض بياتات الوكاله',
+    'no'  => 'الرقم',
+    'file' => 'الملف',
+    'attachments[]' => 'المرفقات',
 ];

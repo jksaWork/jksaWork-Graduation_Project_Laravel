@@ -101,39 +101,50 @@
                             </div>
 
                             <div class="tab-pane fade" id="kt_tab_pane_9" role="tabpanel">
-                                {{-- @if (count($agent->attachments) > 0)
-                                    @foreach ($employee->attachments as $attachment)
+                                <table class="table align-middle table-row-dashed fs-6 gy-5" id="">
+                                    <!--begin::Table head-->
+                                    <thead>
+                                        <!--begin::Table row-->
+                                        <tr class=" text-gray-400 fw-bolder fs-7 text-uppercase ">
+                                            <th class="">{{ __('translation.no') }}</th>
+                                            <th class="">{{ __('translation.file') }}</th>
+                                            <th class="">{{ __('translation.name') }}</th>
+                                            <th class="">{{ __('translation.action') }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @if (count($agent->attachments) > 0)
+                                    @foreach ($agent->attachments as $attachment)
                                         <tr>
-                                            <td class=" "> {{ $attachment->employee_id }}</td>
-                                            <td class=" "> {{ $employee->name }}</td>
-                                            <td class=" "> {{ $attachment->file_name }}</td>
+                                            <td class=" "> {{ $attachment->id }}</td>
+                                            <td class=" "> <img src="{{ asset('agents/attachments/' . $attachment->url )}}" width="80" alt=""></td>
+                                            <td class=" "> {{ $agent->name }}</td>
                                             <td class=" ">
-                                                <div>
-                                                    <a target="_blank"
-                                                        href="{{ route('attchment.file', [$employee->id, $attachment->file_name]) }}"
-                                                        class="btn btn-outline-primary p-1">
-                                                        <i class="mdi mdi-eye" style="font-size: 20px"></i>
+                                                <div style="">
+                                                    <a href="{{ route('show_attachments', $attachment->id) }}" class="btn btn-light-primary btn-sm btn-icon">
+                                                        <i class="fa fa-eye"></i>
                                                     </a>
-                                                    <a href="{{ route('attchment.download', [$employee->id, $attachment->file_name]) }}"
-                                                        class="btn btn-outline-info p-1">
-                                                        <i class="mdi mdi-download" style="font-size: 20px"></i>
+
+                                                    <a href="{{ route('download_attachments', $attachment->id) }}" class="btn btn-light-info btn-sm btn-icon">
+                                                        <i class="fa fa-download"></i>
                                                     </a>
-                                                    <form method='post'
-                                                        style="display:inline-block;
-                                                                                                                                                        "
-                                                        action='{{ route('attachment.destroy', $attachment->id) }} '>
-                                                        @csrf
-                                                        @method('delete')
-                                                        <input type="hidden" name='emp_id' value='{{ $employee->id }}'>
-                                                        <button class="btn btn-outline-danger p-1">
-                                                            <i class="mdi mdi-delete" style="font-size: 20px"></i>
-                                                        </button>
-                                                    </form>
-                                                </div>
+
+                                                        {{-- <a href="{{ route('agent.show', ['status' => true , 'agent' => $attachment->id]) }}" class="btn btn-light-success btn-sm btn-icon">
+                                                            <i class="fa fa-toggle-on"></i>
+                                                             </a> --}}
                                             </td>
                                         </tr>
                                     @endforeach
-                                @endif --}}
+                                @endif
+                                    </tbody>
+                                    <div>
+                                        <form action="{{ route('attachments.store')}}" method="post" enctype="multipart/form-data" >
+                                            @csrf
+                                            <input type="hidden" name="agent_id" value='{{$agent->id }}'>
+                                            <x:input-file class="col-12" name='attachments[]' />
+                                            <button class="btn btn-light-primary mt-3">Attach </button>
+                                        </form>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -143,7 +154,6 @@
     @endsection
 
     @push('scripts')
-        ;
         <script src="{{ asset('admin_assets/js/custom/index.js') }}"></script>
         <script src="//code.jquery.com/jquery.js"></script>
         <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>

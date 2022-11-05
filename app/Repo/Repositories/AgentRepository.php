@@ -135,7 +135,7 @@ class  AgentRepository implements AgentIterface {
     {
         foreach ($files as $key => $value) {
             $name = $value->hashName();
-            $value->store('agnets/attachments', 'public');
+            $value->store('agents/attachments', 'public');
             // I Do This For First Step
             $attachment  = new Attachments;
                 // $attachment->attacheable = $agent->id;
