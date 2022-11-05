@@ -1,5 +1,5 @@
 @extends('layouts.admin.admin')
-@section('main-head' ,  'Add new Agent')
+@section('main-head' ,  'Admin Mangement')
 @section('content')
 
     <div class="post d-flex flex-column-fluid" id="kt_post">
@@ -8,15 +8,16 @@
         <div class="card p-5">
             <div class="card-body p-3">
     <div class="row">
-        <form action="{{route('users.store')}}" method="post">
+        <form action="{{route('users.update' , $admin->id )}}" method="post">
             @csrf
+            @method('PUT')
         <div class="col-md-12">
             <div class="card p-4">
                 <div class="row">
-                    <x:text-input class="col-md-6" name='name'  />
-                    <x:text-input class="col-md-6" name='email'  />
-                    <x:text-input class="col-md-6" name='password'  />
-                    <x:text-input class="col-md-6" name='phone'  />
+                    <x:text-input class="col-md-6" name='name' value='{{ $admin->name }}'  />
+                    <x:text-input class="col-md-6" name='email' value='{{ $admin->email }}' />
+                    <x:text-input class="col-md-6" name='password'   />
+                    <x:text-input class="col-md-6" name='phone' value='{{ $admin->phone }}'  />
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Roles</label>

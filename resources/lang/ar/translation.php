@@ -11,6 +11,19 @@ return [
     'edit' => 'تعديل',
     'delete' => 'حذف',
     'change_status' => 'تغير الحاله',
-
-
+    'add_agent' =>'اضافه وكاله',
+    'show_agent' => 'عرض الوكلات',
+    'agents' => 'الوكلات' ,
+    'agents_images[]' => 'وثائق الوكاله',
+    'description' => "الوصف",
+    'lat' => 'خط الطول',
+    'long' => 'خط العرض',
+    'logo' => 'العلامه التجاريه',
+    'agents_files[]' => 'مرفقات الوكاله',
+    'location' => 'الموقع',
+    'agent_logo' => 'علامه الوكال',
+    'in_active' => 'غير مفعل',
+    'active' => 'مفعل',
+    'add_agent' => 'اضافه وكاله جديده',
+    'search_on_agents' => 'بحث قي الوكلات'
 ];

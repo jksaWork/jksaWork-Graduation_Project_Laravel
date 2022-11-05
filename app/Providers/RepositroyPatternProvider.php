@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Repo\Interfaces\AdminIterface;
+use App\Repo\Interfaces\AgentIterface;
 use App\Repo\Interfaces\ClientInteface;
 use App\Repo\Interfaces\OwnerInterFace;
 use App\Repo\Repositories\AdminRepository;
+use App\Repo\Repositories\AgentRepository;
 use App\Repo\Repositories\ClientRepo;
 use App\Repo\Repositories\OwnerRepository;
 use Illuminate\Support\ServiceProvider;
@@ -25,6 +27,8 @@ class RepositroyPatternProvider extends ServiceProvider
         $this->app->bind(OwnerInterFace::class, OwnerRepository::class);
         // Bind The Admin IinterFace With Admin Repo
         $this->app->bind(AdminIterface::class, AdminRepository::class);
+        // Bind The Agent IinterFace With Agent Repo
+        $this->app->bind(AgentIterface::class, AgentRepository::class);
     }
 
     /**

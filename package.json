@@ -20,5 +20,10 @@
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1",
         "webpack-cli": "^4.10.0"
+    },
+    "dependencies": {
+        "dropify": "^0.2.2",
+        "dropzone": "^6.0.0-beta.2",
+        "jquery": "^3.6.1"
     }
 }

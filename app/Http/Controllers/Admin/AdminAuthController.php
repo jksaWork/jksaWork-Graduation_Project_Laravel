@@ -18,7 +18,8 @@ class AdminAuthController extends Controller
             // dd('The Admin Is Login');
             drakify('sccuess');
             $request->session()->regenerate();
-            return redirect()->intended('admin/dashbaord');
+            return redirect()->route('dashboard');
+            // return redirect()->intended('admin/dashbaord');
         }
         else {
             drakify('error');
