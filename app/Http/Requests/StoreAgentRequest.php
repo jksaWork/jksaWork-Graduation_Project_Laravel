@@ -23,6 +23,11 @@ class StoreAgentRequest extends FormRequest
      */
     public function rules()
     {
+        $roles  =  request()->method() == 'PUT' ? $this->UpdateAgentRequest() : $this->StoreAgentRequest();
+        return $roles;
+    }
+
+    public function StoreAgentRequest(){
         return [
             'name' => 'required',
             'email' => 'required|email|unique:agent_users,email',
@@ -34,6 +39,22 @@ class StoreAgentRequest extends FormRequest
             'agents_files' => 'required',
             'logo' => 'required',
             'location' => 'required',
+        ];
+    }
+
+    public function UpdateAgentRequest(){
+        return [
+            'location' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'description' => 'required',
+            'long' => 'required',
+            'lat' => 'required',
+            // 'email' => 'required|email|unique:agent_users,email',
+            // 'password' => 'required',
+            
+            // 'agents_files' => 'required',
+            // 'logo' => 'required',
         ];
     }
 }

@@ -84,22 +84,18 @@ class  AgentRepository implements AgentIterface {
         return redirect()->back();
     }
 
-    public function editAgent($admin){
-        $roles = Role::all();
-        return view('admin.admins.edit' , compact('admin','roles'));
+    public function editAgent($agent){
+        // $roles = Role::all();
+        return view('admin.agents.edit' , compact('agent'));
     }
 
-    public function updateAgent($request, $admin){
+    public function updateAgent($request, $agent){
         // dd($request , $client);
         try{
-            $data = $request->except('_token' , '_method' , 'role_id');
-            $data['password'] = bcrypt($request->password);
-            $admin->update($data);
-            // dd($admin->roles);
-            $admin->detachRoles($admin->roles);
-            $admin->attachRoles(['admin', $request->role_id]);
-            session()->flash('success' , 'Update Admin Was Done Succesfuly');
-            return redirect()->route('users.index');
+            $data = $request->except('_token' , '_method');
+            $agent->update($data);
+            session()->flash('success' , 'Update Agent Was Done Succesfuly');
+            return redirect()->route('agent.index');
         }catch(Exception $e){
             dd($e);
             session()->flash('error' ,  'Some Thing Went Worng ');

@@ -1,4 +1,5 @@
 @extends('layouts.admin.admin')
+@section('main-head' ,  __('translation.show_agent_details'))
 @section('content')
     <div class="post d-flex flex-column-fluid" id="kt_post">
         <!--begin::Container-->
@@ -60,6 +61,18 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <h1 class='text-gray-900 text-hover-primary fs-2 fw-bolder me-1 my-5'> {{__('translation.location_in_map')}}</h1>
+                                <div>
+                                    @php
+                                                            $link  = "https://maps.googleapis.com/maps/api/staticmap?center=15.599766380508013,32.52571397310215&zoom=12&size=3000x300&maptype=roadmap
+                                                                &markers=color:red%7Clabel:L%7C{$agent->lat},{$agent->long}
+                                                                &key=AIzaSyClrFqfOqOGTSGWpiZby6POa-AEFjGmJoM"
+                                                            @endphp
+                                                            <div class="col-md-12">
+                                                            <a href="{{"https://www.google.com/maps/@" .$agent->lat .",".$agent->long . ",14z" }}" target="_blank" rel="noopener noreferrer">
+                                                                <img src="{{$link}}"  style="max-width:100%; min-width:99%; max-height:300px;"  alt="">
+                                                            </a>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="kt_tab_pane_8" role="tabpanel">
                                 <div class="tab-pane fade show active" id="kt_tab_pane_7" role="tabpanel">

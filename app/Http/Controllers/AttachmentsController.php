@@ -22,7 +22,6 @@ class AttachmentsController extends Controller
             $file->move(public_path('agents/attachments/' . $request->emp_id), $file_name);
             $attachment = new Attachments();
             $attachment->url = $file_name;
-            // dd('sad');
             $agent->attachments()->save($attachment);
         }
         return redirect()->route('agent.show', ['agent' => $request->agent_id])->with(['success' => 'done']);

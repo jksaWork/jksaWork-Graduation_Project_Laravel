@@ -67,7 +67,7 @@ class AgentController extends Controller
      */
     public function edit(Agent $agent)
     {
-        //
+        return $this->interface->editAgent($agent);
     }
 
     public function data(){
@@ -82,7 +82,7 @@ class AgentController extends Controller
      */
     public function update(StoreAgentRequest $request, Agent $agent)
     {
-        //
+        return $this->interface->updateAgent($request , $agent);
     }
 
     /**

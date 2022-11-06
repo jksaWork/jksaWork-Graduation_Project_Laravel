@@ -11,11 +11,12 @@ class TextArea extends Component
      *
      * @return void
      */
-    public $class , $name;
-    public function __construct($class , $name)
+    public $class , $name , $value;
+    public function __construct($class , $name , $value = null)
     {
         $this->name = $name;
         $this->class = $class;
+        $this->value = $value;
     }
 
     /**
