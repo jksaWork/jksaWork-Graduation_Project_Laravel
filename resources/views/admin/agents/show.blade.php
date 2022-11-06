@@ -1,5 +1,5 @@
 @extends('layouts.admin.admin')
-@section('main-head' ,  __('translation.show_agent_details'))
+@section('main-head', __('translation.show_agent_details'))
 @section('content')
     <div class="post d-flex flex-column-fluid" id="kt_post">
         <!--begin::Container-->
@@ -30,48 +30,52 @@
                     <div class="card-body">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="kt_tab_pane_7" role="tabpanel">
-                                <table class="table align-middle table-row-dashed fs-6 gy-5" id="">
-                                    <!--begin::Table head-->
-                                    <thead>
-                                        <!--begin::Table row-->
-                                        <tr class=" text-gray-400 fw-bolder fs-7 text-uppercase ">
-                                            <th class="">{{ __('translation.logo') }}</th>
-                                            <th class="">{{ __('translation.name') }}</th>
-                                            <th class="">{{ __('translation.phone') }}</th>
-                                            <th class="">{{ __('translation.location') }}</th>
-                                            <th class="">{{ __('translation.description') }}</th>
-                                            <th class="">{{ __('translation.status') }}</th>
-                                        </tr>
-                                        <!--end::Table row-->
-                                    </thead>
-                                    <!--end::Table head-->
-                                    <!--begin::Table body-->
-                                    <tbody class="fw-bold text-gray-600">
-                                        <tr>
-                                            <td>
-                                                <div class="text-center">
-                                                    <img src="{{ $agent->logo }}" width='70' alt="">
-                                                </div>
-                                            </td>
-                                            <td> {{ $agent->name }}</td>
-                                            <td> {{ $agent->phone }}</td>
-                                            <td> {{ $agent->location }}</td>
-                                            <td> {{ $agent->description }}</td>
-                                            <td> {!! $agent->getStatusWithSpan() !!}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <h1 class='text-gray-900 text-hover-primary fs-2 fw-bolder me-1 my-5'> {{__('translation.location_in_map')}}</h1>
                                 <div>
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="">
+                                        <!--begin::Table head-->
+                                        <thead>
+                                            <!--begin::Table row-->
+                                            <tr class=" text-gray-400 fw-bolder fs-7 text-uppercase ">
+                                                <th class="">{{ __('translation.logo') }}</th>
+                                                <th class="">{{ __('translation.name') }}</th>
+                                                <th class="">{{ __('translation.phone') }}</th>
+                                                <th class="">{{ __('translation.location') }}</th>
+                                                <th class="">{{ __('translation.description') }}</th>
+                                                <th class="">{{ __('translation.status') }}</th>
+                                            </tr>
+                                            <!--end::Table row-->
+                                        </thead>
+                                        <!--end::Table head-->
+                                        <!--begin::Table body-->
+                                        <tbody class="fw-bold text-gray-600">
+                                            <tr>
+                                                <td>
+                                                    <div class="text-center">
+                                                        <img src="{{ $agent->logo }}" width='70' alt="">
+                                                    </div>
+                                                </td>
+                                                <td> {{ $agent->name }}</td>
+                                                <td> {{ $agent->phone }}</td>
+                                                <td> {{ $agent->location }}</td>
+                                                <td> {{ $agent->description }}</td>
+                                                <td> {!! $agent->getStatusWithSpan() !!}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h1 class='text-gray-900 text-hover-primary fs-2 fw-bolder me-1 my-5'>
+                                        {{ __('translation.location_in_map') }}</h1>
                                     @php
-                                                            $link  = "https://maps.googleapis.com/maps/api/staticmap?center=15.599766380508013,32.52571397310215&zoom=12&size=3000x300&maptype=roadmap
+                                        $link = "https://maps.googleapis.com/maps/api/staticmap?center=15.599766380508013,32.52571397310215&zoom=12&size=3000x300&maptype=roadmap
                                                                 &markers=color:red%7Clabel:L%7C{$agent->lat},{$agent->long}
-                                                                &key=AIzaSyClrFqfOqOGTSGWpiZby6POa-AEFjGmJoM"
-                                                            @endphp
-                                                            <div class="col-md-12">
-                                                            <a href="{{"https://www.google.com/maps/@" .$agent->lat .",".$agent->long . ",14z" }}" target="_blank" rel="noopener noreferrer">
-                                                                <img src="{{$link}}"  style="max-width:100%; min-width:99%; max-height:300px;"  alt="">
-                                                            </a>
+                                                                &key=AIzaSyClrFqfOqOGTSGWpiZby6POa-AEFjGmJoM";
+                                    @endphp
+                                    <div class="col-md-12">
+                                        <a href="{{ 'https://www.google.com/maps/@' . $agent->lat . ',' . $agent->long . ',14z' }}"
+                                            target="_blank" rel="noopener noreferrer">
+                                            <img src="{{ $link }}"
+                                                style="max-width:100%; min-width:99%; max-height:300px;" alt="">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="kt_tab_pane_8" role="tabpanel">
@@ -126,34 +130,39 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @if (count($agent->attachments) > 0)
-                                    @foreach ($agent->attachments as $attachment)
-                                        <tr>
-                                            <td class=" "> {{ $attachment->id }}</td>
-                                            <td class=" "> <img src="{{ asset('agents/attachments/' . $attachment->url )}}" width="80" alt=""></td>
-                                            <td class=" "> {{ $agent->name }}</td>
-                                            <td class=" ">
-                                                <div style="">
-                                                    <a href="{{ route('show_attachments', $attachment->id) }}" class="btn btn-light-primary btn-sm btn-icon">
-                                                        <i class="fa fa-eye"></i>
-                                                    </a>
+                                        @if (count($agent->attachments) > 0)
+                                            @foreach ($agent->attachments as $attachment)
+                                                <tr>
+                                                    <td class=" "> {{ $attachment->id }}</td>
+                                                    <td class=" "> <img
+                                                            src="{{ asset('agents/attachments/' . $attachment->url) }}"
+                                                            width="80" alt=""></td>
+                                                    <td class=" "> {{ $agent->name }}</td>
+                                                    <td class=" ">
+                                                        <div style="">
+                                                            <a href="{{ route('show_attachments', $attachment->id) }}"
+                                                                class="btn btn-light-primary btn-sm btn-icon">
+                                                                <i class="fa fa-eye"></i>
+                                                            </a>
 
-                                                    <a href="{{ route('download_attachments', $attachment->id) }}" class="btn btn-light-info btn-sm btn-icon">
-                                                        <i class="fa fa-download"></i>
-                                                    </a>
+                                                            <a href="{{ route('download_attachments', $attachment->id) }}"
+                                                                class="btn btn-light-info btn-sm btn-icon">
+                                                                <i class="fa fa-download"></i>
+                                                            </a>
 
-                                                        {{-- <a href="{{ route('agent.show', ['status' => true , 'agent' => $attachment->id]) }}" class="btn btn-light-success btn-sm btn-icon">
+                                                            {{-- <a href="{{ route('agent.show', ['status' => true , 'agent' => $attachment->id]) }}" class="btn btn-light-success btn-sm btn-icon">
                                                             <i class="fa fa-toggle-on"></i>
                                                              </a> --}}
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                @endif
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endif
                                     </tbody>
                                     <div>
-                                        <form action="{{ route('attachments.store')}}" method="post" enctype="multipart/form-data" >
+                                        <form action="{{ route('attachments.store') }}" method="post"
+                                            enctype="multipart/form-data">
                                             @csrf
-                                            <input type="hidden" name="agent_id" value='{{$agent->id }}'>
+                                            <input type="hidden" name="agent_id" value='{{ $agent->id }}'>
                                             <x:input-file class="col-12" name='attachments[]' />
                                             <button class="btn btn-light-primary mt-3">Attach </button>
                                         </form>

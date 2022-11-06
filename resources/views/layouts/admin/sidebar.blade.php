@@ -5,7 +5,7 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="/admin/dashbaord" >
+        <a href="/admin/dashbaord">
             <img alt="Logo" src="{{ asset('assets/media/logos/logo-1-dark.svg') }}" class="h-25px logo" />
         </a>
         <!--end::Logo-->
@@ -68,7 +68,27 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link active" href="{{ route('area.index')}}">
+                    <a class="menu-link {{ true ?: 'active'}}" href="/admin">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+                            <span class="menu-icon">
+                                <!--begin::Svg Icon | path: icons/duotune/communication/com001.svg-->
+                                <span class="svg-icon svg-icon-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path opacity="0.3" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="black"></path>
+                                        <path d="M19 10.4C19 10.3 19 10.2 19 10C19 8.9 18.1 8 17 8H16.9C15.6 6.2 14.6 4.29995 13.9 2.19995C13.3 2.09995 12.6 2 12 2C11.9 2 11.8 2 11.7 2C12.4 4.6 13.5 7.10005 15.1 9.30005C15 9.50005 15 9.7 15 10C15 11.1 15.9 12 17 12C17.1 12 17.3 12 17.4 11.9C18.6 13 19.9 14 21.4 14.8C21.4 14.8 21.5 14.8 21.5 14.9C21.7 14.2 21.8 13.5 21.9 12.7C20.9 12.1 19.9 11.3 19 10.4Z" fill="black"></path>
+                                        <path d="M12 15C11 13.1 10.2 11.2 9.60001 9.19995C9.90001 8.89995 10 8.4 10 8C10 7.1 9.40001 6.39998 8.70001 6.09998C8.40001 4.99998 8.20001 3.90005 8.00001 2.80005C7.30001 3.10005 6.70001 3.40002 6.20001 3.90002C6.40001 4.80002 6.50001 5.6 6.80001 6.5C6.40001 6.9 6.10001 7.4 6.10001 8C6.10001 9 6.80001 9.8 7.80001 10C8.30001 11.6 9.00001 13.2 9.70001 14.7C7.10001 13.2 4.70001 11.5 2.40001 9.5C2.20001 10.3 2.10001 11.1 2.10001 11.9C4.60001 13.9 7.30001 15.7 10.1 17.2C10.2 18.2 11 19 12 19C12.6 20 13.2 20.9 13.9 21.8C14.6 21.7 15.3 21.5 15.9 21.2C15.4 20.5 14.9 19.8 14.4 19.1C15.5 19.5 16.5 19.9 17.6 20.2C18.3 19.8 18.9 19.2 19.4 18.6C17.6 18.1 15.7 17.5 14 16.7C13.9 15.8 13.1 15 12 15Z" fill="black"></path>
+                                    </svg>
+                                </span>
+                                <!--end::Svg Icon-->
+                            </span>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">{{ __('translation.map')}}</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a class="menu-link active" href="{{ route('area.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -87,8 +107,10 @@
                         <span class="menu-title">Areas</span>
                     </a>
                 </div>
-            <div class="menu-item">
-                    <a class="menu-link {{ !request()->routeIs('services.index')?: 'active'}}" href="{{ route('services.index')}}">
+
+                <div class="menu-item">
+                    <a class="menu-link {{ !request()->routeIs('services.index') ?: 'active' }}"
+                        href="{{ route('services.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duclientotune/abstract/abs027.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -252,7 +274,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">{{__('translation.agents')}}</span>
+                        <span class="menu-title">{{ __('translation.agents') }}</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
@@ -261,15 +283,15 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">{{__('translation.show_agent')}}</span>
+                                <span class="menu-title">{{ __('translation.show_agent') }}</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('agent.create') }}">
+                            <a class="menu-link" href="{{ route('agent.create') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">{{ __('translation.add_agent')}}</span>
+                                <span class="menu-title">{{ __('translation.add_agent') }}</span>
                             </a>
                         </div>
                         {{-- <div class="menu-item">
@@ -311,7 +333,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('users.index') }}">
+                            <a class="menu-link" href="{{ route('users.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -319,7 +341,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('admin.roles.index') }}">
+                            <a class="menu-link" href="{{ route('admin.roles.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -396,7 +418,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{ route('owners.create')}}">
+                            <a class="menu-link" href="{{ route('owners.create') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -404,7 +426,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{ route('owners.index')}}">
+                            <a class="menu-link" href="{{ route('owners.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
