@@ -4,9 +4,9 @@ namespace App\Models;
 
 use App\Traits\HasStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class AgentUser extends Model
+class AgentUser extends Authenticatable
 {
     use HasFactory , HasStatus;
     public  $guarded = [];

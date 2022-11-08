@@ -68,7 +68,7 @@ Route::group(
     function () {
         //  New Route Login
         Route::prefix('admin')->middleware('guest:admin')->group(function () {
-            Route::get('login', [AdminAuthController::class, 'getlogin']);
+            Route::get('login', [AdminAuthController::class, 'getlogin'])->name('admin.get_login');
             Route::post('login', [AdminAuthController::class, 'login'])->name('admin.login');
         });
 
