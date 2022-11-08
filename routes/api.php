@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\Api\AreaController;
+use App\Http\Controllers\Api\AreaController;
 use App\Http\Controllers\Api\ApiAuthController;
 use App\Http\Controllers\Api\ApiOnwerAuthControler;
 use App\Http\Controllers\Api\ApiServiceController;
