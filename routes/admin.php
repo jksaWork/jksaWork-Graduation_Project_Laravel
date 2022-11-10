@@ -77,7 +77,9 @@ Route::group(
             Route::resource('roles', RoleController::class);
             Route::delete('bulk_delete', fn () => '')->name('roles.bulk_delete');
         });
-
+        Route::middleware('auth:admin,web')->group(function(){
+            Route::resource('owners', OwnerController::class);
+        });
 
         Route::prefix('admin')->middleware('auth:admin')->group(function () {
             Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -88,7 +90,6 @@ Route::group(
             // Clients Resource
             Route::resource('clients', ClientController::class);
             // Owners Resource
-            Route::resource('owners', OwnerController::class);
             // User Controller
             Route::resource('users', UserController::class);
             Route::get('user-ajax', [UserController::class, 'data'])->name('users.data');

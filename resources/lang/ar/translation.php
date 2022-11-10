@@ -39,4 +39,13 @@ return [
     'Are You Admin' => ' تسجيل دخول الادمن ',
     'Admin Login' => 'تسجيل دخول الادمن',
     'Login' => 'تسجيل الدخول',
+    'dashboard' => 'لوحه التحكم',
+    'recent_offer' => 'عروض الايجار',
+    'add_offer' => 'اضافه عرض',
+    "offer_history"=> 'سجل العروض',
+    'sale_offer' => 'عروض البيع' ,
+    'excahnge_offer' => 'عروض الاستبدال',
+    'agent_owners_mangement' => 'اداره المالكين',
+    'agent'=>'الوكاله',
+    'owners_dashboard' => 'اداره حسابات  المالكين'
 ];

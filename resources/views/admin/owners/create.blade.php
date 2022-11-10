@@ -1,4 +1,9 @@
+{{-- @if (!) --}}
+{{-- @dd('jksa');
 @extends('layouts.admin.admin')
+@else --}}
+@extends(auth()->guard('admin')->check() ?'layouts.admin.admin':'layouts.agents.agent_layouts')
+{{-- @endif --}}
 @section('main-head')
     Owner Mangement
     <small> - Edit  Owners </small>
@@ -12,7 +17,7 @@
                 <!--begin::Card header-->
                 <div class="card-header border-0 pt-6">
                     <div class="card-body pt-0">
-                        @include('layouts.includes.session')
+                        {{-- @include('layouts.includes.session') --}}
                         <form action="{{ route('owners.store')}}" method="post">
                             @csrf
                             <div class="row">
@@ -20,7 +25,9 @@
                                 <x:text-input name='email' class='col-md-6' />
                                 <x:text-input name='password' class='col-md-6' />
                                 <x:text-input name='phone' class='col-md-6' />
-                                {{-- <x:text-input name='phone' class='col-md-6' /> --}}
+                                @if (auth()->guard('web')->check())
+                                    <x:text-input name='agent_id' class='col-md-6' value="{{auth()->user()->agent_id ?? ''}}" />
+                                @endif
                                 <div class='col-md-6'>
                                     <x:status-filed />
                                 </div>

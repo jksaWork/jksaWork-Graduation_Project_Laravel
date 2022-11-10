@@ -11,7 +11,7 @@ Dribbble: www.dribbble.com/keenthemes
 Like: www.facebook.com/keenthemes
 License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
 -->
-<html lang="" {{ app()->getLocale() == 'en' ?: 'direction="rtl" dir="rtl" style="direction: rtl"'}}>
+<html lang=""  direction="{{ app()->getLocale() == 'en' ?: 'rtl' }} " dir="{{ app()->getLocale() == 'en' ?: 'rtl'}}" style="{{ app()->getLocale() == 'en' ?: 'direction: rtl'}}">
 	<!--begin::Head-->
 	<head><base href="">
 		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>

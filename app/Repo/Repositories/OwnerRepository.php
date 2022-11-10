@@ -21,6 +21,7 @@ class  OwnerRepository implements OwnerInterFace {
     public function StoreOwnerInDatabse($request){
         try{
             $data = $request->all();
+            // dd($data);
             $data['password'] = bcrypt($request->password);
             return $Owner  = Owner::create($data);
         }catch(Exception $e){
@@ -29,7 +30,7 @@ class  OwnerRepository implements OwnerInterFace {
     }
 
     public function getOwnerIndex(){
-        $Owners = Owner::whenSerach()->paginate(10);
+        $Owners = Owner::whenSerach()->WhenAgentUser()->paginate(10);
         return view('admin.owners.index',compact('Owners'));
     }
 

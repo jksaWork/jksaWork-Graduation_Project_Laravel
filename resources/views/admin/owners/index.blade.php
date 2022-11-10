@@ -1,5 +1,6 @@
-@extends('layouts.admin.admin')
-@section('main-head' , 'Owners Dashboard')
+{{-- @extends('layouts.admin.admin') --}}
+@extends(auth()->guard('admin')->check() ?'layouts.admin.admin':'layouts.agents.agent_layouts')
+@section('main-head' , __('translation.owners_dashboard'))
 @section('content')
 <div class="post d-flex flex-column-fluid" id="kt_post">
     <!--begin::Container-->
@@ -27,6 +28,7 @@
                         <!--end::Svg Icon-->
                         <form action="{{ route('owners.index')}}" method="get">
                             <input type="text"  name='search'
+                            value="{{request()->search}}"
                             class="form-control form-control-solid w-250px ps-15"
                             placeholder="Search Area" />
                         </form>
@@ -85,9 +87,13 @@
                                 </div>
                             </th>
                             <th class="min-w-125px">Name</th>
-                            <th class="min-w-125px">phone</th>
-                            <th class="min-w-125px">Email</th>
-                            <th class="min-w-125px">Status</th>
+                            <th class="">phone</th>
+                            <th class="">Email</th>
+                            <th class="">Status</th>
+
+                            @admin
+                            <th class="">{{__('translation.agent')}}</th>
+                            @endAdmin
                             <th class="text-end min-w-70px">Actions</th>
                         </tr>
                         <!--end::Table row-->
@@ -107,6 +113,9 @@
                             </td>
                             <td>{{ $Owner->phone }}</a></td>
                             <td>{{ $Owner->email }}</a></td>
+                            @admin
+                            <td class="">{{ $Owner->Agent->name ?? '-'}}</td>
+                            @endAdmin
                             <td>{!! $Owner->getStatusWithSpan() !!}</a>
                             </td>
                             <td class="text-end">

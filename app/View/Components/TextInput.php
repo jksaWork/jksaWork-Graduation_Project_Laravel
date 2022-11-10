@@ -3,7 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-
+use Illuminate\Support\Str;
 class TextInput extends Component
 {
     /**
@@ -12,12 +12,14 @@ class TextInput extends Component
      * @return void
      */
 
-     public $name, $class , $value;
+     public $name, $class , $value , $hidden;
     public function __construct($name, $class , $value = null)
     {
         $this->name = $name;
         $this->class = $class;
         $this->value = $value;
+        $this->hidden  = Str::endsWith($name, '_id');
+        // dd($this->hidden);
     }
 
     /**

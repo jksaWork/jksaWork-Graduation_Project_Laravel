@@ -1,4 +1,6 @@
-@extends('layouts.admin.admin')
+{{-- @extends('layouts.admin.admin') --}}
+@extends(auth()->guard('admin')->check() ?'layouts.admin.admin':'layouts.agents.agent_layouts')
+
 @section('main-head')
     Owner Mangement
     <small> - Edit Owner </small>
