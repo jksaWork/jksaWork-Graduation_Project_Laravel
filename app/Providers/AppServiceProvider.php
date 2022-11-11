@@ -14,12 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Blade::directive('admin', function () {
-            echo  "if(auth()->guard('admin')->check()){";
-        });
-        Blade::directive('endAdmin', function () {
-            echo  "}";
-        });
+
     }
 
     /**
@@ -30,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-
+        Blade::directive('admin', function () {
+            return "<?php if(auth()->guard('admin')->check()){ ?>";
+        });
+        Blade::directive('endAdmin', function () {
+            return "<?php } ?>";
+        });
     }
 }

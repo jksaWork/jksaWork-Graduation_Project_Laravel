@@ -1,7 +1,7 @@
 <div class="form-group">
-    <label for="" class="fs-6 fw-bold mb-2"> Status </label>
+    <label for="" class="fs-6 fw-bold mb-2"> {{__('translation.status')}} </label>
     <select class="form-control" name="status" id="status">
-        <option value="1">Actice</option>
-        <option value="0"> Not Active</option>
+        <option value="1">{{__('translation.active')}}</option>
+        <option value="0"> {{__('translation.in_active')}}</option>
     </select>
 </div>

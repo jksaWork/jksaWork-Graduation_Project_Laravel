@@ -2,7 +2,7 @@
 
 namespace App\Repo\Interfaces;
 
-interface  AdminIterface {
+interface  OfferInterface {
     public function create();
     public function StoreAdmin($data);
     public function getAdminsIndex();

@@ -1,4 +1,6 @@
-@extends('layouts.admin.admin')
+{{-- @extends('layouts.admin.admin') --}}
+@extends(auth()->guard('admin')->check() ?'layouts.admin.admin':'layouts.agents.agent_layouts')
+@section('main-head' ,  __('translation.users_mangement'))
 @section('content')
 <div class="post d-flex flex-column-fluid" id="kt_post">
     <!--begin::Container-->
@@ -36,6 +38,7 @@
                                     placeholder="@lang('site.search')">
                             </div>
                         </div>
+                    @if(auth()->guard('admin')->check())
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Roles</label>
@@ -46,6 +49,7 @@
                                 </select>
                             </div>
                         </div>
+                        @endif
                     </div><!-- end of row -->
                     <div class="row">
                         <div class="col-md-12">
@@ -64,7 +68,11 @@
                                             <th class="text-center">{{__('translation.name')}}</th>
                                             <th class="text-center">{{__('translation.email')}} </th>
                                             <th class="text-center">{{__('translation.phone')}}</th>
+                                            @admin
                                             <th class="text-center">{{__('translation.roles')}}</th>
+                                            @endAdmin
+                                            {{-- <th class="text-center">{{__('translation.roles')}}</th> --}}
+
                                             <th class="text-center">{{__('translation.status')}}</th>
                                             <th class="text-center">{{__('translation.date')}}</th>
                                             <th class="text-center">{{__('translation.action')}}</th>
@@ -92,8 +100,22 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script>
         // alert('worgiing');
+        var  isadmin = @json(auth()->guard('admin')->check());
+        console.log(isadmin);
 
-        let role;
+        var usersColumns = [
+                {data: 'record_select', name: 'record_select', searchable: false, sortable: false, width: '1%'},
+                {data: 'name', name: 'name' },
+                {data: 'email', name: 'email'},
+                {data: 'phone', name: 'phone'},
+                {data: 'roles', name: 'roles', searchable: false},
+                {data: 'status', name: 'roles', searchable: false},
+                {data: 'created_at', name: 'created_at', searchable: false},
+                {data: 'actions', name: 'actions', searchable: false, sortable: false, width: '20%'},
+            ];
+            usersColumns = isadmin ? usersColumns : usersColumns.filter(el => el.data !== 'roles');
+        console.log(usersColumns);
+            let role;
         let rolesTable = $('#roles-table').DataTable({
             dom: "tiplr",
             serverSide: true,
@@ -107,16 +129,7 @@
                     d.role_id = role;
                 },
             },
-            columns: [
-                {data: 'record_select', name: 'record_select', searchable: false, sortable: false, width: '1%'},
-                {data: 'name', name: 'name' },
-                {data: 'email', name: 'email'},
-                {data: 'phone', name: 'phone'},
-                {data: 'roles', name: 'roles', searchable: false},
-                {data: 'status', name: 'roles', searchable: false},
-                {data: 'created_at', name: 'created_at', searchable: false},
-                {data: 'actions', name: 'actions', searchable: false, sortable: false, width: '20%'},
-            ],
+            columns: usersColumns,
             order: [[3, 'desc']],
             drawCallback: function (settings) {
                 $('.record__select').prop('checked', false);

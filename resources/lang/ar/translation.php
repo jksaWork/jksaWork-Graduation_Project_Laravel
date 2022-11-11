@@ -47,5 +47,15 @@ return [
     'excahnge_offer' => 'عروض الاستبدال',
     'agent_owners_mangement' => 'اداره المالكين',
     'agent'=>'الوكاله',
-    'owners_dashboard' => 'اداره حسابات  المالكين'
+    'owners_dashboard' => 'اداره حسابات  المالكين',
+    'offers' => 'العروض',
+    'Add Users' => 'اضافه مستخدم',
+    "show_users" => "عرض المستخدين",
+    'users_account' => 'حسابات المستخدمين',
+    'Mangements' => 'الادارات',
+    'add_new_users' => 'اضافه مستخدم جديد',
+    'users_mangement' => 'اداره حسابات المستخدمين',
+    // 'rent_offer' => 'عرث'
+    'rent_offer' => 'عروض الايجار',
+
 ];

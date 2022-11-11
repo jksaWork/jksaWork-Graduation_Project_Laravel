@@ -150,16 +150,16 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title"> Rent Orders </span>
+                        <span class="menu-title"> {{__('translation.rent_offer')}} </span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/account/api-keys.html">
+                            <a class="menu-link" href="{{route('offers.create')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Add Offer</span>
+                                <span class="menu-title">{{__('translation.add_offer')}}</span>
                             </a>
                         </div>
                         <div class="menu-item">

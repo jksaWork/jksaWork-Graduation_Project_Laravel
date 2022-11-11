@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\AttachmentsController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\OfferController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\SettingController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -78,7 +79,13 @@ Route::group(
             Route::delete('bulk_delete', fn () => '')->name('roles.bulk_delete');
         });
         Route::middleware('auth:admin,web')->group(function(){
+             // Owners Resource
             Route::resource('owners', OwnerController::class);
+            Route::resource('users', UserController::class);
+            // User Controller
+            Route::get('user-ajax', [UserController::class, 'data'])->name('users.data');
+            // Offer Routes
+            Route::resource('offers' , OfferController::class);
         });
 
         Route::prefix('admin')->middleware('auth:admin')->group(function () {
@@ -89,10 +96,6 @@ Route::group(
             Route::resource('services', ServiceController::class);
             // Clients Resource
             Route::resource('clients', ClientController::class);
-            // Owners Resource
-            // User Controller
-            Route::resource('users', UserController::class);
-            Route::get('user-ajax', [UserController::class, 'data'])->name('users.data');
 
             // Agent Controller
             Route::resource('agent',  AgentController::class);

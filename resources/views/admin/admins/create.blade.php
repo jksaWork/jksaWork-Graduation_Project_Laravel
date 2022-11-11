@@ -1,5 +1,7 @@
-@extends('layouts.admin.admin')
-@section('main-head' ,  'Add new Agent')
+{{-- @extends('layouts.admin.admin') --}}
+@extends(auth()->guard('admin')->check() ?'layouts.admin.admin':'layouts.agents.agent_layouts')
+
+@section('main-head' , __('translation.add_new_users'))
 @section('content')
 
     <div class="post d-flex flex-column-fluid" id="kt_post">
@@ -17,7 +19,10 @@
                     <x:text-input class="col-md-6" name='email'  />
                     <x:text-input class="col-md-6" name='password'  />
                     <x:text-input class="col-md-6" name='phone'  />
-                    <div class="col-md-6">
+                        @if (auth()->guard('web')->check())
+                            <x:text-input name='agent_id' class='col-md-6' value="{{auth()->user()->agent_id ?? ''}}" />
+                        @endif
+                    <div class="col-md-6  {{ !auth()->guard('web')->check() ?: 'd-none'}}">
                         <div class="form-group">
                             <label for="">Roles</label>
                             <select class="form-control" name="role_id" id="" >

@@ -4,20 +4,23 @@ namespace App\Repo\Repositories;
 
 use App\Models\Admin;
 use App\Models\AgentUser;
+use App\Models\Area;
 use App\Models\Client;
 use App\Models\Owner;
 use App\Models\Role;
 use App\Repo\Interfaces\AdminIterface;
 use App\Repo\Interfaces\ClientInteface;
+use App\Repo\Interfaces\OfferInterface;
 use App\Repo\Interfaces\OwnerInterFace;
 use Exception;
 use Yajra\DataTables\Facades\DataTables;
 
-class  AdminRepository implements AdminIterface {
+class  OfferRepository implements OfferInterface {
     public function create()
     {
-        $roles = Role::all();
-        return view('admin.admins.create' , compact('roles'));
+        // return 'helo We Are begin ';
+        $areas = Area::all();
+        return view('offers.create' , compact('areas'));
     }
     public function StoreAdmin($request){
         $this->StoreAdminInDatabse($request);

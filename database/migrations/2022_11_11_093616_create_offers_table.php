@@ -1,0 +1,48 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateOffersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('offers', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('short_desc');
+            $table->string('long_desc');
+            $table->integer('price');
+            $table->string('location');
+            $table->boolean('is_avaliable')->default(1);
+            $table->enum('status' , ['new' , 'approved' , 'rejected', 'under_mainten']);
+            $table->integer('long');
+            $table->integer('lat');
+            $table->foreignId('service_id')->references('id')->on('services');
+            $table->foreignId('area_id')->references('id')->on('areas');
+            $table->unsignedBigInteger('agent_id')->nullable();
+            $table->unsignedBigInteger('owner_id')->nullable();
+            $table->unsignedBigInteger('client_id')->nullable();
+            $table->foreign('client_id')->references('id')->on('clients');
+            $table->foreign('owner_id')->references('id')->on('owners');
+            $table->foreign('agent_id')->references('id')->on('agents');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('offers');
+    }
+}

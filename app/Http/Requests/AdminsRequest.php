@@ -25,12 +25,15 @@ class AdminsRequest extends FormRequest
     {
         $roles =  [
             'name' => 'required',
-            'email' => 'required|email|unique:admins,email',
+            // 'email' => 'required|email|unique:admins,email',
             'password' => 'required',
             'phone' => 'required|numeric',
-            'role_id' => 'required', 
+            'role_id' => 'required',
         ];
+        // dd(auth()->guard('web')->check() );
+        $roles['email'] = !auth()->guard('web')->check() ? 'required|email|unique:admins,email' : 'required|email|unique:agent_users,email';
         if(request()->method() == 'PUT') $roles['email'] = 'exists:admins,email';
+        // dd($roles);
         return $roles;
     }
 }

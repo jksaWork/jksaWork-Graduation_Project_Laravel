@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link active" href="/admin">
+                    <a class="menu-link {{ request()->routeIs('agent.dashboard') ?: 'active'}}" href="/admin">
                         <span class="menu-icon">
                             <span class="svg-icon svg-icon-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -67,7 +67,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link {{ true ?: 'active'}}" href="/admin">
+                    <a class="menu-link {{ request()->routeIs('agent.dashboard') ?: 'active'}}" href="/admin">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="menu-icon">
@@ -88,7 +88,7 @@
                 </div>
                 <div class="menu-item">
                     <div class="menu-content pb-2">
-                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span>
+                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{ __('translation.offers')}}</span>
                     </div>
                 </div>
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -112,7 +112,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/account/api-keys.html">
+                            <a class="menu-link {{ !request()->routeIs('agent.dashboard') ?: 'active'}}" href="#">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -212,10 +212,10 @@
                 {{-- Jksa Altigani --}}
                 <div class="menu-item">
                     <div class="menu-content pt-8 pb-2">
-                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">Mangements</span>
+                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{__('translation.Mangements')}}</span>
                     </div>
                 </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
@@ -251,17 +251,9 @@
                                 <span class="menu-title">{{ __('translation.add_agent') }}</span>
                             </a>
                         </div>
-                        {{-- <div class="menu-item">
-                            <a class="menu-link" href="{{route('admin.roles.index') }}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Roles</span>
-                            </a>
-                        </div> --}}
                     </div>
-                </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                </div> --}}
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{!request()->is('users/*') ?: 'active'}}">
                     <span class="menu-link">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
@@ -277,37 +269,29 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title"> User Account</span>
+                        <span class="menu-title"> {{__('translation.users_account')}}</span>
                         <span class="menu-arrow"></span>
                     </span>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                    <div class="menu-sub menu-sub-accordion menu-active-bg ">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{ route('users.create') }}">
+                            <a class="menu-link {{ !request()->routeIs('users.create') ?: 'active'}}" href="{{ route('users.create') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Add Users</span>
+                                <span class="menu-title">{{ __('translation.Add Users')}}</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{ route('users.index') }}">
+                            <a class="menu-link  {{ !request()->routeIs('users.index') ?: 'active'}}" href="{{ route('users.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Show User</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{ route('admin.roles.index') }}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Roles</span>
+                                <span class="menu-title">{{__('translation.show_users')}}</span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{!request()->is('agents/*') ?: 'hover show'}}">
                     <span class="menu-link">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen022.svg-->
@@ -333,9 +317,9 @@
                         <span class="menu-title">{{__('translation.agent_owners_mangement')}} </span>
                         <span class="menu-arrow"></span>
                     </span>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                    <div class="menu-sub menu-sub-accordion menu-active-bg {{!request()->is('agents/*') ?: 'hover show'}}">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{ route('owners.create') }}">
+                            <a class="menu-link  {{!request()->routeIs('owners.create') ?: 'active'}} " href="{{ route('owners.create') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -343,7 +327,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{ route('owners.index') }}">
+                            <a class="menu-link {{!request()->routeIs('owners.index') ?: 'active'}} " href="{{ route('owners.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>

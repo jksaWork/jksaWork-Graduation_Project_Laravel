@@ -98,6 +98,7 @@
                                         <!--end::Table head-->
                                         <!--begin::Table body-->
                                         <tbody class="fw-bold text-gray-600">
+                                            {{-- @dd($agent->Users); --}}
                                             @foreach ($agent->Users as $user_agent)
                                                 <tr>
                                                     <td>
