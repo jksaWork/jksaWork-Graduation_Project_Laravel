@@ -5,7 +5,10 @@ namespace App\Repo\Repositories;
 use App\Models\Admin;
 use App\Models\AgentUser;
 use App\Models\Area;
+use App\Models\Attachments;
 use App\Models\Client;
+use App\Models\Offer;
+use App\Models\offerType;
 use App\Models\Owner;
 use App\Models\Role;
 use App\Repo\Interfaces\AdminIterface;
@@ -19,51 +22,88 @@ class  OfferRepository implements OfferInterface {
     public function create()
     {
         // return 'helo We Are begin ';
-        $areas = Area::all();
-        return view('offers.create' , compact('areas'));
+        try{
+            $areas = Area::all();
+            $type =offerType::all();
+            $service_id = decrypt(request()->service_id);
+            $heading = [
+                1 => __('translation.rent_offer'),
+                2 => __('translation.sale_order'),
+                3 => __('translation.exchange Orders'),
+            ];
+            // dd($service_id);
+            return view('offers.create' , compact('areas' , 'type', 'service_id' , 'heading'));
+        }catch(Exception $e){
+            abort(404);
+        }
     }
-    public function StoreAdmin($request){
-        $this->StoreAdminInDatabse($request);
-        return redirect()->route('users.index');
+    public function StoreOffer($request){
+        $this->StoreOfferInDatabse($request);
+        return redirect()->route('offers.index');
     }
 
-    public function StoreAdminInDatabse($request){
+    public function StoreOfferInDatabse($request){
         try{
-            // dd();
-            $data = $request->except('_token' , 'role_id');
-            $data['password'] = bcrypt($request->password);
-            $admin  = $this->getAuthenticatable()::create($data);
-            // dd('hello' , $admin, $this->getAuthenticatable());
-            if($this->getAuthenticatable() == Admin::class){
-                $admin->attachRoles(['admin', $request->role_id]);
-            }
-            session()->flash('success', 'Insert Admin Was Done');
+            // Upload Main Image
+            $request->main_image->store('offers' , 'public');
+            $name = $request->main_image->hashName();
+            // init Offer Data
+            $data =  [
+            'title' => $request->title,
+            'price' => $request->price,
+            'location' => $request->location,
+            'short_desc' => $request->short_desc,
+            'long_desc' => $request->long_desc,
+            'long' => $request->long,
+            'lat' => $request->lat,
+            'main_image' => $name,
+            'type_id' => $request->type_idd,
+            'area_id' => $request->type_idd,
+            'service_id' => $request->service_id,
+            ];
+            // Sotre The Offer Data
+            $offer = Offer::create($data);
+            // Uploda Sub Image
+            $this->HandelOfferFiles($request->sub_images, $offer);
             }catch(Exception $e){
             dd($e);
         }
     }
 
-    public function getAdminsIndex(){
-        $Admins = Admin::whenSerach()->paginate(10);
-        // dd();
-        $roles = Role::whereNotIn('name' , ['admin'])->get();
-        return view('admin.admins.index',compact('Admins' , 'roles'));
+    public function getOfferIndex(){
+        // dd('sad');
+        // $areas = Area::get();
+        try{
+            $areas = Area::all();
+            $type =offerType::all();
+            $service_id = decrypt(request()->service_id);
+            $heading = [
+                1 => __('translation.rent_offer'),
+                2 => __('translation.sale_order'),
+                3 => __('translation.exchange Orders'),
+            ];
+            // dd($service_id);
+            return view('offers.index' , compact('areas' , 'type', 'service_id' , 'heading'));
+        }catch(Exception $e){
+            abort(404);
+        }
+        // return view('offers.index', compact('areas'));
     }
 
     public function getAjaxData(){
-        $query = $this->getAuthenticatable()::query(); #->whenHasRole(request()->role_id);
+        $query = Offer::BelongToService(request('service_id'));
 
         return  DataTables::of($query)
-            ->addColumn('record_select', 'admin.admins.data_table.record_select')
+            ->addColumn('record_select', 'offers.data_table.record_select')
             ->editColumn('created_at', function ( $user) {
                 return $user->created_at->format('Y-m-d');
             })
             ->addColumn('actions', 'admin.admins.data_table.actions')
-            ->addColumn('roles' , function($admin){
-                return view('admin.admins.data_table.roles', compact('admin'));
-            })
+            // ->addColumn('roles' , function($admin){
+            //     return view('offers.data_table.roles', compact('admin'));
+            // })
             ->addColumn('status' , function($admin){
-                return view('admin.admins.data_table.status', compact('admin'));
+                return view('offers.data_table.status', compact('admin'));
             })
             ->rawColumns(['record_select', 'actions' , 'roles'])
             ->toJson();
@@ -115,5 +155,18 @@ class  OfferRepository implements OfferInterface {
 
     public function getAuthenticatable(){
         return !auth()->guard('web')->check() ? Admin::class : AgentUser::class;
+    }
+
+    public function HandelOfferFiles($files , Offer $offer)
+    {
+        foreach ($files as $key => $value) {
+            $name = $value->hashName();
+            $value->store('offers/attachments', 'public');
+            // I Do This For First Step
+            $attachment  = new Attachments();
+                // $attachment->attacheable = $agent->id;
+                $attachment->url = $name;
+                $offer->attachments()->save($attachment);
+        }
     }
 }

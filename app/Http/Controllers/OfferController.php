@@ -20,9 +20,13 @@ class OfferController extends Controller
      */
     public function index()
     {
-
+        return $this->interface->getOfferIndex();
     }
 
+
+    public function data(){
+        return $this->interface->getAjaxData();
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +45,8 @@ class OfferController extends Controller
      */
     public function store(StoreOfferRequest $request)
     {
-        //
+        // return $request;
+        $this->interface->StoreOffer($request);
     }
 
     /**

@@ -1,49 +1,38 @@
 @extends('layouts.admin.admin')
-@section('main-head', 'Admin Mangement')
+@section('main-head', $heading[$service_id] ?? '')
 @section('content')
 
     <div class="post d-flex flex-column-fluid" id="kt_post">
         <div id="kt_content_container" class="container-xxl">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="card p-5">
                 <div class="card-body p-3">
                     <div class="row">
-                        <form action="{{ route('agent.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('offers.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="col-md-12">
                                 <div class="card p-4">
                                     <div class="row">
-                                        <x:text-input class="col-md-6" name='name' />
-                                        <x:text-input class="col-md-6" name='email' />
-                                        <x:text-input class="col-md-6" name='password' />
-                                        <x:text-input class="col-md-6" name='phone' />
-                                        <x:input-file  class="col-md-6" name='agents_files[]'/>
-                                        <x:input-file  class="col-md-6" name='logo'/>
-                                        <x:text-area  class="col-md-6" name='description'/>
+                                        <x:text-input class="col-md-6" name='title' />
+                                        <x:text-input class="col-md-6" name='price' />
+                                        <x:text-input class="col-md-6" name='service_id' value='{{$service_id}}'/>
+                                        <x:select-options name='status' :options="['new' , 'approved' , 'rejected', 'under_mainten']" class='col-md-6' />
+                                        <x:select-options name='area_idd' :options="$areas" class='col-md-6' />
+                                        <x:select-options name='type_idd' :options="$type" class='col-md-6' />
+                                        <x:input-file  class="col-md-6"  name='main_image'/>
+                                        <x:input-file  class="col-md-6"  name='sub_images[]'/>
+                                        <x:text-area  class="col-md-6" name='short_desc'/>
+                                        <x:text-area  class="col-md-6" name='long_desc'/>
                                         <x:text-input class="col-md-6" name='location' />
-
-                                        <div class="fv-row mb-7 col-md-6">
-                                            <label class="required fs-6 fw-bold mb-2">{{ __('translation.' . 'lat') }}</label>
-                                            <input type="hidden" class="form-control form-control-solid"
-                                                placeholder="" name="lat" value="{{  old('lat') ?? '' }}"/>
-                                                @error('lat')
-                                                    <span class="text-danger">
-                                                        {{$message}}
-                                                    </span>
-                                                @enderror
-                                        </div>
-                                        <div class="fv-row mb-7 col-md-6">
-                                            <label class="required fs-6 fw-bold mb-2">{{ __('translation.' . 'long') }}</label>
-                                            <input type="hidden" class="form-control form-control-solid"
-                                                placeholder=""
-                                                name="long" value="{{  old('long') ?? '' }}"/>
-                                                @error('long')
-                                                    <span class="text-danger">
-                                                        {{$message}}
-                                                    </span>
-                                                @enderror
-                                        </div>
-                                        {{-- <x:text-input class="col-md-6" name='lat' value='15.6162612' /> --}}
-                                        <div id="map" style="height: 500px;width: 1000px;"></div>
+                                        <x:google-map />
                                     </div>
                                 </div>
                                 <div class="mt-3">

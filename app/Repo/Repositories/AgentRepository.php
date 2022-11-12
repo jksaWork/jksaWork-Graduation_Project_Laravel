@@ -148,7 +148,7 @@ class  AgentRepository implements AgentIterface {
         // init Aget User
         $userData =  [
             // 'email' => $request->email,
-            'name' => $request->email,
+            'name' => $request->name,
             'phone' => $request->phone,
             'location' => $request->location,
             'description' => $request->description,

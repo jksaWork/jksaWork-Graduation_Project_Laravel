@@ -4,8 +4,8 @@ namespace App\Repo\Interfaces;
 
 interface  OfferInterface {
     public function create();
-    public function StoreAdmin($data);
-    public function getAdminsIndex();
+    public function StoreOffer($data);
+    public function getOfferIndex();
     public function ChangeStatus($admin);
     public function editAdmin($admin);
     public function updateAdmin($request , $admin);

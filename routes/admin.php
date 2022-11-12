@@ -86,6 +86,7 @@ Route::group(
             Route::get('user-ajax', [UserController::class, 'data'])->name('users.data');
             // Offer Routes
             Route::resource('offers' , OfferController::class);
+            Route::get('offer-ajax', [OfferController::class, 'data'])->name('offer.data');
         });
 
         Route::prefix('admin')->middleware('auth:admin')->group(function () {

@@ -26,12 +26,15 @@ class CreateOffersTable extends Migration
             $table->integer('lat');
             $table->foreignId('service_id')->references('id')->on('services');
             $table->foreignId('area_id')->references('id')->on('areas');
+            $table->foreignId('type_id')->references('id')->on('offer_types');
             $table->unsignedBigInteger('agent_id')->nullable();
             $table->unsignedBigInteger('owner_id')->nullable();
             $table->unsignedBigInteger('client_id')->nullable();
             $table->foreign('client_id')->references('id')->on('clients');
             $table->foreign('owner_id')->references('id')->on('owners');
             $table->foreign('agent_id')->references('id')->on('agents');
+            $table->string('main_image');
+            // $table->string('type');
             $table->timestamps();
         });
     }
