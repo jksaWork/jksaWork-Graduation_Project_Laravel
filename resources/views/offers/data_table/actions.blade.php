@@ -1,6 +1,6 @@
 {{-- @if (auth()->user()->hasPermission('update_admins')) --}}
 <div style="min-width: 200px">
-    <a href="{{ route('agent.show', $id) }}" class="btn btn-light-primary btn-sm btn-icon">
+    <a href="{{ route('offers.show', $id) }}" class="btn btn-light-primary btn-sm btn-icon">
         <i class="fa fa-eye"></i>
     </a>
 
@@ -13,7 +13,7 @@
         </span>
     </a>
 
-        <a href="{{ route('agent.show', ['status' => true , 'agent' => $id]) }}"
+        <a href="{{ route('offers.show', ['status' => true , 'offer' => $id]) }}"
             class="btn btn-light-success btn-sm btn-icon me-1">
             <span class="svg-icon svg-icon-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -25,7 +25,7 @@
 {{-- @endif --}}
 
 {{-- @if (auth()->user()->hasPermission('delete_admins')) --}}
-    <form action="{{ route('agent.destroy', $id) }}" class="my-1 my-xl-0" method="post" style="display: inline-block;">
+    <form action="{{ route('offers.destroy', $id) }}" class="my-1 my-xl-0" method="post" style="display: inline-block;">
         @csrf
         @method('delete')
         <button type="submit" class="btn btn-light-danger btn-sm delete btn-icon">

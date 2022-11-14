@@ -46,7 +46,7 @@ class OfferController extends Controller
     public function store(StoreOfferRequest $request)
     {
         // return $request;
-        $this->interface->StoreOffer($request);
+        return $this->interface->StoreOffer($request);
     }
 
     /**
@@ -57,7 +57,8 @@ class OfferController extends Controller
      */
     public function show(Offer $offer)
     {
-        //
+        if(request()->has('status'))  return $this->interface->ChangeStatus($offer);
+        else return $this->interface->ShowOfferDetails($offer);
     }
 
     /**

@@ -39,7 +39,7 @@ class  OfferRepository implements OfferInterface {
     }
     public function StoreOffer($request){
         $this->StoreOfferInDatabse($request);
-        return redirect()->route('offers.index');
+        return redirect()->route('offers.index' , ['service_id' => encrypt($request->service_id)]);
     }
 
     public function StoreOfferInDatabse($request){
@@ -60,6 +60,7 @@ class  OfferRepository implements OfferInterface {
             'type_id' => $request->type_idd,
             'area_id' => $request->type_idd,
             'service_id' => $request->service_id,
+            'agent_id' => $request->agent_id,
             ];
             // Sotre The Offer Data
             $offer = Offer::create($data);
@@ -98,14 +99,36 @@ class  OfferRepository implements OfferInterface {
             ->editColumn('created_at', function ( $user) {
                 return $user->created_at->format('Y-m-d');
             })
-            ->addColumn('actions', 'admin.admins.data_table.actions')
-            // ->addColumn('roles' , function($admin){
-            //     return view('offers.data_table.roles', compact('admin'));
-            // })
+
+            ->addColumn('actions', 'offers.data_table.actions')
+            ->addColumn('area' , function($offer){
+                $type ='area';
+                return view('offers.data_table.areas_services_type', compact('offer', 'type'));
+            })
+            ->addColumn('agent' , function($offer){
+                $type ='agent';
+                return view('offers.data_table.areas_services_type', compact('offer', 'type'));
+            })
+            ->addColumn('owner' , function($offer){
+                $type ='owner';
+                return view('offers.data_table.areas_services_type', compact('offer', 'type'));
+            })
+            ->addColumn('client' , function($offer){
+                $type ='client';
+                return view('offers.data_table.areas_services_type', compact('offer', 'type'));
+            })
+            ->addColumn('service' , function($offer){
+                $type ='service';
+                return view('offers.data_table.areas_services_type', compact('offer' , 'type'));
+            })
+            ->addColumn('type' , function($offer){
+                $type = 'type';
+                return view('offers.data_table.areas_services_type', compact('offer' , 'type'));
+            })
             ->addColumn('status' , function($admin){
                 return view('offers.data_table.status', compact('admin'));
             })
-            ->rawColumns(['record_select', 'actions' , 'roles'])
+            ->rawColumns(['record_select', 'actions' , 'roles' , 'service' , 'type', 'area'])
             ->toJson();
 
     }
@@ -116,6 +139,10 @@ class  OfferRepository implements OfferInterface {
         $Owner->ChangeStatus();
         session()->flash('success' , 'Status  Was Change Succesfuly');
         return redirect()->back();
+    }
+
+    public function ShowOfferDetails($offer){
+        return view('offers.show', compact('offer'));
     }
 
     public function editAdmin($admin){

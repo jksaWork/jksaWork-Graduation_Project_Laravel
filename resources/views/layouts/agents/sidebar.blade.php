@@ -91,6 +91,8 @@
                         <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{ __('translation.offers')}}</span>
                     </div>
                 </div>
+
+                {{-- Rent Offer --}}
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -107,12 +109,12 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title"> {{__('translation.recent_offer')}} </span>
+                        <span class="menu-title"> {{__('translation.rent_offer')}} </span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link {{ !request()->routeIs('agent.dashboard') ?: 'active'}}" href="#">
+                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => encrypt(1)])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -120,7 +122,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/account/logs.html">
+                            <a class="menu-link" href="{{route('offers.index' , ['service_id' => encrypt(1)])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -148,28 +150,29 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title"> {{ __('translation.sale_offer')}}</span>
+                        <span class="menu-title"> {{__('translation.sale_order')}}</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/account/api-keys.html">
+                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => encrypt(2)])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">{{ __('translation.add_offer')}}</span>
+                                <span class="menu-title">{{__('translation.add_offer')}}</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/account/logs.html">
+                            <a class="menu-link" href="{{route('offers.index' , ['service_id' => encrypt(2)])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">{{ __('translation.offer_history')}}</span>
+                                <span class="menu-title">{{__('translation.offer_history')}}</span>
                             </a>
                         </div>
                     </div>
                 </div>
+                {{-- Exchange Offer --}}
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -187,24 +190,24 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title"> {{ __('translation.excahnge_offer')}} </span>
+                        <span class="menu-title"> {{__('translation.exchange Orders')}}</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/account/api-keys.html">
+                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => encrypt(3)])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">{{ __('translation.add_offer')}}</span>
+                                <span class="menu-title">{{__('translation.add_offer')}}</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo1/dist/account/logs.html">
+                            <a class="menu-link" href="{{route('offers.index' , ['service_id' => encrypt(3)])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">{{ __('translation.offer_history')}}</span>
+                                <span class="menu-title">{{__('translation.offer_history')}}</span>
                             </a>
                         </div>
                     </div>

@@ -12,4 +12,10 @@ class Attachments extends Model
     public function attachable(){
         return $this->morphTo();
     }
+
+    public function getUrlAttribute($key)
+    {
+        if($this->attachable_type =='App\Models\Offer') return asset('offers/attachments/' . $key);
+        else return asset('agents/attachments/' . $key);
+    }
 }

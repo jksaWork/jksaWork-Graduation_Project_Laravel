@@ -70,7 +70,7 @@ class AttachmentsController extends Controller
     public  function download($id)
     {
         $file_name = Attachments::find($id)->url;
-        $pathToFile = Storage::disk('public')->getAdapter()->applyPathPrefix('agents/attachments/'. $file_name);
+        $pathToFile = Storage::disk('public')->getAdapter()->applyPathPrefix($file_name);
         return response()->download($pathToFile);
     }
 }

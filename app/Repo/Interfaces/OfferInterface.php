@@ -7,6 +7,7 @@ interface  OfferInterface {
     public function StoreOffer($data);
     public function getOfferIndex();
     public function ChangeStatus($admin);
+    public function ShowOfferDetails($admin);
     public function editAdmin($admin);
     public function updateAdmin($request , $admin);
     public function deleteAdmin($admin);

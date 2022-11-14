@@ -36,6 +36,7 @@ class StoreOfferRequest extends FormRequest
             'long' =>'required',
             'main_image' => 'required',
             'sub_images' => 'required',
+            'agent_id' => 'sometimes',
         ];
     }
 }

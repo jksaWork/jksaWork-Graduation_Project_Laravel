@@ -22,8 +22,8 @@ class CreateOffersTable extends Migration
             $table->string('location');
             $table->boolean('is_avaliable')->default(1);
             $table->enum('status' , ['new' , 'approved' , 'rejected', 'under_mainten']);
-            $table->integer('long');
-            $table->integer('lat');
+            $table->string('long');
+            $table->string('lat');
             $table->foreignId('service_id')->references('id')->on('services');
             $table->foreignId('area_id')->references('id')->on('areas');
             $table->foreignId('type_id')->references('id')->on('offer_types');
@@ -34,7 +34,6 @@ class CreateOffersTable extends Migration
             $table->foreign('owner_id')->references('id')->on('owners');
             $table->foreign('agent_id')->references('id')->on('agents');
             $table->string('main_image');
-            // $table->string('type');
             $table->timestamps();
         });
     }

@@ -13,9 +13,13 @@ abstract class OfferAbstract extends Model {
 }
 class Offer extends OfferAbstract
 {
+    public function getMainImageAttribute($key)
+    {
+        return asset('offers/' . $key);
+    }
     // use HasFactory, HasStatus;
-
     protected $statusattrubute = 'is_avaliable';
+    protected $status_filed = 'fillable';
 
     // relation With Attachment
 
@@ -25,6 +29,31 @@ class Offer extends OfferAbstract
         return $query->when($service_id, function ($query) use ($service_id) {
             return $query->where('service_id', $service_id);
         });
+    }
+    // Area  Relation
+    public function Area(){
+        return $this->belongsTo(Area::class);
+    }
+    // Service  Relation
+    public function Service(){
+        return $this->belongsTo(Service::class);
+    }
+    // Type Relation
+    public function Type(){
+        return $this->belongsTo(offerType::class);
+    }
+
+    public function Agent(){
+        return $this->belongsTo(Agent::class);
+    }
+    public function Owner()
+    {
+        return $this->belongsTo(Owner::class);
+    }
+
+    public function Client()
+    {
+        return $this->belongsTo(Client::class);
     }
 
     public function attachments()

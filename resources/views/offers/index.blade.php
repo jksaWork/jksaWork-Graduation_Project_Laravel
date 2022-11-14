@@ -1,4 +1,6 @@
-@extends('layouts.admin.admin')
+{{-- @extends('layouts.admin.admin') --}}
+@extends(auth()->guard('admin')->check() ?'layouts.admin.admin':'layouts.agents.agent_layouts')
+@section('main-head', $heading[$service_id] ?? '')
 @section('content')
 <div class="post d-flex flex-column-fluid" id="kt_post">
     <!--begin::Container-->
@@ -26,7 +28,7 @@
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
-                        <input type="text" id="data-table-search" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="{{__('translation.search_on_agents')}}">
+                        <input type="text" id="data-table-search" data-kt-customer-table-filter="search" class="form-control form-control-solid w-250px ps-15" placeholder="{{__('translation.search_on_offers')}}">
                     </div>
                     <!--end::Search-->
                 </div>
@@ -35,20 +37,9 @@
                 <div class="card-toolbar">
                     <!--begin::Toolbar-->
                     <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-
-                        <!--begin::Menu 1-->
-
-                        <!--end::Menu 1-->
-                        <!--end::Filter-->
-                        <!--begin::Export-->
-
-                        <!--end::Export-->
-                        <!--begin::Add customer-->
-                        <a href="{{ route('agent.create')}}" type="button" class="btn btn-light-primary"> {{__('translation.add_agent')}} </a>
-                        <!--end::Add customer-->
+                        <a href="{{ route('offers.create' , ['service_id' => encrypt($service_id)])}}" type="button" class="btn btn-light-primary"> {{__('translation.add_offer')}} </a>
                     </div>
-                    <!--end::Toolbar-->
-                    <!--begin::Group actions-->
+
                     <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
                         <div class="fw-bolder me-5">
                             <span class="me-2" data-kt-customer-table-select="selected_count"></span>Selected
@@ -78,7 +69,17 @@
                                             <th class="text-center">{{__('translation.phone')}}</th> --}}
                                             {{-- <th class="text-center">{{__('translation.roles')}}</th> --}}
                                             <th class="text-center">{{__('translation.title')}}</th>
+                                            {{-- @admin --}}
+                                            @if (auth()->guard('admin')->check())
+                                                <th class="text-center">{{__('translation.agent')}}</th>
+                                            @endif
+                                            {{-- @endAdmin --}}
+                                            <th class="text-center">{{__('translation.areas')}}</th>
+                                            <th class="text-center">{{__('translation.service')}}</th>
+                                            <th class="text-center">{{__('translation.type_idd')}}</th>
                                             <th class="text-center">{{__('translation.description')}}</th>
+                                            <th class="text-center">{{__('translation.client')}}</th>
+                                            <th class="text-center">{{__('translation.owner')}}</th>
                                             <th class="text-center">{{__('translation.location')}}</th>
                                             <th class="text-center">{{__('translation.status')}}</th>
                                             <th class="text-center">{{__('translation.date')}}</th>
@@ -103,7 +104,27 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script>
         // alert('worgiing');
-
+        var isadmin = @json(auth()->guard('admin')->check());
+        var OfferColums = [
+                {data: 'record_select', name: 'record_select', searchable: false, sortable: false, width: '1%'},
+                // {data: 'logo', name: 'logo' },
+                {data: 'title', name: 'title' },
+                // {data: 'phone', name: 'phone'},
+                {data: 'agent', name: 'agent'},
+                {data: 'service', name: 'service'},
+                {data: 'area', name: 'area'},
+                {data: 'type', name: 'type'},
+                // {data: 'agent', name: 'location'},
+                {data: 'short_desc', name: 'short_desc'},
+                {data: 'owner', name: 'owner'},
+                {data: 'client', name: 'client'},
+                {data: 'location', name: 'location'},
+                {data: 'status', name: 'status', searchable: false},
+                {data: 'created_at', name: 'created_at', searchable: false},
+                {data: 'actions', name: 'actions', searchable: false, sortable: false, width: '20%'},
+            ];
+        var OfferColums = isadmin ? OfferColums : OfferColums.filter(el => el.data !== 'agent');
+        console.log(isadmin , OfferColums);
         let service_id = @json($service_id);
         let rolesTable = $('#roles-table').DataTable({
             dom: "tiplr",
@@ -118,17 +139,7 @@
                     d.service_id = service_id;
                 },
             },
-            columns: [
-                {data: 'record_select', name: 'record_select', searchable: false, sortable: false, width: '1%'},
-                // {data: 'logo', name: 'logo' },
-                {data: 'title', name: 'title' },
-                // {data: 'phone', name: 'phone'},
-                {data: 'location', name: 'location'},
-                {data: 'short_desc', name: 'short_desc'},
-                {data: 'status', name: 'status', searchable: false},
-                {data: 'created_at', name: 'created_at', searchable: false},
-                {data: 'actions', name: 'actions', searchable: false, sortable: false, width: '20%'},
-            ],
+            columns: OfferColums,
             order: [[3, 'desc']],
             drawCallback: function (settings) {
                 $('.record__select').prop('checked', false);

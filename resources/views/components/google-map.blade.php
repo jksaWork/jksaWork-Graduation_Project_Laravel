@@ -2,8 +2,8 @@
     <!-- The whole future lies in uncertainty: live immediately. - Seneca -->
     <div class="fv-row mb-7 col-md-6">
         <label class="required fs-6 fw-bold mb-2">{{ __('translation.' . 'lat') }}</label>
-        <input type="hidden" class="form-control form-control-solid"
-            placeholder="" name="lat" value="{{  old('lat') ?? '' }}"/>
+        <input type="text" class="form-control form-control-solid"
+            placeholder="" name="lat" value="15.233123"/>
             @error('lat')
                 <span class="text-danger">
                     {{$message}}
@@ -12,9 +12,9 @@
     </div>
     <div class="fv-row mb-7 col-md-6">
         <label class="required fs-6 fw-bold mb-2">{{ __('translation.' . 'long') }}</label>
-        <input type="hidden" class="form-control form-control-solid"
+        <input type="text" class="form-control form-control-solid"
             placeholder=""
-            name="long" value="{{  old('long') ?? '' }}"/>
+            name="long" value="32.233123"/>
             @error('long')
                 <span class="text-danger">
                     {{$message}}

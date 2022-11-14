@@ -1,7 +1,7 @@
-@extends('layouts.admin.admin')
+{{-- @extends('layouts.admin.admin') --}}
+@extends(auth()->guard('admin')->check() ?'layouts.admin.admin':'layouts.agents.agent_layouts')
 @section('main-head', $heading[$service_id] ?? '')
 @section('content')
-
     <div class="post d-flex flex-column-fluid" id="kt_post">
         <div id="kt_content_container" class="container-xxl">
             @if ($errors->any())
@@ -24,15 +24,20 @@
                                         <x:text-input class="col-md-6" name='title' />
                                         <x:text-input class="col-md-6" name='price' />
                                         <x:text-input class="col-md-6" name='service_id' value='{{$service_id}}'/>
+                                        @if (auth()->guard('web')->check())
+                                            <x:text-input class="col-md-6" name='agent_id' value='{{auth()->user()->id}}'/>
+                                        @endif
                                         <x:select-options name='status' :options="['new' , 'approved' , 'rejected', 'under_mainten']" class='col-md-6' />
                                         <x:select-options name='area_idd' :options="$areas" class='col-md-6' />
                                         <x:select-options name='type_idd' :options="$type" class='col-md-6' />
+                                        <x:text-input class="col-md-6" name='location' />
                                         <x:input-file  class="col-md-6"  name='main_image'/>
                                         <x:input-file  class="col-md-6"  name='sub_images[]'/>
                                         <x:text-area  class="col-md-6" name='short_desc'/>
                                         <x:text-area  class="col-md-6" name='long_desc'/>
-                                        <x:text-input class="col-md-6" name='location' />
-                                        <x:google-map />
+                                        <div class="col-md-12">
+                                            <x:google-map />
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mt-3">
@@ -81,8 +86,8 @@
         $("#pac-input").focusin(function() {
             $(this).val('');
         });
-        $('[name="lat"]').val('');
-        $('[name="long"]').val('');
+        // $('[name="lat"]').val('');
+        // $('[name="long"]').val('');
         // This example adds a search box to a map, using the Google Place Autocomplete
         // feature. People can enter geographical searches. The search box will return a
         // pick list containing a mix of places and predicted search terms.
@@ -150,7 +155,7 @@
                 geocoder.geocode({'location': latlng}, function(results, status) {
                     if (status === 'OK') {
                         if (results[0]) {
-                            map.setZoom(8);
+                            map.setZoom(22);
                             var marker = new google.maps.Marker({
                                 position: latlng,
                                 map: map
