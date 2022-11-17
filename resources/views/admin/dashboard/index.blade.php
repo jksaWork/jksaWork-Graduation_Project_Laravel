@@ -1,4 +1,4 @@
-@extends('layouts.agents.agent_layouts')
+@extends('layouts.admin.admin')
 @section('main-head', __('translation.Admin Dashboard'))
 @section('content')
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
