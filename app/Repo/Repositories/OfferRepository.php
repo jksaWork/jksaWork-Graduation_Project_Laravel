@@ -25,7 +25,7 @@ class  OfferRepository implements OfferInterface {
         try{
             $areas = Area::all();
             $type =offerType::all();
-            $service_id = decrypt(request()->service_id);
+            $service_id = request()->service_id;
             $heading = [
                 1 => __('translation.rent_offer'),
                 2 => __('translation.sale_order'),
@@ -34,7 +34,7 @@ class  OfferRepository implements OfferInterface {
             // dd($service_id);
             return view('offers.create' , compact('areas' , 'type', 'service_id' , 'heading'));
         }catch(Exception $e){
-            abort(404);
+            abort(500);
         }
     }
     public function StoreOffer($request){
@@ -77,7 +77,7 @@ class  OfferRepository implements OfferInterface {
         try{
             $areas = Area::all();
             $type =offerType::all();
-            $service_id = decrypt(request()->service_id);
+            $service_id = request()->service_id;
             $heading = [
                 1 => __('translation.rent_offer'),
                 2 => __('translation.sale_order'),
@@ -86,7 +86,7 @@ class  OfferRepository implements OfferInterface {
             // dd($service_id);
             return view('offers.index' , compact('areas' , 'type', 'service_id' , 'heading'));
         }catch(Exception $e){
-            abort(404);
+            abort(500);
         }
         // return view('offers.index', compact('areas'));
     }

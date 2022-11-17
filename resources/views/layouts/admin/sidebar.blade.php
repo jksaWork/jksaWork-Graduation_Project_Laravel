@@ -156,7 +156,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => encrypt(1)])}}">
+                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => 1])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -164,7 +164,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.index' , ['service_id' => encrypt(1)])}}">
+                            <a class="menu-link" href="{{route('offers.index' , ['service_id' => 1])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -197,7 +197,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => encrypt(2)])}}">
+                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => 2])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -205,7 +205,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.index' , ['service_id' => encrypt(2)])}}">
+                            <a class="menu-link" href="{{route('offers.index' , ['service_id' => 2])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -237,7 +237,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => encrypt(3)])}}">
+                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => 3])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -245,7 +245,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.index' , ['service_id' => encrypt(3)])}}">
+                            <a class="menu-link" href="{{route('offers.index' , ['service_id' => 3])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
