@@ -21,7 +21,6 @@ use Yajra\DataTables\Facades\DataTables;
 class  OfferRepository implements OfferInterface {
     public function create()
     {
-        // return 'helo We Are begin ';
         try{
             $areas = Area::all();
             $type =offerType::all();
@@ -34,7 +33,7 @@ class  OfferRepository implements OfferInterface {
             // dd($service_id);
             return view('offers.create' , compact('areas' , 'type', 'service_id' , 'heading'));
         }catch(Exception $e){
-            abort(500);
+            dd($e);
         }
     }
     public function StoreOffer($request){
