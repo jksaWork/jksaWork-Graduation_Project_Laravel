@@ -15,4 +15,9 @@ class OfferControllerApi extends Controller
         $offers = Offer::with('Agent' , 'Type' , 'Area' , 'Owner')->paginate(10);
         return $this->SeccuessMessage(OfferResource::collection($offers));
     }
+
+    public function show($id){
+        $offer = Offer::findOrFail($id);
+        return $this->SeccuessMessage(new OfferResource($offer));
+    }
 }

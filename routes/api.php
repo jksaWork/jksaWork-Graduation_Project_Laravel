@@ -30,6 +30,7 @@ Route::prefix('client')->group(function (){
     // Authunticated Route
     // Route::middleware('auth:')->group(function () {
         Route::get('offers' , [OfferControllerApi::class  , 'index']);
+        Route::get('offers/{id}' , [OfferControllerApi::class  , 'show']);
     // });;
 
 });

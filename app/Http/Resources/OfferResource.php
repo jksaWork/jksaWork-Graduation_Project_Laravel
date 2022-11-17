@@ -36,6 +36,7 @@ class OfferResource extends JsonResource
             'type' => $this->Type,
             'service' =>$this->Service,
             'agent' =>$this->Agent,
+            'images' => $this->attachments, 
         ];
     }
 }
