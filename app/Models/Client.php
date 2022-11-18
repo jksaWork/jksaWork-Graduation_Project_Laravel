@@ -12,4 +12,8 @@ class Client extends Model
 {
     use HasFactory , HasApiTokens, HasStatus, HasSearchScope;
     protected $guarded = [];
+
+    public function FavorateOffers(){
+        return $this->belongsToMany(Offer::class,  'favoarate_offers' , 'client_id' , 'offer_id');
+    }
 }

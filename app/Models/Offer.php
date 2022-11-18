@@ -60,4 +60,8 @@ class Offer extends OfferAbstract
     {
         return $this->morphMany(Attachments::class, 'attachable');
     }
+
+    public function FavorateOffers(){
+        return $this->hasMany(FavoarateOffer::class, 'offer_id');
+    }
 }

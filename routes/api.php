@@ -30,9 +30,10 @@ Route::prefix('client')->group(function (){
     // Authunticated Route
     // Route::middleware('auth:')->group(function () {
         Route::get('offers' , [OfferControllerApi::class  , 'index']);
-        Route::get('offers/{id}' , [OfferControllerApi::class  , 'show']);
+        Route::get('offers/{id}' , [OfferControllerApi::class  , 'show'])->where('id' , '[0-9]+');
     // });;
-
+        Route::get('offers/favorate/{offer_id}' , [OfferControllerApi::class, 'ToggleFavorateToClient'])->middleware('auth:sanctum');
+        Route::get('offers/favorate-list' , [OfferControllerApi::class, 'FavirateOffer'])->middleware('auth:sanctum');
 });
 
 
