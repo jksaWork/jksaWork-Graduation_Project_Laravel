@@ -10,7 +10,7 @@ trait HasStatus {
     }
 
     public function getStatusWithSpan(){
-        if(!$this->{$this->statusattrubute}) return "<span class='badge badge-warning'> " .  __('translation.in' . $this->status_filed)  . " </span>";
-        else  return "<span class='badge badge-success'> " .  __('translation.' . $this->status_filed)  . "</span>";
+        if(!$this->{$this->statusattrubute}) return "<span class='badge badge-light-warning'> " .  __('translation.in' . $this->status_filed)  . " </span>";
+        else  return "<span class='badge badge-light-success'> " .  __('translation.' . $this->status_filed)  . "</span>";
     }
 }

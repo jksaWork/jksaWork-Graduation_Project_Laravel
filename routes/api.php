@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\ApiAuthController;
 use App\Http\Controllers\Api\ApiOnwerAuthControler;
 use App\Http\Controllers\Api\ApiServiceController;
 use App\Http\Controllers\Api\OfferControllerApi;
+use App\Http\Controllers\OfferController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,8 @@ Route::prefix('client')->group(function (){
     // });;
         Route::get('offers/favorate/{offer_id}' , [OfferControllerApi::class, 'ToggleFavorateToClient'])->middleware('auth:sanctum');
         Route::get('offers/favorate-list' , [OfferControllerApi::class, 'FavirateOffer'])->middleware('auth:sanctum');
-});
+        Route::get('offers/inMap' , [OfferControllerApi::class, 'MarkerInMap']);
+    });
 
 
 

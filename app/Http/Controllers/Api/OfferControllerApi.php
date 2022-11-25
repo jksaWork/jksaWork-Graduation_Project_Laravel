@@ -28,7 +28,13 @@ class OfferControllerApi extends Controller
     }
 
     public function FavirateOffer(){
-        $offers = Client::find(auth()->user()->id)->FavorateOffers;
+        $offers_ids = Client::find(auth()->user()->id)->FavorateOffers->pluck('id');
+        $offers = Offer::with('Agent' , 'Type' , 'Area' , 'Owner')->find($offers_ids);
+        return $this->SeccuessMessage($offers);
+    }
+
+    public function MarkerInMap(){
+        $offers = Offer::select('lat' , 'long' , 'location' , 'main_image')->get();
         return $this->SeccuessMessage($offers);
     }
 }

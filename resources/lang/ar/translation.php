@@ -86,4 +86,7 @@ return [
     'owner' => 'المالك',
     'fillable' => 'متاح',
     'in_fillable' => 'غير متاح',
+    'owners' => 'المالكين',
+    'clients' => 'العملاء',
+    'Latest_offer' => 'اخر الطلبات',
 ];

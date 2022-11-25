@@ -8,186 +8,65 @@
         <!--begin::Container-->
         <div id="kt_content_container" class="container-xxl">
             <!--begin::Row-->
-            <div class="row gy-5 g-xl-8">
-                <!--begin::Col-->
+            <div class="row g-5 g-xl-8">
                 <div class="col-xl-4">
-                    <!--begin::Mixed Widget 2-->
-                    <div class="card card-xl-stretch">
-                        <!--begin::Header-->
-                        <div class="card-header border-0 bg-danger py-5">
-                            <h3 class="card-title fw-bolder text-white">Sales Statistics</h3>
-                            <div class="card-toolbar">
-                                <!--begin::Menu-->
-                                <button type="button" class="btn btn-sm btn-icon btn-color-white btn-active-white btn-active-color- border-0 me-n3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-                                    <span class="svg-icon svg-icon-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="5" y="5" width="5" height="5" rx="1" fill="#000000"></rect>
-                                                <rect x="14" y="5" width="5" height="5" rx="1" fill="#000000" opacity="0.3"></rect>
-                                                <rect x="5" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3"></rect>
-                                                <rect x="14" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3"></rect>
-                                            </g>
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                </button>
-                                <!--begin::Menu 3-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3" data-kt-menu="true">
-                                    <!--begin::Heading-->
-                                    <div class="menu-item px-3">
-                                        <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">Payments</div>
-                                    </div>
-                                    <!--end::Heading-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Create Invoice</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link flex-stack px-3">Create Payment
-                                        <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="" data-bs-original-title="Specify a target name for future usage and reference" aria-label="Specify a target name for future usage and reference"></i></a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Generate Bill</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-end">
-                                        <a href="#" class="menu-link px-3">
-                                            <span class="menu-title">Subscription</span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <!--begin::Menu sub-->
-                                        <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Plans</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Billing</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Statements</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu separator-->
-                                            <div class="separator my-2"></div>
-                                            <!--end::Menu separator-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <div class="menu-content px-3">
-                                                    <!--begin::Switch-->
-                                                    <label class="form-check form-switch form-check-custom form-check-solid">
-                                                        <!--begin::Input-->
-                                                        <input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications">
-                                                        <!--end::Input-->
-                                                        <!--end::Label-->
-                                                        <span class="form-check-label text-muted fs-6">Recuring</span>
-                                                        <!--end::Label-->
-                                                    </label>
-                                                    <!--end::Switch-->
-                                                </div>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu sub-->
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3 my-1">
-                                        <a href="#" class="menu-link px-3">Settings</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                </div>
-                                <!--end::Menu 3-->
-                                <!--end::Menu-->
-                            </div>
-                        </div>
-                        <!--end::Header-->
+                    <!--begin: Statistics Widget 6-->
+                    <div class="card bg-light-success card-xl-stretch mb-xl-8">
                         <!--begin::Body-->
-                        <div class="card-body p-0">
-                            <!--begin::Chart-->
-                            <div class="mixed-widget-2-chart card-rounded-bottom bg-danger" data-kt-color="danger" style="height: 200px; min-height: 200px;"><div id="apexchartsevo00fz8" class="apexcharts-canvas apexchartsevo00fz8 apexcharts-theme-light" style="width: 736px; height: 200px;"><svg id="SvgjsSvg1522" width="736" height="200" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1524" class="apexcharts-inner apexcharts-graphical" transform="translate(0, 0)"><defs id="SvgjsDefs1523"><clipPath id="gridRectMaskevo00fz8"><rect id="SvgjsRect1527" width="743" height="203" x="-3.5" y="-1.5" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMaskevo00fz8"></clipPath><clipPath id="nonForecastMaskevo00fz8"></clipPath><clipPath id="gridRectMarkerMaskevo00fz8"><rect id="SvgjsRect1528" width="740" height="204" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><filter id="SvgjsFilter1534" filterUnits="userSpaceOnUse" width="200%" height="200%" x="-50%" y="-50%"><feFlood id="SvgjsFeFlood1535" flood-color="#cb1b46" flood-opacity="0.5" result="SvgjsFeFlood1535Out" in="SourceGraphic"></feFlood><feComposite id="SvgjsFeComposite1536" in="SvgjsFeFlood1535Out" in2="SourceAlpha" operator="in" result="SvgjsFeComposite1536Out"></feComposite><feOffset id="SvgjsFeOffset1537" dx="0" dy="5" result="SvgjsFeOffset1537Out" in="SvgjsFeComposite1536Out"></feOffset><feGaussianBlur id="SvgjsFeGaussianBlur1538" stdDeviation="3 " result="SvgjsFeGaussianBlur1538Out" in="SvgjsFeOffset1537Out"></feGaussianBlur><feMerge id="SvgjsFeMerge1539" result="SvgjsFeMerge1539Out" in="SourceGraphic"><feMergeNode id="SvgjsFeMergeNode1540" in="SvgjsFeGaussianBlur1538Out"></feMergeNode><feMergeNode id="SvgjsFeMergeNode1541" in="[object Arguments]"></feMergeNode></feMerge><feBlend id="SvgjsFeBlend1542" in="SourceGraphic" in2="SvgjsFeMerge1539Out" mode="normal" result="SvgjsFeBlend1542Out"></feBlend></filter><filter id="SvgjsFilter1544" filterUnits="userSpaceOnUse" width="200%" height="200%" x="-50%" y="-50%"><feFlood id="SvgjsFeFlood1545" flood-color="#cb1b46" flood-opacity="0.5" result="SvgjsFeFlood1545Out" in="SourceGraphic"></feFlood><feComposite id="SvgjsFeComposite1546" in="SvgjsFeFlood1545Out" in2="SourceAlpha" operator="in" result="SvgjsFeComposite1546Out"></feComposite><feOffset id="SvgjsFeOffset1547" dx="0" dy="5" result="SvgjsFeOffset1547Out" in="SvgjsFeComposite1546Out"></feOffset><feGaussianBlur id="SvgjsFeGaussianBlur1548" stdDeviation="3 " result="SvgjsFeGaussianBlur1548Out" in="SvgjsFeOffset1547Out"></feGaussianBlur><feMerge id="SvgjsFeMerge1549" result="SvgjsFeMerge1549Out" in="SourceGraphic"><feMergeNode id="SvgjsFeMergeNode1550" in="SvgjsFeGaussianBlur1548Out"></feMergeNode><feMergeNode id="SvgjsFeMergeNode1551" in="[object Arguments]"></feMergeNode></feMerge><feBlend id="SvgjsFeBlend1552" in="SourceGraphic" in2="SvgjsFeMerge1549Out" mode="normal" result="SvgjsFeBlend1552Out"></feBlend></filter></defs><g id="SvgjsG1553" class="apexcharts-xaxis" transform="translate(0, 0)"><g id="SvgjsG1554" class="apexcharts-xaxis-texts-g" transform="translate(0, -4)"></g></g><g id="SvgjsG1563" class="apexcharts-grid"><g id="SvgjsG1564" class="apexcharts-gridlines-horizontal" style="display: none;"><line id="SvgjsLine1566" x1="0" y1="0" x2="736" y2="0" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1567" x1="0" y1="20" x2="736" y2="20" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1568" x1="0" y1="40" x2="736" y2="40" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1569" x1="0" y1="60" x2="736" y2="60" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1570" x1="0" y1="80" x2="736" y2="80" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1571" x1="0" y1="100" x2="736" y2="100" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1572" x1="0" y1="120" x2="736" y2="120" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1573" x1="0" y1="140" x2="736" y2="140" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1574" x1="0" y1="160" x2="736" y2="160" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1575" x1="0" y1="180" x2="736" y2="180" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1576" x1="0" y1="200" x2="736" y2="200" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line></g><g id="SvgjsG1565" class="apexcharts-gridlines-vertical" style="display: none;"></g><line id="SvgjsLine1578" x1="0" y1="200" x2="736" y2="200" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line><line id="SvgjsLine1577" x1="0" y1="1" x2="0" y2="200" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line></g><g id="SvgjsG1529" class="apexcharts-area-series apexcharts-plot-series"><g id="SvgjsG1530" class="apexcharts-series" seriesName="NetxProfit" data:longestSeries="true" rel="1" data:realIndex="0"><path id="SvgjsPath1533" d="M 0 200L 0 125C 42.93333333333333 125 79.73333333333335 87.5 122.66666666666667 87.5C 165.6 87.5 202.4 120 245.33333333333334 120C 288.26666666666665 120 325.06666666666666 25 368 25C 410.93333333333334 25 447.73333333333335 100 490.6666666666667 100C 533.6 100 570.4000000000001 100 613.3333333333334 100C 656.2666666666667 100 693.0666666666667 100 736 100C 736 100 736 100 736 200M 736 100z" fill="transparent" fill-opacity="1" stroke-opacity="1" stroke-linecap="butt" stroke-width="0" stroke-dasharray="0" class="apexcharts-area" index="0" clip-path="url(#gridRectMaskevo00fz8)" filter="url(#SvgjsFilter1534)" pathTo="M 0 200L 0 125C 42.93333333333333 125 79.73333333333335 87.5 122.66666666666667 87.5C 165.6 87.5 202.4 120 245.33333333333334 120C 288.26666666666665 120 325.06666666666666 25 368 25C 410.93333333333334 25 447.73333333333335 100 490.6666666666667 100C 533.6 100 570.4000000000001 100 613.3333333333334 100C 656.2666666666667 100 693.0666666666667 100 736 100C 736 100 736 100 736 200M 736 100z" pathFrom="M -1 200L -1 200L 122.66666666666667 200L 245.33333333333334 200L 368 200L 490.6666666666667 200L 613.3333333333334 200L 736 200"></path><path id="SvgjsPath1543" d="M 0 125C 42.93333333333333 125 79.73333333333335 87.5 122.66666666666667 87.5C 165.6 87.5 202.4 120 245.33333333333334 120C 288.26666666666665 120 325.06666666666666 25 368 25C 410.93333333333334 25 447.73333333333335 100 490.6666666666667 100C 533.6 100 570.4000000000001 100 613.3333333333334 100C 656.2666666666667 100 693.0666666666667 100 736 100" fill="none" fill-opacity="1" stroke="#cb1b46" stroke-opacity="1" stroke-linecap="butt" stroke-width="3" stroke-dasharray="0" class="apexcharts-area" index="0" clip-path="url(#gridRectMaskevo00fz8)" filter="url(#SvgjsFilter1544)" pathTo="M 0 125C 42.93333333333333 125 79.73333333333335 87.5 122.66666666666667 87.5C 165.6 87.5 202.4 120 245.33333333333334 120C 288.26666666666665 120 325.06666666666666 25 368 25C 410.93333333333334 25 447.73333333333335 100 490.6666666666667 100C 533.6 100 570.4000000000001 100 613.3333333333334 100C 656.2666666666667 100 693.0666666666667 100 736 100" pathFrom="M -1 200L -1 200L 122.66666666666667 200L 245.33333333333334 200L 368 200L 490.6666666666667 200L 613.3333333333334 200L 736 200"></path><g id="SvgjsG1531" class="apexcharts-series-markers-wrap" data:realIndex="0"><g class="apexcharts-series-markers"><circle id="SvgjsCircle1584" r="0" cx="0" cy="0" class="apexcharts-marker wdhr2ssr9 no-pointer-events" stroke="#cb1b46" fill="#f1416c" fill-opacity="1" stroke-width="3" stroke-opacity="0.9" default-marker-size="0"></circle></g></g></g><g id="SvgjsG1532" class="apexcharts-datalabels" data:realIndex="0"></g></g><line id="SvgjsLine1579" x1="0" y1="0" x2="736" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1580" x1="0" y1="0" x2="736" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line><g id="SvgjsG1581" class="apexcharts-yaxis-annotations"></g><g id="SvgjsG1582" class="apexcharts-xaxis-annotations"></g><g id="SvgjsG1583" class="apexcharts-point-annotations"></g></g><g id="SvgjsG1562" class="apexcharts-yaxis" rel="0" transform="translate(-18, 0)"></g><g id="SvgjsG1525" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend" style="max-height: 100px;"></div><div class="apexcharts-tooltip apexcharts-theme-light"><div class="apexcharts-tooltip-title" style="font-family: inherit; font-size: 12px;"></div><div class="apexcharts-tooltip-series-group" style="order: 1;"><span class="apexcharts-tooltip-marker" style="background-color: transparent;"></span><div class="apexcharts-tooltip-text" style="font-family: inherit; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-y-label"></span><span class="apexcharts-tooltip-text-y-value"></span></div><div class="apexcharts-tooltip-goals-group"><span class="apexcharts-tooltip-text-goals-label"></span><span class="apexcharts-tooltip-text-goals-value"></span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div></div><div class="apexcharts-yaxistooltip apexcharts-yaxistooltip-0 apexcharts-yaxistooltip-left apexcharts-theme-light"><div class="apexcharts-yaxistooltip-text"></div></div></div></div>
-                            <!--end::Chart-->
-                            <!--begin::Stats-->
-                            <div class="card-p mt-n20 position-relative">
-                                <!--begin::Row-->
-                                <div class="row g-0">
-                                    <!--begin::Col-->
-                                    <div class="col bg-light-warning px-6 py-8 rounded-2 me-7 mb-7">
-                                        <!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
-                                        <span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <rect x="8" y="9" width="3" height="10" rx="1.5" fill="black"></rect>
-                                                <rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5" fill="black"></rect>
-                                                <rect x="18" y="11" width="3" height="8" rx="1.5" fill="black"></rect>
-                                                <rect x="3" y="13" width="3" height="6" rx="1.5" fill="black"></rect>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->
-                                        <a href="#" class="text-warning fw-bold fs-6">Weekly Sales</a>
-                                    </div>
-                                    <!--end::Col-->
-                                    <!--begin::Col-->
-                                    <div class="col bg-light-primary px-6 py-8 rounded-2 mb-7">
-                                        <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
-                                        <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path opacity="0.3" d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z" fill="black"></path>
-                                                <path d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->
-                                        <a href="#" class="text-primary fw-bold fs-6">New Projects</a>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
-                                <!--begin::Row-->
-                                <div class="row g-0">
-                                    <!--begin::Col-->
-                                    <div class="col bg-light-danger px-6 py-8 rounded-2 me-7">
-                                        <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
-                                        <span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="black"></path>
-                                                <path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->
-                                        <a href="#" class="text-danger fw-bold fs-6 mt-2">Item Orders</a>
-                                    </div>
-                                    <!--end::Col-->
-                                    <!--begin::Col-->
-                                    <div class="col bg-light-success px-6 py-8 rounded-2">
-                                        <!--begin::Svg Icon | path: icons/duotune/communication/com010.svg-->
-                                        <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M6 8.725C6 8.125 6.4 7.725 7 7.725H14L18 11.725V12.925L22 9.725L12.6 2.225C12.2 1.925 11.7 1.925 11.4 2.225L2 9.725L6 12.925V8.725Z" fill="black"></path>
-                                                <path opacity="0.3" d="M22 9.72498V20.725C22 21.325 21.6 21.725 21 21.725H3C2.4 21.725 2 21.325 2 20.725V9.72498L11.4 17.225C11.8 17.525 12.3 17.525 12.6 17.225L22 9.72498ZM15 11.725H18L14 7.72498V10.725C14 11.325 14.4 11.725 15 11.725Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->
-                                        <a href="#" class="text-success fw-bold fs-6 mt-2">Bug Reports</a>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
+                        <div class="card-body my-3">
+                            <a href="#" class="card-title fw-bolder text-success fs-5 mb-3 d-block">{{__('translation.owners')}}</a>
+                            <div class="py-1">
+                                <span class="text-dark fs-1 fw-bolder me-2">50%</span>
+                                <span class="fw-bold text-muted fs-7">Avarage</span>
                             </div>
-                            <!--end::Stats-->
+                            <div class="progress h-7px bg-success bg-opacity-50 mt-7">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
-                        <!--end::Body-->
+                        <!--end:: Body-->
                     </div>
-                    <!--end::Mixed Widget 2-->
+                    <!--end: Statistics Widget 6-->
                 </div>
+                <div class="col-xl-4">
+                    <!--begin: Statistics Widget 6-->
+                    <div class="card bg-light-warning card-xl-stretch mb-xl-8">
+                        <!--begin::Body-->
+                        <div class="card-body my-3">
+                            <a href="#" class="card-title fw-bolder text-warning fs-5 mb-3 d-block">{{ __('translation.offers')}}</a>
+                            <div class="py-1">
+                                <span class="text-dark fs-1 fw-bolder me-2">15%</span>
+                                <span class="fw-bold text-muted fs-7">{{ 23}} {{__('translation.offer')}}</span>
+                            </div>
+                            <div class="progress h-7px bg-warning bg-opacity-50 mt-7">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 15%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <!--end:: Body-->
+                    </div>
+                    <!--end: Statistics Widget 6-->
+                </div>
+                <div class="col-xl-4">
+                    <!--begin: Statistics Widget 6-->
+                    <div class="card bg-light-primary card-xl-stretch mb-5 mb-xl-8">
+                        <!--begin::Body-->
+                        <div class="card-body my-3">
+                            <a href="#" class="card-title fw-bolder text-primary fs-5 mb-3 d-block">{{__('translation.clients')}}</a>
+                            <div class="py-1">
+                                <span class="text-dark fs-1 fw-bolder me-2">76%</span>
+                                <span class="fw-bold text-muted fs-7">400k Impressions</span>
+                            </div>
+                            <div class="progress h-7px bg-primary bg-opacity-50 mt-7">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 76%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <!--end:: Body-->
+                    </div>
+                    <!--end: Statistics Widget 6-->
+                </div>
+            </div>
+
+            <div class="row gy-5 g-xl-8">
+
                 <!--end::Col-->
                 <!--begin::Col-->
                 <div class="col-xl-4">
@@ -431,243 +310,14 @@
                     </div>
                     <!--end: List Widget 5-->
                 </div>
-                <!--end::Col-->
-                <!--begin::Col-->
-                <div class="col-xl-4">
-                    <!--begin::Mixed Widget 7-->
-                    <div class="card card-xl-stretch-50 mb-5 mb-xl-8">
-                        <!--begin::Body-->
-                        <div class="card-body d-flex flex-column p-0">
-                            <!--begin::Stats-->
-                            <div class="flex-grow-1 card-p pb-0">
-                                <div class="d-flex flex-stack flex-wrap">
-                                    <div class="me-2">
-                                        <a href="#" class="text-dark text-hover-primary fw-bolder fs-3">Generate Reports</a>
-                                        <div class="text-muted fs-7 fw-bold">Finance and accounting reports</div>
-                                    </div>
-                                    <div class="fw-bolder fs-3 text-primary">$24,500</div>
-                                </div>
-                            </div>
-                            <!--end::Stats-->
-                            <!--begin::Chart-->
-                            <div class="mixed-widget-7-chart card-rounded-bottom" data-kt-chart-color="primary" style="height: 150px; min-height: 150px;"><div id="apexchartsigdyuezc" class="apexcharts-canvas apexchartsigdyuezc apexcharts-theme-light" style="width: 736px; height: 150px;"><svg id="SvgjsSvg1631" width="736" height="150" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1633" class="apexcharts-inner apexcharts-graphical" transform="translate(0, 0)"><defs id="SvgjsDefs1632"><clipPath id="gridRectMaskigdyuezc"><rect id="SvgjsRect1636" width="743" height="153" x="-3.5" y="-1.5" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMaskigdyuezc"></clipPath><clipPath id="nonForecastMaskigdyuezc"></clipPath><clipPath id="gridRectMarkerMaskigdyuezc"><rect id="SvgjsRect1637" width="740" height="154" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1644" class="apexcharts-xaxis" transform="translate(0, 0)"><g id="SvgjsG1645" class="apexcharts-xaxis-texts-g" transform="translate(0, -4)"></g></g><g id="SvgjsG1653" class="apexcharts-grid"><g id="SvgjsG1654" class="apexcharts-gridlines-horizontal" style="display: none;"><line id="SvgjsLine1656" x1="0" y1="0" x2="736" y2="0" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1657" x1="0" y1="15" x2="736" y2="15" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1658" x1="0" y1="30" x2="736" y2="30" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1659" x1="0" y1="45" x2="736" y2="45" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1660" x1="0" y1="60" x2="736" y2="60" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1661" x1="0" y1="75" x2="736" y2="75" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1662" x1="0" y1="90" x2="736" y2="90" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1663" x1="0" y1="105" x2="736" y2="105" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1664" x1="0" y1="120" x2="736" y2="120" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1665" x1="0" y1="135" x2="736" y2="135" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1666" x1="0" y1="150" x2="736" y2="150" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line></g><g id="SvgjsG1655" class="apexcharts-gridlines-vertical" style="display: none;"></g><line id="SvgjsLine1668" x1="0" y1="150" x2="736" y2="150" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line><line id="SvgjsLine1667" x1="0" y1="1" x2="0" y2="150" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line></g><g id="SvgjsG1638" class="apexcharts-area-series apexcharts-plot-series"><g id="SvgjsG1639" class="apexcharts-series" seriesName="NetxProfit" data:longestSeries="true" rel="1" data:realIndex="0"><path id="SvgjsPath1642" d="M 0 150L 0 112.5C 51.52 112.5 95.68 87.5 147.20000000000002 87.5C 198.72000000000003 87.5 242.88000000000002 112.5 294.40000000000003 112.5C 345.92 112.5 390.08000000000004 50 441.6 50C 493.12 50 537.2800000000001 100 588.8000000000001 100C 640.32 100 684.48 25 736 25C 736 25 736 25 736 150M 736 25z" fill="rgba(241,250,255,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="butt" stroke-width="0" stroke-dasharray="0" class="apexcharts-area" index="0" clip-path="url(#gridRectMaskigdyuezc)" pathTo="M 0 150L 0 112.5C 51.52 112.5 95.68 87.5 147.20000000000002 87.5C 198.72000000000003 87.5 242.88000000000002 112.5 294.40000000000003 112.5C 345.92 112.5 390.08000000000004 50 441.6 50C 493.12 50 537.2800000000001 100 588.8000000000001 100C 640.32 100 684.48 25 736 25C 736 25 736 25 736 150M 736 25z" pathFrom="M -1 150L -1 150L 147.20000000000002 150L 294.40000000000003 150L 441.6 150L 588.8000000000001 150L 736 150"></path><path id="SvgjsPath1643" d="M 0 112.5C 51.52 112.5 95.68 87.5 147.20000000000002 87.5C 198.72000000000003 87.5 242.88000000000002 112.5 294.40000000000003 112.5C 345.92 112.5 390.08000000000004 50 441.6 50C 493.12 50 537.2800000000001 100 588.8000000000001 100C 640.32 100 684.48 25 736 25" fill="none" fill-opacity="1" stroke="#009ef7" stroke-opacity="1" stroke-linecap="butt" stroke-width="3" stroke-dasharray="0" class="apexcharts-area" index="0" clip-path="url(#gridRectMaskigdyuezc)" pathTo="M 0 112.5C 51.52 112.5 95.68 87.5 147.20000000000002 87.5C 198.72000000000003 87.5 242.88000000000002 112.5 294.40000000000003 112.5C 345.92 112.5 390.08000000000004 50 441.6 50C 493.12 50 537.2800000000001 100 588.8000000000001 100C 640.32 100 684.48 25 736 25" pathFrom="M -1 150L -1 150L 147.20000000000002 150L 294.40000000000003 150L 441.6 150L 588.8000000000001 150L 736 150"></path><g id="SvgjsG1640" class="apexcharts-series-markers-wrap" data:realIndex="0"><g class="apexcharts-series-markers"><circle id="SvgjsCircle1674" r="0" cx="0" cy="0" class="apexcharts-marker w3uazicp no-pointer-events" stroke="#009ef7" fill="#f1faff" fill-opacity="1" stroke-width="3" stroke-opacity="0.9" default-marker-size="0"></circle></g></g></g><g id="SvgjsG1641" class="apexcharts-datalabels" data:realIndex="0"></g></g><line id="SvgjsLine1669" x1="0" y1="0" x2="736" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1670" x1="0" y1="0" x2="736" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line><g id="SvgjsG1671" class="apexcharts-yaxis-annotations"></g><g id="SvgjsG1672" class="apexcharts-xaxis-annotations"></g><g id="SvgjsG1673" class="apexcharts-point-annotations"></g></g><g id="SvgjsG1652" class="apexcharts-yaxis" rel="0" transform="translate(-18, 0)"></g><g id="SvgjsG1634" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend" style="max-height: 75px;"></div><div class="apexcharts-tooltip apexcharts-theme-light"><div class="apexcharts-tooltip-title" style="font-family: inherit; font-size: 12px;"></div><div class="apexcharts-tooltip-series-group" style="order: 1;"><span class="apexcharts-tooltip-marker" style="background-color: rgb(241, 250, 255);"></span><div class="apexcharts-tooltip-text" style="font-family: inherit; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-y-label"></span><span class="apexcharts-tooltip-text-y-value"></span></div><div class="apexcharts-tooltip-goals-group"><span class="apexcharts-tooltip-text-goals-label"></span><span class="apexcharts-tooltip-text-goals-value"></span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div></div><div class="apexcharts-xaxistooltip apexcharts-xaxistooltip-bottom apexcharts-theme-light"><div class="apexcharts-xaxistooltip-text" style="font-family: inherit; font-size: 12px;"></div></div><div class="apexcharts-yaxistooltip apexcharts-yaxistooltip-0 apexcharts-yaxistooltip-left apexcharts-theme-light"><div class="apexcharts-yaxistooltip-text"></div></div></div></div>
-                            <!--end::Chart-->
-                        </div>
-                        <!--end::Body-->
-                    </div>
-                    <!--end::Mixed Widget 7-->
-                    <!--begin::Mixed Widget 10-->
-                    <div class="card card-xl-stretch-50 mb-5 mb-xl-8">
-                        <!--begin::Body-->
-                        <div class="card-body p-0 d-flex justify-content-between flex-column overflow-hidden">
-                            <!--begin::Hidden-->
-                            <div class="d-flex flex-stack flex-wrap flex-grow-1 px-9 pt-9 pb-3">
-                                <div class="me-2">
-                                    <span class="fw-bolder text-gray-800 d-block fs-3">Sales</span>
-                                    <span class="text-gray-400 fw-bold">Oct 8 - Oct 26 21</span>
-                                </div>
-                                <div class="fw-bolder fs-3 text-primary">$15,300</div>
-                            </div>
-                            <!--end::Hidden-->
-                            <!--begin::Chart-->
-                            <div class="mixed-widget-10-chart" data-kt-color="primary" style="height: 175px; min-height: 190px;"><div id="apexchartslil4fg7rk" class="apexcharts-canvas apexchartslil4fg7rk apexcharts-theme-light" style="width: 736px; height: 175px;"><svg id="SvgjsSvg1675" width="736" height="175" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><g id="SvgjsG1677" class="apexcharts-inner apexcharts-graphical" transform="translate(42.571990966796875, 40)"><defs id="SvgjsDefs1676"><linearGradient id="SvgjsLinearGradient1681" x1="0" y1="0" x2="0" y2="1"><stop id="SvgjsStop1682" stop-opacity="0.4" stop-color="rgba(216,227,240,0.4)" offset="0"></stop><stop id="SvgjsStop1683" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop><stop id="SvgjsStop1684" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop></linearGradient><clipPath id="gridRectMasklil4fg7rk"><rect id="SvgjsRect1686" width="689.4280090332031" height="94.494" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMasklil4fg7rk"></clipPath><clipPath id="nonForecastMasklil4fg7rk"></clipPath><clipPath id="gridRectMarkerMasklil4fg7rk"><rect id="SvgjsRect1687" width="687.4280090332031" height="96.494" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><rect id="SvgjsRect1685" width="21.357125282287598" height="92.494" x="0" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke-dasharray="3" fill="url(#SvgjsLinearGradient1681)" class="apexcharts-xcrosshairs" y2="92.494" filter="none" fill-opacity="0.9"></rect><g id="SvgjsG1727" class="apexcharts-xaxis" transform="translate(0, 0)"><g id="SvgjsG1728" class="apexcharts-xaxis-texts-g" transform="translate(0, -4)"><text id="SvgjsText1730" font-family="inherit" x="42.714250564575195" y="121.494" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-xaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1731">Feb</tspan><title>Feb</title></text><text id="SvgjsText1733" font-family="inherit" x="128.1427516937256" y="121.494" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-xaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1734">Mar</tspan><title>Mar</title></text><text id="SvgjsText1736" font-family="inherit" x="213.57125282287598" y="121.494" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-xaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1737">Apr</tspan><title>Apr</title></text><text id="SvgjsText1739" font-family="inherit" x="298.99975395202637" y="121.494" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-xaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1740">May</tspan><title>May</title></text><text id="SvgjsText1742" font-family="inherit" x="384.42825508117676" y="121.494" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-xaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1743">Jun</tspan><title>Jun</title></text><text id="SvgjsText1745" font-family="inherit" x="469.85675621032715" y="121.494" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-xaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1746">Jul</tspan><title>Jul</title></text><text id="SvgjsText1748" font-family="inherit" x="555.2852573394775" y="121.494" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-xaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1749">Aug</tspan><title>Aug</title></text><text id="SvgjsText1751" font-family="inherit" x="640.7137584686279" y="121.494" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-xaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1752">Sep</tspan><title>Sep</title></text></g></g><g id="SvgjsG1765" class="apexcharts-grid"><g id="SvgjsG1766" class="apexcharts-gridlines-horizontal"><line id="SvgjsLine1768" x1="0" y1="0" x2="683.4280090332031" y2="0" stroke="#eff2f5" stroke-dasharray="4" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1769" x1="0" y1="23.1235" x2="683.4280090332031" y2="23.1235" stroke="#eff2f5" stroke-dasharray="4" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1770" x1="0" y1="46.247" x2="683.4280090332031" y2="46.247" stroke="#eff2f5" stroke-dasharray="4" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1771" x1="0" y1="69.37049999999999" x2="683.4280090332031" y2="69.37049999999999" stroke="#eff2f5" stroke-dasharray="4" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1772" x1="0" y1="92.494" x2="683.4280090332031" y2="92.494" stroke="#eff2f5" stroke-dasharray="4" stroke-linecap="butt" class="apexcharts-gridline"></line></g><g id="SvgjsG1767" class="apexcharts-gridlines-vertical"></g><line id="SvgjsLine1774" x1="0" y1="92.494" x2="683.4280090332031" y2="92.494" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line><line id="SvgjsLine1773" x1="0" y1="1" x2="0" y2="92.494" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line></g><g id="SvgjsG1688" class="apexcharts-bar-series apexcharts-plot-series"><g id="SvgjsG1689" class="apexcharts-series" rel="1" seriesName="NetxProfit" data:realIndex="0"><path id="SvgjsPath1693" d="M 21.357125282287598 92.494L 21.357125282287598 38.68525Q 21.357125282287598 34.68525 25.357125282287598 34.68525L 36.714250564575195 34.68525Q 40.714250564575195 34.68525 40.714250564575195 38.68525L 40.714250564575195 38.68525L 40.714250564575195 92.494L 40.714250564575195 92.494z" fill="rgba(0,158,247,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 21.357125282287598 92.494L 21.357125282287598 38.68525Q 21.357125282287598 34.68525 25.357125282287598 34.68525L 36.714250564575195 34.68525Q 40.714250564575195 34.68525 40.714250564575195 38.68525L 40.714250564575195 38.68525L 40.714250564575195 92.494L 40.714250564575195 92.494z" pathFrom="M 21.357125282287598 92.494L 21.357125282287598 92.494L 40.714250564575195 92.494L 40.714250564575195 92.494L 40.714250564575195 92.494L 40.714250564575195 92.494L 40.714250564575195 92.494L 21.357125282287598 92.494" cy="34.68525" cx="105.78562641143799" j="0" val="50" barHeight="57.808749999999996" barWidth="21.357125282287598"></path><path id="SvgjsPath1695" d="M 106.78562641143799 92.494L 106.78562641143799 27.123500000000007Q 106.78562641143799 23.123500000000007 110.78562641143799 23.123500000000007L 122.14275169372559 23.123500000000007Q 126.14275169372559 23.123500000000007 126.14275169372559 27.123500000000007L 126.14275169372559 27.123500000000007L 126.14275169372559 92.494L 126.14275169372559 92.494z" fill="rgba(0,158,247,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 106.78562641143799 92.494L 106.78562641143799 27.123500000000007Q 106.78562641143799 23.123500000000007 110.78562641143799 23.123500000000007L 122.14275169372559 23.123500000000007Q 126.14275169372559 23.123500000000007 126.14275169372559 27.123500000000007L 126.14275169372559 27.123500000000007L 126.14275169372559 92.494L 126.14275169372559 92.494z" pathFrom="M 106.78562641143799 92.494L 106.78562641143799 92.494L 126.14275169372559 92.494L 126.14275169372559 92.494L 126.14275169372559 92.494L 126.14275169372559 92.494L 126.14275169372559 92.494L 106.78562641143799 92.494" cy="23.123500000000007" cx="191.21412754058838" j="1" val="60" barHeight="69.37049999999999" barWidth="21.357125282287598"></path><path id="SvgjsPath1697" d="M 192.21412754058838 92.494L 192.21412754058838 15.561750000000004Q 192.21412754058838 11.561750000000004 196.21412754058838 11.561750000000004L 207.57125282287598 11.561750000000004Q 211.57125282287598 11.561750000000004 211.57125282287598 15.561750000000004L 211.57125282287598 15.561750000000004L 211.57125282287598 92.494L 211.57125282287598 92.494z" fill="rgba(0,158,247,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 192.21412754058838 92.494L 192.21412754058838 15.561750000000004Q 192.21412754058838 11.561750000000004 196.21412754058838 11.561750000000004L 207.57125282287598 11.561750000000004Q 211.57125282287598 11.561750000000004 211.57125282287598 15.561750000000004L 211.57125282287598 15.561750000000004L 211.57125282287598 92.494L 211.57125282287598 92.494z" pathFrom="M 192.21412754058838 92.494L 192.21412754058838 92.494L 211.57125282287598 92.494L 211.57125282287598 92.494L 211.57125282287598 92.494L 211.57125282287598 92.494L 211.57125282287598 92.494L 192.21412754058838 92.494" cy="11.561750000000004" cx="276.64262866973877" j="2" val="70" barHeight="80.93225" barWidth="21.357125282287598"></path><path id="SvgjsPath1699" d="M 277.64262866973877 92.494L 277.64262866973877 4Q 277.64262866973877 0 281.64262866973877 0L 292.99975395202637 0Q 296.99975395202637 0 296.99975395202637 4L 296.99975395202637 4L 296.99975395202637 92.494L 296.99975395202637 92.494z" fill="rgba(0,158,247,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 277.64262866973877 92.494L 277.64262866973877 4Q 277.64262866973877 0 281.64262866973877 0L 292.99975395202637 0Q 296.99975395202637 0 296.99975395202637 4L 296.99975395202637 4L 296.99975395202637 92.494L 296.99975395202637 92.494z" pathFrom="M 277.64262866973877 92.494L 277.64262866973877 92.494L 296.99975395202637 92.494L 296.99975395202637 92.494L 296.99975395202637 92.494L 296.99975395202637 92.494L 296.99975395202637 92.494L 277.64262866973877 92.494" cy="0" cx="362.07112979888916" j="3" val="80" barHeight="92.494" barWidth="21.357125282287598"></path><path id="SvgjsPath1701" d="M 363.07112979888916 92.494L 363.07112979888916 27.123500000000007Q 363.07112979888916 23.123500000000007 367.07112979888916 23.123500000000007L 378.42825508117676 23.123500000000007Q 382.42825508117676 23.123500000000007 382.42825508117676 27.123500000000007L 382.42825508117676 27.123500000000007L 382.42825508117676 92.494L 382.42825508117676 92.494z" fill="rgba(0,158,247,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 363.07112979888916 92.494L 363.07112979888916 27.123500000000007Q 363.07112979888916 23.123500000000007 367.07112979888916 23.123500000000007L 378.42825508117676 23.123500000000007Q 382.42825508117676 23.123500000000007 382.42825508117676 27.123500000000007L 382.42825508117676 27.123500000000007L 382.42825508117676 92.494L 382.42825508117676 92.494z" pathFrom="M 363.07112979888916 92.494L 363.07112979888916 92.494L 382.42825508117676 92.494L 382.42825508117676 92.494L 382.42825508117676 92.494L 382.42825508117676 92.494L 382.42825508117676 92.494L 363.07112979888916 92.494" cy="23.123500000000007" cx="447.49963092803955" j="4" val="60" barHeight="69.37049999999999" barWidth="21.357125282287598"></path><path id="SvgjsPath1703" d="M 448.49963092803955 92.494L 448.49963092803955 38.68525Q 448.49963092803955 34.68525 452.49963092803955 34.68525L 463.85675621032715 34.68525Q 467.85675621032715 34.68525 467.85675621032715 38.68525L 467.85675621032715 38.68525L 467.85675621032715 92.494L 467.85675621032715 92.494z" fill="rgba(0,158,247,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 448.49963092803955 92.494L 448.49963092803955 38.68525Q 448.49963092803955 34.68525 452.49963092803955 34.68525L 463.85675621032715 34.68525Q 467.85675621032715 34.68525 467.85675621032715 38.68525L 467.85675621032715 38.68525L 467.85675621032715 92.494L 467.85675621032715 92.494z" pathFrom="M 448.49963092803955 92.494L 448.49963092803955 92.494L 467.85675621032715 92.494L 467.85675621032715 92.494L 467.85675621032715 92.494L 467.85675621032715 92.494L 467.85675621032715 92.494L 448.49963092803955 92.494" cy="34.68525" cx="532.9281320571899" j="5" val="50" barHeight="57.808749999999996" barWidth="21.357125282287598"></path><path id="SvgjsPath1705" d="M 533.9281320571899 92.494L 533.9281320571899 15.561750000000004Q 533.9281320571899 11.561750000000004 537.9281320571899 11.561750000000004L 549.2852573394775 11.561750000000004Q 553.2852573394775 11.561750000000004 553.2852573394775 15.561750000000004L 553.2852573394775 15.561750000000004L 553.2852573394775 92.494L 553.2852573394775 92.494z" fill="rgba(0,158,247,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 533.9281320571899 92.494L 533.9281320571899 15.561750000000004Q 533.9281320571899 11.561750000000004 537.9281320571899 11.561750000000004L 549.2852573394775 11.561750000000004Q 553.2852573394775 11.561750000000004 553.2852573394775 15.561750000000004L 553.2852573394775 15.561750000000004L 553.2852573394775 92.494L 553.2852573394775 92.494z" pathFrom="M 533.9281320571899 92.494L 533.9281320571899 92.494L 553.2852573394775 92.494L 553.2852573394775 92.494L 553.2852573394775 92.494L 553.2852573394775 92.494L 553.2852573394775 92.494L 533.9281320571899 92.494" cy="11.561750000000004" cx="618.3566331863403" j="6" val="70" barHeight="80.93225" barWidth="21.357125282287598"></path><path id="SvgjsPath1707" d="M 619.3566331863403 92.494L 619.3566331863403 27.123500000000007Q 619.3566331863403 23.123500000000007 623.3566331863403 23.123500000000007L 634.7137584686279 23.123500000000007Q 638.7137584686279 23.123500000000007 638.7137584686279 27.123500000000007L 638.7137584686279 27.123500000000007L 638.7137584686279 92.494L 638.7137584686279 92.494z" fill="rgba(0,158,247,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 619.3566331863403 92.494L 619.3566331863403 27.123500000000007Q 619.3566331863403 23.123500000000007 623.3566331863403 23.123500000000007L 634.7137584686279 23.123500000000007Q 638.7137584686279 23.123500000000007 638.7137584686279 27.123500000000007L 638.7137584686279 27.123500000000007L 638.7137584686279 92.494L 638.7137584686279 92.494z" pathFrom="M 619.3566331863403 92.494L 619.3566331863403 92.494L 638.7137584686279 92.494L 638.7137584686279 92.494L 638.7137584686279 92.494L 638.7137584686279 92.494L 638.7137584686279 92.494L 619.3566331863403 92.494" cy="23.123500000000007" cx="703.7851343154907" j="7" val="60" barHeight="69.37049999999999" barWidth="21.357125282287598"></path><g id="SvgjsG1691" class="apexcharts-bar-goals-markers" style="pointer-events: none"><g id="SvgjsG1692" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1694" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1696" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1698" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1700" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1702" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1704" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1706" className="apexcharts-bar-goals-groups"></g></g></g><g id="SvgjsG1708" class="apexcharts-series" rel="2" seriesName="Revenue" data:realIndex="1"><path id="SvgjsPath1712" d="M 42.714250564575195 92.494L 42.714250564575195 38.68525Q 42.714250564575195 34.68525 46.714250564575195 34.68525L 58.07137584686279 34.68525Q 62.07137584686279 34.68525 62.07137584686279 38.68525L 62.07137584686279 38.68525L 62.07137584686279 92.494L 62.07137584686279 92.494z" fill="rgba(228,230,239,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 42.714250564575195 92.494L 42.714250564575195 38.68525Q 42.714250564575195 34.68525 46.714250564575195 34.68525L 58.07137584686279 34.68525Q 62.07137584686279 34.68525 62.07137584686279 38.68525L 62.07137584686279 38.68525L 62.07137584686279 92.494L 62.07137584686279 92.494z" pathFrom="M 42.714250564575195 92.494L 42.714250564575195 92.494L 62.07137584686279 92.494L 62.07137584686279 92.494L 62.07137584686279 92.494L 62.07137584686279 92.494L 62.07137584686279 92.494L 42.714250564575195 92.494" cy="34.68525" cx="127.14275169372559" j="0" val="50" barHeight="57.808749999999996" barWidth="21.357125282287598"></path><path id="SvgjsPath1714" d="M 128.1427516937256 92.494L 128.1427516937256 27.123500000000007Q 128.1427516937256 23.123500000000007 132.1427516937256 23.123500000000007L 143.49987697601318 23.123500000000007Q 147.49987697601318 23.123500000000007 147.49987697601318 27.123500000000007L 147.49987697601318 27.123500000000007L 147.49987697601318 92.494L 147.49987697601318 92.494z" fill="rgba(228,230,239,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 128.1427516937256 92.494L 128.1427516937256 27.123500000000007Q 128.1427516937256 23.123500000000007 132.1427516937256 23.123500000000007L 143.49987697601318 23.123500000000007Q 147.49987697601318 23.123500000000007 147.49987697601318 27.123500000000007L 147.49987697601318 27.123500000000007L 147.49987697601318 92.494L 147.49987697601318 92.494z" pathFrom="M 128.1427516937256 92.494L 128.1427516937256 92.494L 147.49987697601318 92.494L 147.49987697601318 92.494L 147.49987697601318 92.494L 147.49987697601318 92.494L 147.49987697601318 92.494L 128.1427516937256 92.494" cy="23.123500000000007" cx="212.57125282287598" j="1" val="60" barHeight="69.37049999999999" barWidth="21.357125282287598"></path><path id="SvgjsPath1716" d="M 213.57125282287598 92.494L 213.57125282287598 15.561750000000004Q 213.57125282287598 11.561750000000004 217.57125282287598 11.561750000000004L 228.92837810516357 11.561750000000004Q 232.92837810516357 11.561750000000004 232.92837810516357 15.561750000000004L 232.92837810516357 15.561750000000004L 232.92837810516357 92.494L 232.92837810516357 92.494z" fill="rgba(228,230,239,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 213.57125282287598 92.494L 213.57125282287598 15.561750000000004Q 213.57125282287598 11.561750000000004 217.57125282287598 11.561750000000004L 228.92837810516357 11.561750000000004Q 232.92837810516357 11.561750000000004 232.92837810516357 15.561750000000004L 232.92837810516357 15.561750000000004L 232.92837810516357 92.494L 232.92837810516357 92.494z" pathFrom="M 213.57125282287598 92.494L 213.57125282287598 92.494L 232.92837810516357 92.494L 232.92837810516357 92.494L 232.92837810516357 92.494L 232.92837810516357 92.494L 232.92837810516357 92.494L 213.57125282287598 92.494" cy="11.561750000000004" cx="297.99975395202637" j="2" val="70" barHeight="80.93225" barWidth="21.357125282287598"></path><path id="SvgjsPath1718" d="M 298.99975395202637 92.494L 298.99975395202637 4Q 298.99975395202637 0 302.99975395202637 0L 314.35687923431396 0Q 318.35687923431396 0 318.35687923431396 4L 318.35687923431396 4L 318.35687923431396 92.494L 318.35687923431396 92.494z" fill="rgba(228,230,239,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 298.99975395202637 92.494L 298.99975395202637 4Q 298.99975395202637 0 302.99975395202637 0L 314.35687923431396 0Q 318.35687923431396 0 318.35687923431396 4L 318.35687923431396 4L 318.35687923431396 92.494L 318.35687923431396 92.494z" pathFrom="M 298.99975395202637 92.494L 298.99975395202637 92.494L 318.35687923431396 92.494L 318.35687923431396 92.494L 318.35687923431396 92.494L 318.35687923431396 92.494L 318.35687923431396 92.494L 298.99975395202637 92.494" cy="0" cx="383.42825508117676" j="3" val="80" barHeight="92.494" barWidth="21.357125282287598"></path><path id="SvgjsPath1720" d="M 384.42825508117676 92.494L 384.42825508117676 27.123500000000007Q 384.42825508117676 23.123500000000007 388.42825508117676 23.123500000000007L 399.78538036346436 23.123500000000007Q 403.78538036346436 23.123500000000007 403.78538036346436 27.123500000000007L 403.78538036346436 27.123500000000007L 403.78538036346436 92.494L 403.78538036346436 92.494z" fill="rgba(228,230,239,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 384.42825508117676 92.494L 384.42825508117676 27.123500000000007Q 384.42825508117676 23.123500000000007 388.42825508117676 23.123500000000007L 399.78538036346436 23.123500000000007Q 403.78538036346436 23.123500000000007 403.78538036346436 27.123500000000007L 403.78538036346436 27.123500000000007L 403.78538036346436 92.494L 403.78538036346436 92.494z" pathFrom="M 384.42825508117676 92.494L 384.42825508117676 92.494L 403.78538036346436 92.494L 403.78538036346436 92.494L 403.78538036346436 92.494L 403.78538036346436 92.494L 403.78538036346436 92.494L 384.42825508117676 92.494" cy="23.123500000000007" cx="468.85675621032715" j="4" val="60" barHeight="69.37049999999999" barWidth="21.357125282287598"></path><path id="SvgjsPath1722" d="M 469.85675621032715 92.494L 469.85675621032715 38.68525Q 469.85675621032715 34.68525 473.85675621032715 34.68525L 485.21388149261475 34.68525Q 489.21388149261475 34.68525 489.21388149261475 38.68525L 489.21388149261475 38.68525L 489.21388149261475 92.494L 489.21388149261475 92.494z" fill="rgba(228,230,239,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 469.85675621032715 92.494L 469.85675621032715 38.68525Q 469.85675621032715 34.68525 473.85675621032715 34.68525L 485.21388149261475 34.68525Q 489.21388149261475 34.68525 489.21388149261475 38.68525L 489.21388149261475 38.68525L 489.21388149261475 92.494L 489.21388149261475 92.494z" pathFrom="M 469.85675621032715 92.494L 469.85675621032715 92.494L 489.21388149261475 92.494L 489.21388149261475 92.494L 489.21388149261475 92.494L 489.21388149261475 92.494L 489.21388149261475 92.494L 469.85675621032715 92.494" cy="34.68525" cx="554.2852573394775" j="5" val="50" barHeight="57.808749999999996" barWidth="21.357125282287598"></path><path id="SvgjsPath1724" d="M 555.2852573394775 92.494L 555.2852573394775 15.561750000000004Q 555.2852573394775 11.561750000000004 559.2852573394775 11.561750000000004L 570.6423826217651 11.561750000000004Q 574.6423826217651 11.561750000000004 574.6423826217651 15.561750000000004L 574.6423826217651 15.561750000000004L 574.6423826217651 92.494L 574.6423826217651 92.494z" fill="rgba(228,230,239,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 555.2852573394775 92.494L 555.2852573394775 15.561750000000004Q 555.2852573394775 11.561750000000004 559.2852573394775 11.561750000000004L 570.6423826217651 11.561750000000004Q 574.6423826217651 11.561750000000004 574.6423826217651 15.561750000000004L 574.6423826217651 15.561750000000004L 574.6423826217651 92.494L 574.6423826217651 92.494z" pathFrom="M 555.2852573394775 92.494L 555.2852573394775 92.494L 574.6423826217651 92.494L 574.6423826217651 92.494L 574.6423826217651 92.494L 574.6423826217651 92.494L 574.6423826217651 92.494L 555.2852573394775 92.494" cy="11.561750000000004" cx="639.7137584686279" j="6" val="70" barHeight="80.93225" barWidth="21.357125282287598"></path><path id="SvgjsPath1726" d="M 640.7137584686279 92.494L 640.7137584686279 27.123500000000007Q 640.7137584686279 23.123500000000007 644.7137584686279 23.123500000000007L 656.0708837509155 23.123500000000007Q 660.0708837509155 23.123500000000007 660.0708837509155 27.123500000000007L 660.0708837509155 27.123500000000007L 660.0708837509155 92.494L 660.0708837509155 92.494z" fill="rgba(228,230,239,0.85)" fill-opacity="1" stroke="transparent" stroke-opacity="1" stroke-linecap="round" stroke-width="2" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMasklil4fg7rk)" pathTo="M 640.7137584686279 92.494L 640.7137584686279 27.123500000000007Q 640.7137584686279 23.123500000000007 644.7137584686279 23.123500000000007L 656.0708837509155 23.123500000000007Q 660.0708837509155 23.123500000000007 660.0708837509155 27.123500000000007L 660.0708837509155 27.123500000000007L 660.0708837509155 92.494L 660.0708837509155 92.494z" pathFrom="M 640.7137584686279 92.494L 640.7137584686279 92.494L 660.0708837509155 92.494L 660.0708837509155 92.494L 660.0708837509155 92.494L 660.0708837509155 92.494L 660.0708837509155 92.494L 640.7137584686279 92.494" cy="23.123500000000007" cx="725.1422595977783" j="7" val="60" barHeight="69.37049999999999" barWidth="21.357125282287598"></path><g id="SvgjsG1710" class="apexcharts-bar-goals-markers" style="pointer-events: none"><g id="SvgjsG1711" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1713" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1715" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1717" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1719" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1721" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1723" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1725" className="apexcharts-bar-goals-groups"></g></g></g><g id="SvgjsG1690" class="apexcharts-datalabels" data:realIndex="0"></g><g id="SvgjsG1709" class="apexcharts-datalabels" data:realIndex="1"></g></g><line id="SvgjsLine1775" x1="0" y1="0" x2="683.4280090332031" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1776" x1="0" y1="0" x2="683.4280090332031" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line><g id="SvgjsG1777" class="apexcharts-yaxis-annotations"></g><g id="SvgjsG1778" class="apexcharts-xaxis-annotations"></g><g id="SvgjsG1779" class="apexcharts-point-annotations"></g></g><g id="SvgjsG1753" class="apexcharts-yaxis" rel="0" transform="translate(12.571990966796875, 0)"><g id="SvgjsG1754" class="apexcharts-yaxis-texts-g"><text id="SvgjsText1755" font-family="inherit" x="20" y="41.4" text-anchor="end" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-yaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1756">80</tspan><title>80</title></text><text id="SvgjsText1757" font-family="inherit" x="20" y="64.5235" text-anchor="end" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-yaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1758">60</tspan><title>60</title></text><text id="SvgjsText1759" font-family="inherit" x="20" y="87.647" text-anchor="end" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-yaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1760">40</tspan><title>40</title></text><text id="SvgjsText1761" font-family="inherit" x="20" y="110.7705" text-anchor="end" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-yaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1762">20</tspan><title>20</title></text><text id="SvgjsText1763" font-family="inherit" x="20" y="133.894" text-anchor="end" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#a1a5b7" class="apexcharts-text apexcharts-yaxis-label " style="font-family: inherit;"><tspan id="SvgjsTspan1764">0</tspan><title>0</title></text></g></g><g id="SvgjsG1678" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend" style="max-height: 87.5px;"></div><div class="apexcharts-tooltip apexcharts-theme-light"><div class="apexcharts-tooltip-title" style="font-family: inherit; font-size: 12px;"></div><div class="apexcharts-tooltip-series-group" style="order: 1;"><span class="apexcharts-tooltip-marker" style="background-color: rgb(0, 158, 247);"></span><div class="apexcharts-tooltip-text" style="font-family: inherit; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-y-label"></span><span class="apexcharts-tooltip-text-y-value"></span></div><div class="apexcharts-tooltip-goals-group"><span class="apexcharts-tooltip-text-goals-label"></span><span class="apexcharts-tooltip-text-goals-value"></span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div><div class="apexcharts-tooltip-series-group" style="order: 2;"><span class="apexcharts-tooltip-marker" style="background-color: rgb(228, 230, 239);"></span><div class="apexcharts-tooltip-text" style="font-family: inherit; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-y-label"></span><span class="apexcharts-tooltip-text-y-value"></span></div><div class="apexcharts-tooltip-goals-group"><span class="apexcharts-tooltip-text-goals-label"></span><span class="apexcharts-tooltip-text-goals-value"></span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div></div><div class="apexcharts-yaxistooltip apexcharts-yaxistooltip-0 apexcharts-yaxistooltip-left apexcharts-theme-light"><div class="apexcharts-yaxistooltip-text"></div></div></div></div>
-                            <!--end::Chart-->
-                        </div>
-                    </div>
-                    <!--end::Mixed Widget 10-->
-                </div>
-                <!--end::Col-->
-            </div>
-            <!--end::Row-->
-
-            <!--end::Row-->
-            <!--begin::Row-->
-            <div class="row gy-5 g-xl-8">
-                <!--begin::Col-->
-                <div class="col-xl-4">
-                    <!--begin::List Widget 2-->
-                    <div class="card card-xl-stretch mb-xl-8">
-                        <!--begin::Header-->
-                        <div class="card-header border-0">
-                            <h3 class="card-title fw-bolder text-dark">Authors</h3>
-                            <div class="card-toolbar">
-                                <!--begin::Menu-->
-                                <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-                                    <span class="svg-icon svg-icon-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="5" y="5" width="5" height="5" rx="1" fill="#000000"></rect>
-                                                <rect x="14" y="5" width="5" height="5" rx="1" fill="#000000" opacity="0.3"></rect>
-                                                <rect x="5" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3"></rect>
-                                                <rect x="14" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3"></rect>
-                                            </g>
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                </button>
-                                <!--begin::Menu 2-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px" data-kt-menu="true">
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">Quick Actions</div>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu separator-->
-                                    <div class="separator mb-3 opacity-75"></div>
-                                    <!--end::Menu separator-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">New Ticket</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">New Customer</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-                                        <!--begin::Menu item-->
-                                        <a href="#" class="menu-link px-3">
-                                            <span class="menu-title">New Group</span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu sub-->
-                                        <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Admin Group</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Staff Group</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Member Group</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu sub-->
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">New Contact</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu separator-->
-                                    <div class="separator mt-3 opacity-75"></div>
-                                    <!--end::Menu separator-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <div class="menu-content px-3 py-3">
-                                            <a class="btn btn-primary btn-sm px-4" href="#">Generate Reports</a>
-                                        </div>
-                                    </div>
-                                    <!--end::Menu item-->
-                                </div>
-                                <!--end::Menu 2-->
-                                <!--end::Menu-->
-                            </div>
-                        </div>
-                        <!--end::Header-->
-                        <!--begin::Body-->
-                        <div class="card-body pt-2">
-                            <!--begin::Item-->
-                            <div class="d-flex align-items-center mb-7">
-                                <!--begin::Avatar-->
-                                <div class="symbol symbol-50px me-5">
-                                    <img src="assets/media/avatars/150-1.jpg" class="" alt="">
-                                </div>
-                                <!--end::Avatar-->
-                                <!--begin::Text-->
-                                <div class="flex-grow-1">
-                                    <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Emma Smith</a>
-                                    <span class="text-muted d-block fw-bold">Project Manager</span>
-                                </div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="d-flex align-items-center mb-7">
-                                <!--begin::Avatar-->
-                                <div class="symbol symbol-50px me-5">
-                                    <img src="assets/media/avatars/150-4.jpg" class="" alt="">
-                                </div>
-                                <!--end::Avatar-->
-                                <!--begin::Text-->
-                                <div class="flex-grow-1">
-                                    <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Sean Bean</a>
-                                    <span class="text-muted d-block fw-bold">PHP, SQLite, Artisan CLI</span>
-                                </div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="d-flex align-items-center mb-7">
-                                <!--begin::Avatar-->
-                                <div class="symbol symbol-50px me-5">
-                                    <img src="assets/media/avatars/150-12.jpg" class="" alt="">
-                                </div>
-                                <!--end::Avatar-->
-                                <!--begin::Text-->
-                                <div class="flex-grow-1">
-                                    <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Brian Cox</a>
-                                    <span class="text-muted d-block fw-bold">PHP, SQLite, Artisan CLI</span>
-                                </div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="d-flex align-items-center mb-7">
-                                <!--begin::Avatar-->
-                                <div class="symbol symbol-50px me-5">
-                                    <img src="assets/media/avatars/150-8.jpg" class="" alt="">
-                                </div>
-                                <!--end::Avatar-->
-                                <!--begin::Text-->
-                                <div class="flex-grow-1">
-                                    <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Francis Mitcham</a>
-                                    <span class="text-muted d-block fw-bold">PHP, SQLite, Artisan CLI</span>
-                                </div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <div class="d-flex align-items-center">
-                                <!--begin::Avatar-->
-                                <div class="symbol symbol-50px me-5">
-                                    <img src="assets/media/avatars/150-6.jpg" class="" alt="">
-                                </div>
-                                <!--end::Avatar-->
-                                <!--begin::Text-->
-                                <div class="flex-grow-1">
-                                    <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Dan Wilson</a>
-                                    <span class="text-muted d-block fw-bold">PHP, SQLite, Artisan CLI</span>
-                                </div>
-                                <!--end::Text-->
-                            </div>
-                            <!--end::Item-->
-                        </div>
-                        <!--end::Body-->
-                    </div>
-                    <!--end::List Widget 2-->
-                </div>
-                <!--end::Col-->
-                <!--begin::Col-->
                 <div class="col-xl-8">
                     <!--begin::Tables Widget 5-->
                     <div class="card card-xxl-stretch mb-5 mb-xl-8">
                         <!--begin::Header-->
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bolder fs-3 mb-1">Latest Products</span>
-                                <span class="text-muted mt-1 fw-bold fs-7">More than 400 new products</span>
+                                <span class="card-label fw-bolder fs-3 mb-1">{{ __('translation.Latest_offer')}}</span>
+                                {{-- <span class="text-muted mt-1 fw-bold fs-7">More than 400 new products</span> --}}
                             </h3>
                             <div class="card-toolbar">
                                 <ul class="nav">
@@ -692,168 +342,7 @@
                                     <!--begin::Table container-->
                                     <div class="table-responsive">
                                         <!--begin::Table-->
-                                        <table class="table table-row-dashed table-row-gray-200 align-middle gs-0 gy-4">
-                                            <!--begin::Table head-->
-                                            <thead>
-                                                <tr class="border-0">
-                                                    <th class="p-0 w-50px"></th>
-                                                    <th class="p-0 min-w-150px"></th>
-                                                    <th class="p-0 min-w-140px"></th>
-                                                    <th class="p-0 min-w-110px"></th>
-                                                    <th class="p-0 min-w-50px"></th>
-                                                </tr>
-                                            </thead>
-                                            <!--end::Table head-->
-                                            <!--begin::Table body-->
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/plurk.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Brad Simmons</a>
-                                                        <span class="text-muted fw-bold d-block">Movie Creator</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">React, HTML</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-success">Approved</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/telegram.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Popular Authors</a>
-                                                        <span class="text-muted fw-bold d-block">Most Successful</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">Python, MySQL</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-warning">In Progress</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/vimeo.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">New Users</a>
-                                                        <span class="text-muted fw-bold d-block">Awesome Users</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">Laravel,Metronic</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-primary">Success</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/bebo.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Active Customers</a>
-                                                        <span class="text-muted fw-bold d-block">Movie Creator</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">AngularJS, C#</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-danger">Rejected</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/kickstarter.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Bestseller Theme</a>
-                                                        <span class="text-muted fw-bold d-block">Best Customers</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">ReactJS, Ruby</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-warning">In Progress</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                            <!--end::Table body-->
-                                        </table>
+
                                     </div>
                                     <!--end::Table-->
                                 </div>
@@ -863,110 +352,7 @@
                                     <!--begin::Table container-->
                                     <div class="table-responsive">
                                         <!--begin::Table-->
-                                        <table class="table table-row-dashed table-row-gray-200 align-middle gs-0 gy-4">
-                                            <!--begin::Table head-->
-                                            <thead>
-                                                <tr class="border-0">
-                                                    <th class="p-0 w-50px"></th>
-                                                    <th class="p-0 min-w-150px"></th>
-                                                    <th class="p-0 min-w-140px"></th>
-                                                    <th class="p-0 min-w-110px"></th>
-                                                    <th class="p-0 min-w-50px"></th>
-                                                </tr>
-                                            </thead>
-                                            <!--end::Table head-->
-                                            <!--begin::Table body-->
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/plurk.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Brad Simmons</a>
-                                                        <span class="text-muted fw-bold d-block">Movie Creator</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">React, HTML</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-success">Approved</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/telegram.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Popular Authors</a>
-                                                        <span class="text-muted fw-bold d-block">Most Successful</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">Python, MySQL</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-warning">In Progress</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/bebo.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Active Customers</a>
-                                                        <span class="text-muted fw-bold d-block">Movie Creator</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">AngularJS, C#</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-danger">Rejected</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                            <!--end::Table body-->
-                                        </table>
+
                                     </div>
                                     <!--end::Table-->
                                 </div>
@@ -976,139 +362,42 @@
                                     <!--begin::Table container-->
                                     <div class="table-responsive">
                                         <!--begin::Table-->
-                                        <table class="table table-row-dashed table-row-gray-200 align-middle gs-0 gy-4">
-                                            <!--begin::Table head-->
-                                            <thead>
-                                                <tr class="border-0">
-                                                    <th class="p-0 w-50px"></th>
-                                                    <th class="p-0 min-w-150px"></th>
-                                                    <th class="p-0 min-w-140px"></th>
-                                                    <th class="p-0 min-w-110px"></th>
-                                                    <th class="p-0 min-w-50px"></th>
-                                                </tr>
-                                            </thead>
-                                            <!--end::Table head-->
-                                            <!--begin::Table body-->
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/kickstarter.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Bestseller Theme</a>
-                                                        <span class="text-muted fw-bold d-block">Best Customers</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">ReactJS, Ruby</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-warning">In Progress</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/bebo.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Active Customers</a>
-                                                        <span class="text-muted fw-bold d-block">Movie Creator</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">AngularJS, C#</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-danger">Rejected</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/vimeo.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">New Users</a>
-                                                        <span class="text-muted fw-bold d-block">Awesome Users</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">Laravel,Metronic</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-primary">Success</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="symbol symbol-45px me-2">
-                                                            <span class="symbol-label">
-                                                                <img src="assets/media/svg/brand-logos/telegram.svg" class="h-50 align-self-center" alt="">
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Popular Authors</a>
-                                                        <span class="text-muted fw-bold d-block">Most Successful</span>
-                                                    </td>
-                                                    <td class="text-end text-muted fw-bold">Python, MySQL</td>
-                                                    <td class="text-end">
-                                                        <span class="badge badge-light-warning">In Progress</span>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary">
-                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
-                                                            <span class="svg-icon svg-icon-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                                                                    <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                                                                </svg>
-                                                            </span>
-                                                            <!--end::Svg Icon-->
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                            <!--end::Table body-->
-                                        </table>
+                                        <div class="table-responsive">
+                                            <table class="table datatable align-middle table-row-dashed fs-6 gy-5" id="roles-table" style="width: 100%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">
+                                                            <div class="animated-checkbox">
+                                                                <label class="m-0">
+                                                                    <input type="checkbox" id="record__select-all">
+                                                                    <span class="label-text"></span>
+                                                                </label>
+                                                            </div>
+                                                        </th>
+                                                        {{-- <th class="text-center">{{__('translation.logo')}}</th>
+                                                        <th class="text-center">{{__('translation.name')}} </th>
+                                                        <th class="text-center">{{__('translation.phone')}}</th> --}}
+                                                        {{-- <th class="text-center">{{__('translation.roles')}}</th> --}}
+                                                        <th class="text-center">{{__('translation.title')}}</th>
+                                                        {{-- @admin --}}
+                                                        {{-- @if (auth()->guard('admin')->check())
+                                                            <th class="text-center">{{__('translation.agent')}}</th>
+                                                        @endif --}}
+                                                        {{-- @endAdmin --}}
+                                                        <th class="text-center">{{__('translation.areas')}}</th>
+                                                        {{-- <th class="text-center">{{__('translation.service')}}</th> --}}
+                                                        <th class="text-center">{{__('translation.type_idd')}}</th>
+                                                        {{-- <th class="text-center">{{__('translation.description')}}</th>
+                                                        <th class="text-center">{{__('translation.client')}}</th>
+                                                        <th class="text-center">{{__('translation.owner')}}</th> --}}
+                                                        <th class="text-center">{{__('translation.location')}}</th>
+                                                        <th class="text-center">{{__('translation.status')}}</th>
+                                                        {{-- <th class="text-center">{{__('translation.date')}}</th> --}}
+                                                        <th class="text-center">{{__('translation.action')}}</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
                                     </div>
                                     <!--end::Table-->
                                 </div>
@@ -1119,10 +408,11 @@
                     </div>
                     <!--end::Tables Widget 5-->
                 </div>
-                <!--end::Col-->
-                <!--begin::Col-->
-                <!--end::Col-->
             </div>
+            <!--end::Row-->
+
+            <!--end::Row-->
+            <!--begin::Row-->
             <!--begin::Modal - New Product-->
             <div class="modal fade" id="kt_modal_add_event" tabindex="-1" aria-hidden="true">
                 <!--begin::Modal dialog-->
@@ -1336,6 +626,7 @@
                                     <!--end::Event description-->
                                 </div>
                             </div>
+                            {{-- @dd(request()->routeIs('dashboard')); --}}
                             <!--end::Row-->
                             <!--begin::Row-->
                             <div class="d-flex align-items-center mb-2">
@@ -1395,3 +686,68 @@
     </div>
 </div>
 @endsection
+
+
+
+@push('scripts');
+<script src="{{ asset('admin_assets/js/custom/index.js')}}"></script>
+<script src="//code.jquery.com/jquery.js"></script>
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+    // alert('worgiing');
+    var isadmin = @json(auth()->guard('admin')->check());
+    var OfferColums = [
+            {data: 'record_select', name: 'record_select', searchable: false, sortable: false, width: '1%'},
+            // {data: 'logo', name: 'logo' },
+            {data: 'title', name: 'title' },
+            // {data: 'phone', name: 'phone'},
+            // {data: 'agent', name: 'agent'},
+            // {data: 'service', name: 'service'},
+            {data: 'area', name: 'area'},
+            {data: 'type', name: 'type'},
+            // {data: 'agent', name: 'location'},
+            // {data: 'short_desc', name: 'short_desc'},
+            // {data: 'owner', name: 'owner'},
+            // {data: 'client', name: 'client'},
+            {data: 'location', name: 'location'},
+            {data: 'status', name: 'status', searchable: false},
+            // {data: 'created_at', name: 'created_at', searchable: false},
+            {data: 'actions', name: 'actions', searchable: false, sortable: false, width: '20%'},
+        ];
+    var OfferColums = isadmin ? OfferColums : OfferColums.filter(el => el.data !== 'agent');
+    console.log(isadmin , OfferColums);
+    let service_id = 1;
+    let rolesTable = $('#roles-table').DataTable({
+        dom: "tiplr",
+        serverSide: true,
+        processing: true,
+        "language": {
+            "url": "{{ asset('admin_assets/datatable-lang/' . app()->getLocale() . '.json') }}"
+        },
+        ajax: {
+            url: '{{ route('offer.data') }}',
+            data : function (d) {
+                d.service_id = service_id;
+            },
+        },
+        columns: OfferColums,
+        order: [[3, 'desc']],
+        drawCallback: function (settings) {
+            $('.record__select').prop('checked', false);
+            $('#record__select-all').prop('checked', false);
+            $('#record-ids').val();
+            $('#bulk-delete').attr('disabled', true);
+        }
+    });
+
+    $('#data-table-search').keyup(function () {
+        rolesTable.search(this.value).draw();
+    });
+    // $('#roles').on('change' , function(){
+    //     role = $(this).val();
+    //     rolesTable.ajax.reload();
+    // });
+</script>
+
+@endpush
