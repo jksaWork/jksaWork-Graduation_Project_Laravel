@@ -89,4 +89,6 @@ return [
     'owners' => 'المالكين',
     'clients' => 'العملاء',
     'Latest_offer' => 'اخر الطلبات',
+    'offer_with_status' => 'مخطط حالات العروض',
+    'offers_chart' => 'مخطط العروض',
 ];

@@ -64,9 +64,27 @@
                     <!--end: Statistics Widget 6-->
                 </div>
             </div>
-
-            <div class="row gy-5 g-xl-8">
-
+ <div class="row">
+                <div class="col-xl-6 col-lg-6 col-6">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <canvas id="myChart" width="600" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-6">
+                    <div class="card pull-up">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <canvas id="myChart2" width="600" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-5 g-xl-8 mt-4">
                 <!--end::Col-->
                 <!--begin::Col-->
                 <div class="col-xl-4">
@@ -750,4 +768,88 @@
     // });
 </script>
 
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const data = @json($chartOne);
+        const labels = data.map(item => item.label);
+        const CartData = {
+            labels: labels,
+            datasets: [{
+                label: '{{ __('translation.offers') }}',
+                backgroundColor: 'rgb(30, 159, 242)',
+                borderColor: 'rgb(30, 159, 242)',
+                data: data.map(item => item.Data),
+            }]
+        };
+        const config = {
+            type: 'line',
+            data: CartData,
+            options: {}
+        };
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+        const array = @json($charttwo);
+        // cahrt tow option -----------------------------------------
+        const labels2 = array.map(item => item.label);
+        const CartData2 = {
+            labels: labels2,
+            datasets: [{
+                label: '{{ __('translation.offer_with_status') }}',
+                backgroundColor: [
+                    'rgb(255 ,145, 73,0.5)',
+                    'rgb(102 ,110, 232,0.5)',
+                    'rgb(40, 208, 148,0.5)',
+                    'rgba(253, 73, 97, 0.5)',
+                ],
+                borderColor: [
+                    'rgb(40, 208, 242 )',
+                    'rgba(102, 110, 232)',
+                    'rgb(30, 159, 242)',
+                    'rgba(253, 73, 97)',
+                ],
+                data: array.map(item => item.Data),
+            }]
+        };
+        const config2 = {
+            type: 'bar',
+            data: CartData2,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            },
+        };
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+        const Online_Driver_Count = @json('');
+        // var String_Online = (Online_Driver_Count + ",").repeat(4) + Online_Driver_Count;
+        // console.log(String_Online);
+        // console.log();
+        const data3 = @json($chartOne);
+        const labels3 = data.map(item => item.label);
+        const CartData3 = {
+            labels: labels,
+            datasets: [{
+                label: '{{ __('translation.orders') }}',
+                backgroundColor: 'rgb(30, 159, 242)',
+                borderColor: 'rgb(30, 159, 242)',
+                data: data.map(item => item.Data),
+            }]
+        };
+        const config3 = {
+            type: 'line',
+            data: CartData,
+            options: {}
+        };
+        const myChart3 = new Chart(
+            document.getElementById('myChart3'),
+            config3
+        );
+    </script>
 @endpush
