@@ -91,4 +91,7 @@ return [
     'Latest_offer' => 'اخر الطلبات',
     'offer_with_status' => 'مخطط حالات العروض',
     'offers_chart' => 'مخطط العروض',
+    'rent' => 'ايجار',
+    'sale' => 'بيع',
+    'exchange' => 'استبدال',
 ];

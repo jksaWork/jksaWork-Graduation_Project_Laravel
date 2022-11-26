@@ -339,14 +339,14 @@
                             </h3>
                             <div class="card-toolbar">
                                 <ul class="nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link btn btn-sm btn-color-muted btn-active btn-active-secondary fw-bolder px-4 me-1" data-bs-toggle="tab" href="#kt_table_widget_5_tab_1">Month</a>
+                                    <li class="nav-item" onclick="drow_the_table(1)" >
+                                        <a class="nav-link btn btn-sm btn-color-muted btn-active btn-active-secondary fw-bolder px-4 active" data-bs-toggle="tab" href="#kt_table_widget_5_tab_3">{{__('translation.rent')}}</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link btn btn-sm btn-color-muted btn-active btn-active-secondary fw-bolder px-4 me-1" data-bs-toggle="tab" href="#kt_table_widget_5_tab_2">Week</a>
+                                    <li class="nav-item" onclick="drow_the_table(2)">
+                                        <a class="nav-link btn btn-sm btn-color-muted btn-active btn-active-secondary fw-bolder px-4 " data-bs-toggle="tab" href="#kt_table_widget_5_tab_3">{{__('translation.sale')}}</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link btn btn-sm btn-color-muted btn-active btn-active-secondary fw-bolder px-4 active" data-bs-toggle="tab" href="#kt_table_widget_5_tab_3">Day</a>
+                                    <li class="nav-item" onclick="drow_the_table(3)" >
+                                        <a class="nav-link btn btn-sm btn-color-muted btn-active btn-active-secondary fw-bolder px-4 " data-bs-toggle="tab" href="#kt_table_widget_5_tab_3">{{__('translation.exchange')}}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -764,8 +764,12 @@
     });
     // $('#roles').on('change' , function(){
     //     role = $(this).val();
-    //     rolesTable.ajax.reload();
     // });
+    function drow_the_table(number){
+        service_id = number;
+        rolesTable.ajax.reload();
+        console.log(service_id);
+    }
 </script>
 
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -775,7 +779,7 @@
         const CartData = {
             labels: labels,
             datasets: [{
-                label: '{{ __('translation.offers') }}',
+                label: '{{ __('translation.offers_chart') }}',
                 backgroundColor: 'rgb(30, 159, 242)',
                 borderColor: 'rgb(30, 159, 242)',
                 data: data.map(item => item.Data),
@@ -851,5 +855,7 @@
             document.getElementById('myChart3'),
             config3
         );
+
+
     </script>
 @endpush

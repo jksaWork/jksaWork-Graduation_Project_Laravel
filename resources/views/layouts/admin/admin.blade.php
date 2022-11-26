@@ -45,6 +45,16 @@ License: For each use you must have a valid license purchased only from above li
        @endif
         @notifyCss
         @notifyJs
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500&family=El+Messiri&display=swap" rel="stylesheet">
+        <style>
+           * {
+                font-family: 'Cairo', sans-serif;
+                font-family: 'El Messiri', sans-serif;
+            }
+        </style>
         @stack('links')
     </head>
 	<!--end::Head-->
