@@ -42,11 +42,11 @@
                 id="#kt_aside_menu" data-kt-menu="true">
                 <div class="menu-item">
                     <div class="menu-content pb-2">
-                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span>
+                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{__('translation.dashboard')}}</span>
                     </div>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link active" href="/admin">
+                    <a class="menu-link {{ request()->routeIs('dashboard') ?: 'active'}}" href="/admin">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -64,11 +64,11 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Dashboard</span>
+                        <span class="menu-title">{{__('translation.dashboard')}}</span>
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link {{ true ?: 'active'}}" href="/admin">
+                    <a class="menu-link {{-- request()->routeIs('dashboard') ?: 'active'--}}" href="{{--route('map') --}}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="menu-icon">
@@ -88,7 +88,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link active" href="{{ route('area.index') }}">
+                    <a class="menu-link " href="{{ route('area.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -104,7 +104,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Areas</span>
+                        <span class="menu-title">{{ __('translation.areas')}}</span>
                     </a>
                 </div>
 
@@ -126,12 +126,12 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Services</span>
+                        <span class="menu-title">{{__('translation.services')}}</span>
                     </a>
                 </div>
                 <div class="menu-item">
                     <div class="menu-content pb-2">
-                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span>
+                        <span class="menu-section text-muted text-uppercase fs-8 ls-1">{{__('translation.offers')}}</span>
                     </div>
                 </div>
                 {{-- Rent Offer --}}
@@ -322,7 +322,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title"> User Account</span>
+                        <span class="menu-title"> {{__('translation.user_account')}}</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
@@ -331,7 +331,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Add Users</span>
+                                <span class="menu-title">{{__('translation.add_account')}}</span>
                             </a>
                         </div>
                         <div class="menu-item">
@@ -339,7 +339,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Show User</span>
+                                <span class="menu-title">{{__('translation.show_users')}}</span>
                             </a>
                         </div>
                         <div class="menu-item">
@@ -347,7 +347,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Roles</span>
+                                <span class="menu-title">{{__('translation.roles')}}</span>
                             </a>
                         </div>
                     </div>
@@ -369,7 +369,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Client Mangement</span>
+                        <span class="menu-title">{{__('translation.client_mangement')}}</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
@@ -378,7 +378,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Add Client </span>
+                                <span class="menu-title">{{ __('translation.add_cleint')}} </span>
                             </a>
                         </div>
                         <div class="menu-item">
@@ -386,7 +386,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Show Clients</span>
+                                <span class="menu-title">{{__('translation.show_cleint')}}</span>
                             </a>
                         </div>
 
@@ -415,7 +415,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Owners Mangement </span>
+                        <span class="menu-title">{{__('translation.Owners Mangement')}} </span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
@@ -424,7 +424,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Add Owners</span>
+                                <span class="menu-title">{{__('translation.Add Owners')}}</span>
                             </a>
                         </div>
                         <div class="menu-item">
@@ -432,7 +432,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Show Owners</span>
+                                <span class="menu-title">{{__('translation.Show Owners')}}</span>
                             </a>
                         </div>
                     </div>
