@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Agent;
 use App\Models\Attachments;
+use App\Models\Offer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class AttachmentsController extends Controller
 {
@@ -15,16 +17,22 @@ class AttachmentsController extends Controller
             'attachments' => 'required',
             'agent_id' => 'required',
         ]);
-        $agent = Agent::find($request->agent_id);
+        $attachmentable = Agent::find($request->agent_id) ?? Offer::find($request->agent_id);
         // dd($agent);
         foreach ($request->attachments  as $key => $file) {
-            $file_name = date('ymdhis') . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('agents/attachments/' . $request->emp_id), $file_name);
+            $file_name =  $file->hashName();
+            $file->store('offers/attachments',  'public');
             $attachment = new Attachments();
             $attachment->url = $file_name;
-            $agent->attachments()->save($attachment);
+            $attachmentable->attachments()->save($attachment);
         }
-        return redirect()->route('agent.show', ['agent' => $request->agent_id])->with(['success' => 'done']);
+        $route = 'agent.show';
+        $routeKey = 'agent';
+        if($attachmentable instanceof Offer) {
+            $route ='offers.show';
+            $routeKey = 'offer';
+        }
+            return redirect()->route($route, [$routeKey => $request->agent_id])->with(['success' => 'done']);
     }
 
     /**
@@ -62,14 +70,18 @@ class AttachmentsController extends Controller
     public  function show($id)
     {
         $file_name = Attachments::find($id)->url;
-        // dd($url);
-        $pathToFile = Storage::disk('public')->getAdapter()->applyPathPrefix( 'agents/attachments/' .$file_name);
+        if(Str::startsWith($file_name, 'http://localhost:8000/'))
+            $file_name = Str::replaceFirst('http://localhost:8000/' ,  '' , $file_name);
+
+        $pathToFile = Storage::disk('public')->getAdapter()->applyPathPrefix($file_name);
         return response()->file($pathToFile);
     }
 
     public  function download($id)
     {
         $file_name = Attachments::find($id)->url;
+        if(Str::startsWith($file_name, 'http://localhost:8000/'))
+            $file_name = Str::replaceFirst('http://localhost:8000/' ,  '' , $file_name);
         $pathToFile = Storage::disk('public')->getAdapter()->applyPathPrefix($file_name);
         return response()->download($pathToFile);
     }

@@ -12,7 +12,6 @@
             <div class="card p-4">
                 <div class="tile ">
                     <div class="row mb-2">
-
                     </div><!-- end of row -->
                     @include('layouts.includes.session')
                     <div class="card-header border-0 ">
@@ -37,7 +36,7 @@
                 <div class="card-toolbar">
                     <!--begin::Toolbar-->
                     <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                        <a href="{{ route('offers.create' , ['service_id' => encrypt($service_id)])}}" type="button" class="btn btn-light-primary"> {{__('translation.add_offer')}} </a>
+                        <a href="{{ route('offers.create' , ['service_id' => $service_id])}}" type="button" class="btn btn-light-primary"> {{__('translation.add_offer')}} </a>
                     </div>
 
                     <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">

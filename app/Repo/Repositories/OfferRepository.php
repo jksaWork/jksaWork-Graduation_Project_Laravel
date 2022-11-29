@@ -38,7 +38,7 @@ class  OfferRepository implements OfferInterface {
     }
     public function StoreOffer($request){
         $this->StoreOfferInDatabse($request);
-        return redirect()->route('offers.index' , ['service_id' => encrypt($request->service_id)]);
+        return redirect()->route('offers.index' , ['service_id' => ($request->service_id)]);
     }
 
     public function StoreOfferInDatabse($request){
@@ -194,5 +194,11 @@ class  OfferRepository implements OfferInterface {
                 $attachment->url = $name;
                 $offer->attachments()->save($attachment);
         }
+    }
+
+    public function ChangeOfferStatus($offer , $offervalue){
+        $offer->status = $offervalue;
+        $offer->save();
+        return redirect()->back();
     }
 }

@@ -21,6 +21,7 @@ class CreateAgentUsersTable extends Migration
             $table->string('password')->nullable();
             $table->string('status')->default(1);
             $table->foreignId('agent_id') ->references('id')->on('agents');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

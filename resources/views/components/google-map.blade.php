@@ -1,6 +1,6 @@
 <div>
     <!-- The whole future lies in uncertainty: live immediately. - Seneca -->
-    <div class="fv-row mb-7 col-md-6">
+    <div class="fv-row mb-7 col-md-6 d-none">
         <label class="required fs-6 fw-bold mb-2">{{ __('translation.' . 'lat') }}</label>
         <input type="text" class="form-control form-control-solid"
             placeholder="" name="lat" value="15.233123"/>
@@ -10,7 +10,7 @@
                 </span>
             @enderror
     </div>
-    <div class="fv-row mb-7 col-md-6">
+    <div class="fv-row mb-7 col-md-6 d-none">
         <label class="required fs-6 fw-bold mb-2">{{ __('translation.' . 'long') }}</label>
         <input type="text" class="form-control form-control-solid"
             placeholder=""

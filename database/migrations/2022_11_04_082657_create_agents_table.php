@@ -23,6 +23,7 @@ class CreateAgentsTable extends Migration
             $table->string('lat');
             $table->boolean('status')->default(1);
             $table->string('logo')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

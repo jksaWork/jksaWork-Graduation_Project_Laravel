@@ -58,6 +58,7 @@ class OfferController extends Controller
     public function show(Offer $offer)
     {
         if(request()->has('status'))  return $this->interface->ChangeStatus($offer);
+        if(request()->has('offer_status')) return $this->interface->ChangeOfferStatus( $offer, request()->offer_status);
         else return $this->interface->ShowOfferDetails($offer);
     }
 

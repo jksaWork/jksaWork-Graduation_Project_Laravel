@@ -19,6 +19,10 @@
                                         {{ __('translation.offer_info') }}</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link " data-bs-toggle="tab" href="#kt_tab_pane_4">
+                                        {{ __('translation.offer_status_and_ownerss') }}</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_9">
                                         {{ __('translation.offers_image') }}</a>
                                 </li>
@@ -41,7 +45,7 @@
                                                 <th class="">{{ __('translation.areas') }}</th>
                                                 <th class="">{{ __('translation.type_idd') }}</th>
                                                 <th class="">{{ __('translation.location') }}</th>
-                                                <th class="">{{ __('translation.status') }}</th>
+                                                <th class="">{{ __('translation.offer_status') }}</th>
                                             </tr>
                                             <!--end::Table row-->
                                         </thead>
@@ -81,6 +85,47 @@
                                         </a>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="tab-pane fade show active" id="kt_tab_pane_4" role="tabpanel">
+                                <div>
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="">
+                                        <!--begin::Table head-->
+                                        <thead>
+                                            <!--begin::Table row-->
+                                            <tr class=" text-gray-400 fw-bolder fs-7 text-uppercase ">
+                                                <th class="">{{ __('translation.agent') }}</th>
+                                                <th class="">{{ __('translation.owner') }}</th>
+                                                <th class="">{{ __('translation.client') }}</th>
+                                                <th class="">{{ __('translation.status') }}</th>
+                                                <th class="">{{ __('translation.option') }}</th>
+                                            </tr>
+                                            <!--end::Table row-->
+                                        </thead>
+                                        <!--end::Table head-->
+                                        <!--begin::Table body-->
+                                        <tbody class="fw-bold text-gray-600">
+                                            <tr>
+                                                <td> {{ $offer->Agent->name  ?? '-'}}</td>
+                                                <td> {{ $offer->Owner->name  ?? '-'}}</td>
+                                                <td> {{ $offer->Client->name ?? '-' }}</td>
+                                                <td> {!! $offer->GetOfferStatusWithSpan() !!}</td>
+                                                <td>
+                                                    <form action="{{ route('offers.show' , $offer)}}" method="get">
+                                                        <div class="form-group">
+                                                            <label for=""></label>
+                                                            <select class="form-control" name="offer_status" id="status" onchange="this.form.submit()">
+                                                                @foreach ($offer->statusBadge as $status => $Badge )
+                                                                    <option value="{{$status}}">{{__('translation.' .$status)}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
                             </div>
 
 

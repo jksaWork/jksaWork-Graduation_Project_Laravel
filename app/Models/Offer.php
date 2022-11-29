@@ -5,14 +5,22 @@ namespace App\Models;
 use App\Traits\HasStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 abstract class OfferAbstract extends Model {
-    use HasFactory, HasStatus;
+    use HasFactory, HasStatus , SoftDeletes;
     protected $guarded = [];
 }
 class Offer extends OfferAbstract
 {
+    public $statusBadge = [
+        'new' => 'badge badge-light-success',
+        'rejected' => 'badge badge-light-danger',
+        'under_mainten' => 'badge badge-light-info',
+        'approved' =>  'badge badge-light-primary',
+        'completed' => 'badge badge-light-success'
+    ];
+
     public function getMainImageAttribute($key)
     {
         return asset('offers/' . $key);
@@ -63,5 +71,9 @@ class Offer extends OfferAbstract
 
     public function FavorateOffers(){
         return $this->hasMany(FavoarateOffer::class, 'offer_id');
+    }
+
+    public function GetOfferStatusWithSpan(){
+        return "<span class='badge". ($this->statusBadge[$this->status] ?? "badge-light-warning") ." '>" . __('translation.' . $this->status) . "</span>";
     }
 }

@@ -85,7 +85,7 @@ return [
     'client'=> "العميل",
     'owner' => 'المالك',
     'fillable' => 'متاح',
-    'in_fillable' => 'غير متاح',
+    'infillable' => 'غير متاح',
     'owners' => 'المالكين',
     'clients' => 'العملاء',
     'Latest_offer' => 'اخر الطلبات',
@@ -104,4 +104,8 @@ return [
     'Owners Mangement'=> ' اداره المالكين',
     'Add Owners' => 'اضافه مالك جديد',
     'Show Owners' => 'عرض الملاك',
+    'offer_status_and_ownerss' => 'حاله الطلب و المستفيدين',
+    'offer_status' => 'حاله الاتاحه',
+    'option' => 'الخيارات',
+
 ];

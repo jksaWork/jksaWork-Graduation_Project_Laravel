@@ -133,10 +133,10 @@
                                     <tbody>
                                         @if (count($agent->attachments) > 0)
                                             @foreach ($agent->attachments as $attachment)
-                                                <tr>
+                                                <tr> 
                                                     <td class=" "> {{ $attachment->id }}</td>
                                                     <td class=" "> <img
-                                                            src="{{ asset('agents/attachments/' . $attachment->url) }}"
+                                                            src="{{  $attachment->url }}"
                                                             width="80" alt=""></td>
                                                     <td class=" "> {{ $agent->name }}</td>
                                                     <td class=" ">
