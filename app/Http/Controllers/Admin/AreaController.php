@@ -17,7 +17,7 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $areas = Area::all();
+        $areas = Area::orderBy('id', 'desc')->get();
         // dd($areas);
         return view('admin.area.index' ,compact('areas'));
     }

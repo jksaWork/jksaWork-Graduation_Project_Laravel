@@ -29,10 +29,12 @@ class  AdminRepository implements AdminIterface {
             // dd();
             $data = $request->except('_token' , 'role_id');
             $data['password'] = bcrypt($request->password);
+            // dd($this->getAuthenticatable());
             $admin  = $this->getAuthenticatable()::create($data);
             // dd('hello' , $admin, $this->getAuthenticatable());
             if($this->getAuthenticatable() == Admin::class){
-                $admin->attachRoles(['admin', $request->role_id]);
+
+                // $admin->attachRoles(['admin', $request->role_id]);
             }
             session()->flash('success', 'Insert Admin Was Done');
             }catch(Exception $e){

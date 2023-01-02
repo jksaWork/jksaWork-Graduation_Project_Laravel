@@ -35,7 +35,7 @@ class ServiceController extends Controller
         // Service::create($request->except('_token'));
         try{
             Service::create($request->except('_token'));
-            session()->flash('success' , 'Area Was Insert Succesfuly');
+            session()->flash('success' , 'Service Was Inserted Succesfuly');
             return redirect()->back();
             }
             catch(Exception $e){
