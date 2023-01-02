@@ -13,7 +13,7 @@ class OfferControllerApi extends Controller
 {
     use apiResponse;
     public function index(){
-        $offers = Offer::with('Agent' , 'Type' , 'Area' , 'Owner')->paginate(10);
+        $offers = Offer::with('Agent' , 'Type' , 'Area' , 'Owner')->latest()->paginate(10);
         return $this->SeccuessMessage(OfferResource::collection($offers));
     }
 
@@ -30,11 +30,19 @@ class OfferControllerApi extends Controller
     public function FavirateOffer(){
         $offers_ids = Client::find(auth()->user()->id)->FavorateOffers->pluck('id');
         $offers = Offer::with('Agent' , 'Type' , 'Area' , 'Owner')->find($offers_ids);
-        return $this->SeccuessMessage($offers);
+        return $this->SeccuessMessage(OfferResource::collection($offers));
     }
 
     public function MarkerInMap(){
-        $offers = Offer::select('lat' , 'long' , 'location' , 'main_image')->get();
-        return $this->SeccuessMessage($offers);
+        $offers = Offer::get();
+        return $this->SeccuessMessage(OfferResource::collection($offers));
+    }
+
+
+    public function SearchOnOffer(){
+        $Offers = Offer::with('Agent' , 'Type' , 'Area' , 'Owner')-> withCount('FavorateOffers')->whenSearchByLocation(request('search'))
+        ->whenSearchByArea(request('area_id'))
+        ->get();
+        return  $this->SeccuessMessage(OfferResource::collection($Offers));
     }
 }

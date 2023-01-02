@@ -38,10 +38,33 @@ class Offer extends OfferAbstract
             return $query->where('service_id', $service_id);
         });
     }
+
+    public function  scopewhenSearchByLocation($query , $searchValue){
+        return $query->when($searchValue, function ($query) use ($searchValue) {
+            return $query->where('location', 'like' , "%" . $searchValue)
+            ->orWhere('title', 'like' , "%" . $searchValue)
+            ->orWhere('short_desc', 'like' , "%" . $searchValue)
+            ->orWhere('long_desc', 'like' , "%" . $searchValue);
+        });
+    }
+
+    
+    public function FavorateOffers(){
+        return $this->belongsToMany(Client::class,  'favoarate_offers' , 'offer_id' , 'client_id');
+    }
+
+    public function scopeWhenSearchByArea($query, $area_id)
+    {
+        return $query->when($area_id, function ($query) use ($area_id) {
+            return $query->where('area_id', $area_id);
+        });
+    }
     // Area  Relation
     public function Area(){
         return $this->belongsTo(Area::class);
     }
+
+    
     // Service  Relation
     public function Service(){
         return $this->belongsTo(Service::class);
@@ -69,9 +92,9 @@ class Offer extends OfferAbstract
         return $this->morphMany(Attachments::class, 'attachable');
     }
 
-    public function FavorateOffers(){
-        return $this->hasMany(FavoarateOffer::class, 'offer_id');
-    }
+    // public function FavorateOffers(){
+    //     return $this->hasMany(FavoarateOffer::class, 'offer_id');
+    // }
 
     public function GetOfferStatusWithSpan(){
         return "<span class='badge". ($this->statusBadge[$this->status] ?? "badge-light-warning") ." '>" . __('translation.' . $this->status) . "</span>";
