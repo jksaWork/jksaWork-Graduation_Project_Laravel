@@ -22,6 +22,7 @@
         "webpack-cli": "^4.10.0"
     },
     "dependencies": {
+        "@googlemaps/js-api-loader": "^1.15.1",
         "dropify": "^0.2.2",
         "dropzone": "^6.0.0-beta.2",
         "jquery": "^3.6.1"

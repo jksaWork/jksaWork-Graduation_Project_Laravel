@@ -87,6 +87,12 @@ Route::group(
             // Offer Routes
             Route::resource('offers' , OfferController::class);
             Route::get('offer-ajax', [OfferController::class, 'data'])->name('offer.data');
+            Route::get('offer-in-map' , [\App\Http\Controllers\MapController::class,"index"])->name('Map');
+            Route::get('reports/agent-report' , [\App\Http\Controllers\ReportController::class , "agentOfferReport"])->name('report.agent');
+            Route::get('reports/offer-status-report' , [\App\Http\Controllers\ReportController::class , "offerStatusReport"])->name('report.offer_status_report');
+            Route::get('reports/system-users' , [\App\Http\Controllers\ReportController::class , "OfferAreaReport"])->name('report.system_usage_monthly');
+
+
         });
 
         Route::prefix('admin')->middleware('auth:admin')->group(function () {
