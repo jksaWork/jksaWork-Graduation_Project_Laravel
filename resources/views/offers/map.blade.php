@@ -25,7 +25,15 @@
     <!-- BEGIN Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style-rtl.css') }}">
     <!-- END Custom CSS-->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500&family=El+Messiri&display=swap" rel="stylesheet">
+        <style>
+           * {
+                font-family: 'Cairo', sans-serif;
+                font-family: 'El Messiri', sans-serif;
+            }
+        </style>
     <style>
         #map {
             height: 100%;
@@ -265,7 +273,7 @@
     <div id='active_user_list'>
         <h3 class='mb-2'>{{ __('translation.orders.list') }}</h3>
         @foreach ($orders as $key => $order)
-            <div class="order_foreach mt-1 " style='padding:3px 20px; border-bottom: 1px solid #ccc '
+            <div class="order_foreach mt-1 " style='padding:3px; border-bottom: 1px solid #ccc '
                 onclick="takeCamaraTolaocation({{ $key }})">
                 <div class="row" style="justify-content:space-between ">
                     <div class="order_container">
@@ -301,21 +309,7 @@
             </div>
         @endforeach
     </div>
-    <div id="back_to_dashboard">
-        <a href="{{ route('admin.home') }}">
-            <h3 class='mb-2 d-flex'>
-                <span>
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z" />
-                    </svg>
-                </span>
-                <span class="ml-1">
-                    {{ __('translation.dashboard') }}
-                </span>
-            </h3>
-        </a>
 
-    </div>
 
     <div id="map">
 
