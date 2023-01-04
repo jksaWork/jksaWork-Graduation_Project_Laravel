@@ -3,7 +3,7 @@
 
 @section('main-head', __('translation.show_agent_details'))
 @section('content')
-    <div class="post d-flex flex-column-fluid" id="kt_post">
+    <div class="post d-flex flex-column-fluid w-100" id="kt_post">
         <!--begin::Container-->
         <div id="kt_content_container" class="container-xxl">
             <div class="card p-5">
