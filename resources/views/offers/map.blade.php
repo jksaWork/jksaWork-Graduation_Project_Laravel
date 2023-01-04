@@ -310,9 +310,7 @@
         @endforeach
     </div>
 
-
     <div id="map">
-
     </div>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
