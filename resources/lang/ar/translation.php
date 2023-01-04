@@ -121,4 +121,11 @@ return [
     'print' => 'طباعه',
     'area_report' => 'تقرير المناطق',
     'service_report' => 'تقرير الخدمات',
+    'singit_to_new_status' => 'اسناد العرض لحاله ',
+    "sign_it_to_new_client" => 'اسناد العرض لعميل',
+    'save' => 'حفظ',
+    'back' => 'رجوع',
+    'inactive' => 'غير مفعل',
+    'agent_mangements' => 'اداره الوكالات',
+
 ];

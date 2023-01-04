@@ -13,6 +13,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\AssingOrderToClientController;
 use App\Http\Controllers\AttachmentsController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\OfferController;
@@ -92,6 +93,8 @@ Route::group(
             Route::get('reports/offer-status-report' , [\App\Http\Controllers\ReportController::class , "offerStatusReport"])->name('report.offer_status_report');
             Route::get('reports/system-users' , [\App\Http\Controllers\ReportController::class , "OfferAreaReport"])->name('report.system_usage_monthly');
 
+            // sign Order To Client
+            Route::get('offer-asing-to-client/{id}', [AssingOrderToClientController::class, 'index'])->name('asing_to_cleint');
 
         });
 

@@ -1,5 +1,5 @@
 @extends('layouts.admin.admin')
-@section('main-head', 'Admin Mangement')
+@section('main-head', __('translation.agent_mangements'))
 
 @section('content')
 

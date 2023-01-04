@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link {{ request()->routeIs('agent.dashboard') ?: 'active'}}" href="/admin">
+                    <a class="menu-link {{ request()->routeIs('agent.dashboard') ?: 'active'}}" href="/admin/dashboard">
                         <span class="menu-icon">
                             <span class="svg-icon svg-icon-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"

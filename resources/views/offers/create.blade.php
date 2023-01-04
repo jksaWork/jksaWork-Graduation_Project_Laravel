@@ -42,10 +42,10 @@
                                 </div>
                                 <div class="mt-3">
                                     <button class="btn-primary btn">
-                                        Save
+                                        {{__('translation.save')}}
                                     </button>
                                     <a href="javascript::back()" class="btn btn-light-danger">
-                                        Back
+                                        {{__('translation.back')}}
                                     </a>
                                 </div>
                             </div>

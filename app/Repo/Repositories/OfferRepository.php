@@ -141,7 +141,8 @@ class  OfferRepository implements OfferInterface {
     }
 
     public function ShowOfferDetails($offer){
-        return view('offers.show', compact('offer'));
+        $clients = Client::get();
+        return view('offers.show', compact('offer',"clients"));
     }
 
     public function editAdmin($admin){

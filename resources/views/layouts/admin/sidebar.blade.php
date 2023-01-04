@@ -47,8 +47,7 @@
                     </div>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link {{ request()->routeIs('dashboard') ?: 'active' }}"
-                        href="{{ route('dashboard') }}">
+                    <a class="menu-link {{ request()->routeIs('dashboard') ?: 'active'}}" href="/admin/dashboard">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon svg-icon-2">

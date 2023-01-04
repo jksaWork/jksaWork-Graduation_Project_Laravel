@@ -98,7 +98,8 @@
                                                 <th class="">{{ __('translation.owner') }}</th>
                                                 <th class="">{{ __('translation.client') }}</th>
                                                 <th class="">{{ __('translation.status') }}</th>
-                                                <th class="">{{ __('translation.option') }}</th>
+                                                <th class="">{{ __('translation.sign_it_to_new_client') }}</th>
+                                                <th class="">{{ __('translation.singit_to_new_status') }}</th>
                                             </tr>
                                             <!--end::Table row-->
                                         </thead>
@@ -110,6 +111,18 @@
                                                 <td> {{ $offer->Owner->name  ?? '-'}}</td>
                                                 <td> {{ $offer->Client->name ?? '-' }}</td>
                                                 <td> {!! $offer->GetOfferStatusWithSpan() !!}</td>
+                                                <td>
+                                                    <form action="{{ route('asing_to_cleint', $offer->id)}}" method="get">
+                                                        <div class="form-group">
+                                                            <label for=""></label>
+                                                            <select class="form-control" name="offer_client" id="status" onchange="this.form.submit()">
+                                                                @foreach ($clients as $status => $client )
+                                                                    <option value="{{$client->id}}">{{$client->name}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    </form>
+                                                </td>
                                                 <td>
                                                     <form action="{{ route('offers.show' , $offer)}}" method="get">
                                                         <div class="form-group">
