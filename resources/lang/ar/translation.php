@@ -127,5 +127,8 @@ return [
     'back' => 'رجوع',
     'inactive' => 'غير مفعل',
     'agent_mangements' => 'اداره الوكالات',
+    'offer_precntage' => 'نسبه سجلات العروض',
+    'owner_presentage' => 'نسبه سجلات الملاك',
+    'client_precnetage' => 'نسبه سجلات العملاء'
 
 ];

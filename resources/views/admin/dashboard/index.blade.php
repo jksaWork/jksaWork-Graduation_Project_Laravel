@@ -16,8 +16,8 @@
                         <div class="card-body my-3">
                             <a href="#" class="card-title fw-bolder text-success fs-5 mb-3 d-block">{{__('translation.owners')}}</a>
                             <div class="py-1">
-                                <span class="text-dark fs-1 fw-bolder me-2">50%</span>
-                                <span class="fw-bold text-muted fs-7">Avarage</span>
+                                <span class="text-dark fs-1 fw-bolder me-2">{{$recored[0]}}%</span>
+                                <span class="fw-bold text-muted fs-7">{{__('translation.owner_presentage')}}</span>
                             </div>
                             <div class="progress h-7px bg-success bg-opacity-50 mt-7">
                                 <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -34,8 +34,8 @@
                         <div class="card-body my-3">
                             <a href="#" class="card-title fw-bolder text-warning fs-5 mb-3 d-block">{{ __('translation.offers')}}</a>
                             <div class="py-1">
-                                <span class="text-dark fs-1 fw-bolder me-2">15%</span>
-                                <span class="fw-bold text-muted fs-7">{{ 23}} {{__('translation.offer')}}</span>
+                                <span class="text-dark fs-1 fw-bolder me-2">{{$recored[1]}}%</span>
+                                <span class="fw-bold text-muted fs-7">{{ 23}} {{__('translation.offer_precntage')}}</span>
                             </div>
                             <div class="progress h-7px bg-warning bg-opacity-50 mt-7">
                                 <div class="progress-bar bg-warning" role="progressbar" style="width: 15%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -52,8 +52,8 @@
                         <div class="card-body my-3">
                             <a href="#" class="card-title fw-bolder text-primary fs-5 mb-3 d-block">{{__('translation.clients')}}</a>
                             <div class="py-1">
-                                <span class="text-dark fs-1 fw-bolder me-2">76%</span>
-                                <span class="fw-bold text-muted fs-7">400k Impressions</span>
+                                <span class="text-dark fs-1 fw-bolder me-2">{{$recored[2]}}%</span>
+                                <span class="fw-bold text-muted fs-7">{{__('translation.client_precnetage')}}</span>
                             </div>
                             <div class="progress h-7px bg-primary bg-opacity-50 mt-7">
                                 <div class="progress-bar bg-primary" role="progressbar" style="width: 76%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
