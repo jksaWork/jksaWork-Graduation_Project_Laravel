@@ -129,6 +129,6 @@ return [
     'agent_mangements' => 'اداره الوكالات',
     'offer_precntage' => 'نسبه سجلات العروض',
     'owner_presentage' => 'نسبه سجلات الملاك',
-    'client_precnetage' => 'نسبه سجلات العملاء'
-
+    'client_precnetage' => 'نسبه سجلات العملاء',
+    'owner Dashboard' => 'لوحه تحكم المالكين',
 ];

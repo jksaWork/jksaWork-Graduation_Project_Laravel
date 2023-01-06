@@ -20,7 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(LaraTrustSeeder::class);
         Admin::factory(1)->create();
         Client::factory(1)->create();
-        Owner::factory(1)->create();
+        Owner::factory(1)->create([
+            'email' => 'owner@gmail.com',
+            'password' => bcrypt('123456'),
+        ]);
         $this->call([
             ServiceSeeder::class,
             AgentSeeder::class,

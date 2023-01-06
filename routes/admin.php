@@ -20,6 +20,7 @@ use App\Http\Controllers\OfferController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\SettingController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +33,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', fn () => 'jksa')->name('switchLan');
+Route::get('/' , [DashboardController::class , 'getIndex']);
+Route::get('/switch', fn () => 'jksa')->name('switchLan');
 Route::get('/pro', fn () => 'jksa')->name('profile');
 Route::middleware('auth')->group(function () {
 

@@ -46,6 +46,11 @@ return [
             'provider' => 'admins',
         ],
 
+        'owner' => [
+            'driver' => 'session',
+            'provider' => 'owners',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -82,6 +87,10 @@ return [
         'agents' => [
             'driver' => 'eloquent',
             'model' => App\Models\AgentUser::class,
+        ],
+        'owners' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Owner::class,
         ]
 
         // 'users' => [
