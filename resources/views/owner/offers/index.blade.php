@@ -1,5 +1,5 @@
 {{-- @extends('layouts.admin.admin') --}}
-@extends(auth()->guard('admin')->check() ?'layouts.admin.admin':'layouts.agents.agent_layouts')
+@extends('layouts.owners.agent_layouts')
 @section('main-head', $heading[$service_id] ?? '')
 @section('content')
 <div class="post d-flex flex-column-fluid" id="kt_post">
@@ -36,7 +36,7 @@
                 <div class="card-toolbar">
                     <!--begin::Toolbar-->
                     <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                        <a href="{{ route('offers.create' , ['service_id' => $service_id])}}" type="button" class="btn btn-light-primary"> {{__('translation.add_offer')}} </a>
+                        <a href="{{ route('owner.offers.create' , ['service_id' => $service_id])}}" type="button" class="btn btn-light-primary"> {{__('translation.add_offer')}} </a>
                     </div>
 
                     <div class="d-flex justify-content-end align-items-center d-none" data-kt-customer-table-toolbar="selected">
@@ -133,7 +133,7 @@
                 "url": "{{ asset('admin_assets/datatable-lang/' . app()->getLocale() . '.json') }}"
             },
             ajax: {
-                url: '{{ route('offer.data') }}',
+                url: '{{ route('owner.offer.ajax') }}',
                 data : function (d) {
                     d.service_id = service_id;
                 },

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ApiAuthController;
 use App\Http\Controllers\Owenr\OwnerDashbaord;
+use App\Http\Controllers\Owenr\OwnerOfferController;
 use App\Http\Controllers\OwnerAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,8 +32,12 @@ Route::prefix('owners')->group(function () {
     // Auth Route
     Route::get('login' , [OwnerAuthController::class , 'index'])->name('get.login');
     Route::post('login' , [OwnerAuthController::class , 'login'])->name('owner.login');
-    Route::middleware('auth:owner')->group(function () {
-        Route::get('dashboard' , [OwnerDashbaord::class, 'index'])->name('owner.dashboard');
+    Route::middleware('auth:owner')->name('owner.')->group(function () {
+        Route::get('dashboard' , [OwnerDashbaord::class, 'index'])->name('dashboard');
+        Route::resource('offers', OwnerOfferController::class);
+        Route::get('offers-ajax', [OwnerOfferController::class , 'getAjaxData'])->name('offer.ajax');
     });
+
+    // Route
 
 });

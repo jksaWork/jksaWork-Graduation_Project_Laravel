@@ -6,7 +6,7 @@
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
         <a href="{{route('owner.dashboard')}}">
-            <img alt="Logo" src="{{ asset('admin_loing.png') }}" class="h-250px logo" />
+            <img alt="Logo" src="{{ asset('admin_login.png') }}" class="h-200px logo" />
         </a>
         <!--end::Logo-->
         <!--begin::Aside toggler-->
@@ -114,7 +114,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => 1])}}">
+                            <a class="menu-link" href="{{route('owner.offers.create' , ['service_id' => 1])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -122,7 +122,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.index' , ['service_id' => 1])}}">
+                            <a class="menu-link" href="{{route('owner.offers.index' , ['service_id' => 1])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -155,7 +155,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => 2])}}">
+                            <a class="menu-link" href="{{route('owner.offers.create' , ['service_id' => 2])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -163,7 +163,7 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.index' , ['service_id' =>2])}}">
+                            <a class="menu-link" href="{{route('owner.offers.index' , ['service_id' =>2])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -195,7 +195,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{route('offers.create' , ['service_id' => 3])}}">
+                            <a class="menu-link" href="{{route('owner.offers.create', ['service_id' => 3])}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -213,6 +213,7 @@
                     </div>
                 </div>
                 {{-- Jksa Altigani --}}
+
                 {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-icon">

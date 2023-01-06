@@ -271,6 +271,7 @@
         </div>
     </div>
     <div id='active_user_list'>
+
         <h3 class='mb-2'>{{ __('translation.orders.list') }}</h3>
         @foreach ($orders as $key => $order)
             <div class="order_foreach mt-1 " style='padding:3px; border-bottom: 1px solid #ccc '
