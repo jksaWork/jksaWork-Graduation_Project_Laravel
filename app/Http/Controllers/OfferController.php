@@ -70,7 +70,7 @@ class OfferController extends Controller
      */
     public function edit(Offer $offer)
     {
-        //
+        return $this->interface->editOffer($offer);
     }
 
     /**
@@ -82,8 +82,10 @@ class OfferController extends Controller
      */
     public function update(UpdateOfferRequest $request, Offer $offer)
     {
-        //
+        return $this->interface->updateOffer($request,$offer);
     }
+
+    // public function
 
     /**
      * Remove the specified resource from storage.
@@ -93,6 +95,6 @@ class OfferController extends Controller
      */
     public function destroy(Offer $offer)
     {
-        //
+        return $this->interface->deleteOffer($offer);
     }
 }

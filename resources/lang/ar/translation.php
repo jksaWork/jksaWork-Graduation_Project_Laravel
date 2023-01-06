@@ -136,4 +136,13 @@ return [
     'sell_offer_conunt' => 'عدد عروض البيع',
     'exchange_offer_conunt' => 'عدد عروض الاستبدال',
     'rent_offer_conunt' => 'عدد عروض الاستبدال',
+    'main_page' => 'الصفحه الرئيسه',
+    'Are You Have Account' => 'ليس لديك حساب',
+    'create_accout' => 'انشاء حساب',
+    'welcome with you' => 'اهلا بك',
+    'Iam Have Account' => 'لدي حساب',
+    'login' => 'تسجيل دخول',
+    'create_account' => 'انشاء حساب',
+    'password_confirmation' => 'تاكيد كلمه المرور',
+
 ];

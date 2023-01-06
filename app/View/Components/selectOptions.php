@@ -11,12 +11,13 @@ class selectOptions extends Component
      *
      * @return void
      */
-    public $options , $name, $class;
-    public function __construct($options , $name ,   $class)
+    public $options , $name, $class , $value;
+    public function __construct($options , $name , $class , $value = null)
     {
         $this->options = $options ;
         $this->name = $name;
         $this->class = $class;
+        $this->value = $value;
     }
 
     /**

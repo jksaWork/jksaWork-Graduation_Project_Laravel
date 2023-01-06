@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Owenr;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOfferRequest;
+use App\Http\Requests\UpdateOfferRequest;
 use App\Models\Area;
 use App\Models\Attachments;
 use App\Models\Client;
@@ -145,5 +146,45 @@ class OwnerOfferController extends Controller
         $offer = Offer::find($id);
         $clients = Client::get();
         return view('owner.offers.show' , compact('offer' , 'clients'));
+    }
+
+    public function edit($id){
+        $offer = Offer::find($id);
+        $areas = Area::all();
+        $type =offerType::all();
+        $service_id = request()->service_id;
+        $heading = [
+            1 => __('translation.rent_offer'),
+            2 => __('translation.sale_order'),
+            3 => __('translation.exchange Orders'),
+        ];
+        return view('owner.offers.edit' ,  compact('areas' , 'type', 'service_id' , 'heading', 'offer' ));
+    }
+
+    public function update(UpdateOfferRequest $request, $offer_id)
+    {
+        try{
+            $offer = Offer::find($offer_id);
+            $data =  [
+                'title' => $request->title,
+                'price' => $request->price,
+                'location' => $request->location,
+                'short_desc' => $request->short_desc,
+                'long_desc' => $request->long_desc,
+                'long' => $request->long,
+                'lat' => $request->lat,
+                'type_id' => $request->type_idd,
+                'area_id' => $request->area_idd,
+                'service_id' => $request->service_id,
+                'agent_id' => $request->agent_id,
+                ];
+                // Sotre The Offer Data
+                $offer->update($data);
+                return redirect()->route('owner.offers.index' , ['service_id' => $request->service_id]);
+        }catch(Exception $e){
+            dd($e);
+            session()->flash('error' ,  'Some Thing Went Worng ');
+            return redirect()->back();
+        }
     }
 }

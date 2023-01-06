@@ -15,6 +15,8 @@
                             <!--begin::Title-->
                             <h1 class="text-dark mb-3">{{__('translation.Welcome Back')}}</h1>
                             <!--end::Title-->
+                                <div class="text-gray-400 fw-bold fs-4">{{__('translation.Are You Have Account')}} ?
+                                <a href="{{ route('owner.register')}}" class="link-primary fw-bolder">{{ __('translation.create_accout')}}</a></div>
                             <!--begin::Link-->
                         </div>
                     </div>

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class OwnerController extends Controller
 {
-
+    public $interface;
     public function __construct(OwnerInterFace  $interface)
     {
         $this->interface = $interface;

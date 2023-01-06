@@ -13,7 +13,7 @@ class UpdateOfferRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,7 @@ class UpdateOfferRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        $roles = collect(StoreOfferRequest::rules());
+        return ($roles->except('main_image', 'sub_images')->toArray());
     }
 }

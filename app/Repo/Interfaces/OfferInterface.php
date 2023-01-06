@@ -11,9 +11,9 @@ interface  OfferInterface {
     public function ChangeStatus($admin);
     public function ChangeOfferStatus(Offer $offer , $value);
     public function ShowOfferDetails($admin);
-    public function editAdmin($admin);
-    public function updateAdmin($request , $admin);
-    public function deleteAdmin($admin);
+    public function editOffer($admin);
+    public function updateOffer($request , $admin);
+    public function deleteOffer($admin);
     public function getAjaxData();
     public function getAuthenticatable();
 }

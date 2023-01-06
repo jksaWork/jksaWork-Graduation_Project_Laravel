@@ -57,7 +57,7 @@ class  OfferRepository implements OfferInterface {
             'lat' => $request->lat,
             'main_image' => $name,
             'type_id' => $request->type_idd,
-            'area_id' => $request->type_idd,
+            'area_id' => $request->area_idd,
             'service_id' => $request->service_id,
             'agent_id' => $request->agent_id,
             ];
@@ -145,22 +145,41 @@ class  OfferRepository implements OfferInterface {
         return view('offers.show', compact('offer',"clients"));
     }
 
-    public function editAdmin($admin){
-        $roles = Role::all();
-        return view('admin.admins.edit' , compact('admin','roles'));
+    public function editOffer($offer){
+        // $roles = Role::all();
+        $areas = Area::all();
+        $type =offerType::all();
+        $service_id = request()->service_id;
+        $heading = [
+            1 => __('translation.rent_offer'),
+            2 => __('translation.sale_order'),
+            3 => __('translation.exchange Orders'),
+        ];
+        return view('offers.edit' ,  compact('areas' , 'type', 'service_id' , 'heading', 'offer' ));
     }
 
-    public function updateAdmin($request,  $admin){
+    public function updateOffer($request, $offer)
+    {
         // dd($request , $client);
         try{
-            $data = $request->except('_token' , '_method' , 'role_id');
-            $data['password'] = bcrypt($request->password);
-            $admin->update($data);
-            // dd($admin->roles);
-            $admin->detachRoles($admin->roles);
-            $admin->attachRoles(['admin', $request->role_id]);
-            session()->flash('success' , 'Update Admin Was Done Succesfuly');
-            return redirect()->route('users.index');
+
+            $data =  [
+                'title' => $request->title,
+                'price' => $request->price,
+                'location' => $request->location,
+                'short_desc' => $request->short_desc,
+                'long_desc' => $request->long_desc,
+                'long' => $request->long,
+                'lat' => $request->lat,
+                'type_id' => $request->type_idd,
+                'area_id' => $request->area_idd,
+                'service_id' => $request->service_id,
+                'agent_id' => $request->agent_id,
+                ];
+                // dd($request->service_id);
+                // Sotre The Offer Data
+                $offer->update($data);
+                return redirect()->route('offers.index' , ['service_id' => $request->service_id]);
         }catch(Exception $e){
             dd($e);
             session()->flash('error' ,  'Some Thing Went Worng ');
@@ -168,11 +187,11 @@ class  OfferRepository implements OfferInterface {
         }
     }
 
-    public function deleteAdmin($Owner)
+    public function deleteOffer($Owner)
     {
         try{
             $Owner->delete();
-            session()->flash('success' , 'Admin  Was Delete Succesfuly');
+            session()->flash('success' , 'Offer  Was Delete Succesfuly');
             return redirect()->back();
         }catch(Exception $e){
             session()->flash('error' ,  'Some Thing Went Worng ');
