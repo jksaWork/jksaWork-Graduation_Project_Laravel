@@ -1,11 +1,8 @@
 {{-- @if (auth()->user()->hasPermission('update_admins')) --}}
 <div style="min-width: 200px">
-    @if (!request()->routeIs('dashboard'))
-    <a href="{{ route('offers.show', $id) }}" class="btn btn-light-primary btn-sm btn-icon">
+    <a href="{{ route('owner.offers.show', $id) }}" class="btn btn-light-primary btn-sm btn-icon">
         <i class="fa fa-eye"></i>
     </a>
-    @endif
-    {{-- @dd(request()->routeIs('dashboard')) --}}
     @if (!request()->routeIs('dashboard'))
     <a href="{{ route('agent.edit', $id) }}" class="btn btn-light-info btn-sm btn-icon me-1">
         <span class="svg-icon svg-icon-3">
@@ -16,7 +13,6 @@
         </span>
     </a>
     @endif
-
         <a href="{{ route('offers.show', ['status' => true , 'offer' => $id]) }}"
             class="btn btn-light-success btn-sm btn-icon me-1">
             <span class="svg-icon svg-icon-3">

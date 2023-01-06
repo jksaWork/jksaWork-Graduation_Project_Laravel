@@ -8,7 +8,7 @@
         <!--begin::Container-->
         <div id="kt_content_container" class="container-xxl">
             <div class="row g-5 g-xl-8">
-                <div class="col-sm-6">
+                <div class="col-6">
                     <!--begin::Statistics Widget 5-->
                     <a href="#" class="card bg-body hoverable card-xl-stretch mb-xl-8">
                         <!--begin::Body-->
@@ -23,14 +23,14 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <div class="text-gray-900 fw-bolder fs-2 mb-2 mt-5">500M$</div>
-                            <div class="fw-bold text-gray-400">SAP UI Progress</div>
+                            <div class="text-gray-900 fw-bolder fs-2 mb-2 mt-5">{{ $offers->count() }}</div>
+                            <div class="fw-bold text-gray-400">{{ __('translation.all_offers')}}</div>
                         </div>
                         <!--end::Body-->
                     </a>
                     <!--end::Statistics Widget 5-->
                 </div>
-                <div class="col-sm-6 ">
+                <div class="col-6">
                     <!--begin::Statistics Widget 5-->
                     <a href="#" class="card bg-dark hoverable card-xl-stretch mb-xl-8">
                         <!--begin::Body-->
@@ -44,14 +44,14 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <div class="text-gray-100 fw-bolder fs-2 mb-2 mt-5">+3000</div>
-                            <div class="fw-bold text-gray-100">New Customers</div>
+                            <div class="text-gray-100 fw-bolder fs-2 mb-2 mt-5">{{$offers->where('service_id' , 3)->count()}}</div>
+                            <div class="fw-bold text-gray-100">{{ __('translation.exchange_offer_conunt') }}</div>
                         </div>
                         <!--end::Body-->
                     </a>
                     <!--end::Statistics Widget 5-->
                 </div>
-                <div class="col-sm-6">
+                <div class="col-6">
                     <!--begin::Statistics Widget 5-->
                     <a href="#" class="card bg-warning hoverable card-xl-stretch mb-xl-8">
                         <!--begin::Body-->
@@ -64,14 +64,14 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <div class="text-white fw-bolder fs-2 mb-2 mt-5">$50,000</div>
-                            <div class="fw-bold text-white">Milestone Reached</div>
+                            <div class="text-white fw-bolder fs-2 mb-2 mt-5"> {{ $offers->where('service_id' , 2)->count()}}</div>
+                            <div class="fw-bold text-white">{{__('translation.sell_offer_conunt')}}</div>
                         </div>
                         <!--end::Body-->
                     </a>
                     <!--end::Statistics Widget 5-->
                 </div>
-                <div class="col-sm-6">
+                <div class="col-6">
                     <!--begin::Statistics Widget 5-->
                     <a href="#" class="card bg-info hoverable card-xl-stretch mb-5 mb-xl-8">
                         <!--begin::Body-->
@@ -84,8 +84,8 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <div class="text-white fw-bolder fs-2 mb-2 mt-5">$50,000</div>
-                            <div class="fw-bold text-white">Milestone Reached</div>
+                            <div class="text-white fw-bolder fs-2 mb-2 mt-5">{{ $offers->where('service_id' , 1)->count()}}</div>
+                            <div class="fw-bold text-white">{{ __('translation.rent_offer_conunt') }}</div>
                         </div>
                         <!--end::Body-->
                     </a>

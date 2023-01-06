@@ -131,4 +131,9 @@ return [
     'owner_presentage' => 'نسبه سجلات الملاك',
     'client_precnetage' => 'نسبه سجلات العملاء',
     'owner Dashboard' => 'لوحه تحكم المالكين',
+    'owners Dashboard' => 'لوحه تحكم الملاك',
+    'all_offers' => 'كل العروض',
+    'sell_offer_conunt' => 'عدد عروض البيع',
+    'exchange_offer_conunt' => 'عدد عروض الاستبدال',
+    'rent_offer_conunt' => 'عدد عروض الاستبدال',
 ];

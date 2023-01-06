@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOfferRequest;
 use App\Models\Area;
 use App\Models\Attachments;
+use App\Models\Client;
 use App\Models\Offer;
 use App\Models\offerType;
 use Exception;
@@ -106,7 +107,7 @@ class OwnerOfferController extends Controller
             ->editColumn('created_at', function ( $user) {
                 return $user->created_at->format('Y-m-d');
             })
-            ->addColumn('actions', 'offers.data_table.actions')
+            ->addColumn('actions', 'owner.offers.data_table.actions')
             ->addColumn('area' , function($offer){
                 $type ='area';
                 return view('owner.offers.data_table.areas_services_type', compact('offer', 'type'));
@@ -121,21 +122,28 @@ class OwnerOfferController extends Controller
             })
             ->addColumn('client' , function($offer){
                 $type ='client';
-                return view('owners.offers.data_table.areas_services_type', compact('offer', 'type'));
+                return view('owner.offers.data_table.areas_services_type', compact('offer', 'type'));
             })
             ->addColumn('service' , function($offer){
                 $type ='service';
-                return view('owners.offers.data_table.areas_services_type', compact('offer' , 'type'));
+                return view('owner.offers.data_table.areas_services_type', compact('offer' , 'type'));
             })
             ->addColumn('type' , function($offer){
                 $type = 'type';
-                return view('owners.offers.data_table.areas_services_type', compact('offer' , 'type'));
+                return view('owner.offers.data_table.areas_services_type', compact('offer' , 'type'));
             })
             ->addColumn('status' , function($admin){
-                return view('owners.offers.data_table.status', compact('admin'));
+                return view('owner.offers.data_table.status', compact('admin'));
             })
             ->rawColumns(['record_select', 'actions' , 'roles' , 'service' , 'type', 'area'])
             ->toJson();
 
+    }
+
+    public function show($id){
+        // dd($id);
+        $offer = Offer::find($id);
+        $clients = Client::get();
+        return view('owner.offers.show' , compact('offer' , 'clients'));
     }
 }

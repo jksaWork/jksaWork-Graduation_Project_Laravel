@@ -27,7 +27,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+    ],
+    function () {
 Route::prefix('owners')->group(function () {
     // Auth Route
     Route::get('login' , [OwnerAuthController::class , 'index'])->name('get.login');
@@ -37,7 +42,6 @@ Route::prefix('owners')->group(function () {
         Route::resource('offers', OwnerOfferController::class);
         Route::get('offers-ajax', [OwnerOfferController::class , 'getAjaxData'])->name('offer.ajax');
     });
-
-    // Route
-
+        // Route
+    });
 });
