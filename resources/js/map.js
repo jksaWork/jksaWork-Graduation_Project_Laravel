@@ -20,8 +20,8 @@ const myStyles = [
 ];
 let markers, drivers;
 let axiosUrl, url = "/offer-in-map",
-    suburl = 'offer-in-map';
-if (document.location.toString().includes('owner')) axiosUrl = url;
+    suburl = '/owners/owner-map';
+if (!document.location.toString().includes('owner')) axiosUrl = url;
 else axiosUrl = suburl;
 axios
     .get(axiosUrl)
