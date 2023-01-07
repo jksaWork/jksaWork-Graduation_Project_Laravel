@@ -39,7 +39,7 @@ class OfferResource extends JsonResource
             'agent' =>$this->Agent,
             'images' => $this->attachments,
             'favorate_count' => $this->favorate_offers_count,
-            'is_favorate' => !$this->favorate_offers_count ?0: auth()->user()->isFavorate($this->id) ,
+            'is_favorate' => !$this->favorate_offers_count ?0: (!auth()->check() ? 0: auth()->user()->isFavorate($this->id)),
         ];
     }
 }
