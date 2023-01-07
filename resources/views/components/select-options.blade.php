@@ -5,11 +5,11 @@
             @foreach ($options as $option)
                 <option value="{{ is_string($option) ? $option : $option->id  }}"
                     @if(is_string($option))
-                        @if ($option == $value)
+                        @if ($option == null)
                             selected
                         @endif
                     @else
-                        @if ($option == $value)
+                        @if ($option == null)
                             selected
                         @endif
                     @endif
