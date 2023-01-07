@@ -67,7 +67,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a class="menu-link {{ request()->routeIs('Map') ?: 'active'}}" href="{{route('Map')}}">
+                    <a class="menu-link {{ request()->routeIs('owner.map') ?: 'active'}}" href="{{route('owner.map')}}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="menu-icon">

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\ApiAuthController;
 use App\Http\Controllers\Owenr\OwnerDashbaord;
 use App\Http\Controllers\Owenr\OwnerOfferController;
+use App\Http\Controllers\Owner\OwnerMapController;
 use App\Http\Controllers\OwnerAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,7 @@ Route::prefix('owners')->group(function () {
         Route::get('dashboard' , [OwnerDashbaord::class, 'index'])->name('dashboard');
         Route::resource('offers', OwnerOfferController::class);
         Route::get('offers-ajax', [OwnerOfferController::class , 'getAjaxData'])->name('offer.ajax');
+        Route::get('owner-map', [OwnerMapController::class , 'Map'])->name('map');
     });
         // Route
     });

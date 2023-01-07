@@ -21,7 +21,7 @@ const myStyles = [
 let markers, drivers;
 let axiosUrl, url = "/offer-in-map",
     suburl = 'offer-in-map';
-if (document.location.toString().includes('admin')) axiosUrl = url;
+if (document.location.toString().includes('owner')) axiosUrl = url;
 else axiosUrl = suburl;
 axios
     .get(axiosUrl)
