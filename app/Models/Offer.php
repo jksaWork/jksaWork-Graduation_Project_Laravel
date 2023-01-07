@@ -48,7 +48,7 @@ class Offer extends OfferAbstract
         });
     }
 
-    
+
     public function FavorateOffers(){
         return $this->belongsToMany(Client::class,  'favoarate_offers' , 'offer_id' , 'client_id');
     }
@@ -64,7 +64,7 @@ class Offer extends OfferAbstract
         return $this->belongsTo(Area::class);
     }
 
-    
+
     // Service  Relation
     public function Service(){
         return $this->belongsTo(Service::class);

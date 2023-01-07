@@ -13,7 +13,7 @@ class OfferControllerApi extends Controller
 {
     use apiResponse;
     public function index(){
-        $offers = Offer::with('Agent' , 'Type' , 'Area' , 'Owner')->latest()->paginate(10);
+        $offers = Offer::BelongToService(request()->service)->with('Agent' , 'Type' , 'Area' , 'Owner')->latest()->paginate(10);
         return $this->SeccuessMessage(OfferResource::collection($offers));
     }
 
