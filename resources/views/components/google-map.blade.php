@@ -22,5 +22,5 @@
             @enderror
     </div>
     {{-- <x:text-input class="col-md-6" name='lat' value='15.6162612' /> --}}
-    <div id="map" style="height: 500px;width: 1000px;"></div>
+    <div id="map" style="height: 500px;max-width: 1000px;"></div>
 </div>
