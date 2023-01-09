@@ -24,10 +24,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'owner@gmail.com',
             'password' => bcrypt('123456'),
         ]);
-        $this->call([
-            ServiceSeeder::class,
-            AgentSeeder::class,
-            AreaSedder::class,
+        $this->call(
+            [
+                ServiceSeeder::class,
+                AgentSeeder::class,
+                AreaSedder::class,
             ]
         );
     }

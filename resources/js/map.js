@@ -153,7 +153,6 @@ function AppendOrderMarker() {
                 lng: parseFloat(markerInForeach.long),
                 title: "mohammed altignai",
             },
-            icon: icon,
             map: map,
         });
 
